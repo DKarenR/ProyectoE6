@@ -292,6 +292,8 @@ const resultadoAlbum = document.getElementById("result-album");
 
 let bd = [[], [], []]; //Es una matriz, el primer array es de nombre de canciones, el segundo de artista y el tercero album
 
+//for(let i=0; i < baseDatosJSON.canciones.length; i++)
+//  bd[0].push(baseDatosJSON.canciones[i].nombre);
 baseDatosJSON.canciones.forEach(element => bd[0].push(element.nombre));
 for(let i=0; i < baseDatosJSON.artistas.length; i++)
   bd[1].push(baseDatosJSON.artistas[i].nombre);
@@ -310,7 +312,7 @@ inputBusqueda.addEventListener("input", function () {
     return;
   for (let i = 0; i < bd[0].length; i++) {
     if(normalizar(bd[0][i]).includes(frase))
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} </p> `;
+      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} </p> `;     //Talvez necesite poner i+1 en el id
   }
   for (let i = 0; i < bd[1].length; i++) {
     if(normalizar(bd[1][i]).includes(frase))
@@ -327,9 +329,25 @@ inputBusqueda.addEventListener("input", function () {
     resultadoAutor.innerHTML = '<p style="padding: 15px; " > No hay artistas registrados con ese nombre </p>';
   if(resultadoAlbum.innerHTML == '')
     resultadoAlbum.innerHTML = '<p style="padding: 15px; " > No hay albumes registrados con ese nombre </p>';
+});
 
-  });*/
+//----------- Selecciona la opcion ------------------- 
 
+document.getElementById("resultadosBusqueda").addEventListener("click", function (evento) {
+       
+  let padre = evento.target.closest("div");
+  if(padre.id === "result-cancion")
+  {
+    let cancionNum = evento.target.id.slice(-1);
+    let cancionLink = baseDatosJSON.canciones[cancionNum].link;
+    let video = document.createElement('iframe');
+                                           
+    video.src = `https://www.youtube.com/embed/${cancionLink}`;
+    video.width = "600";
+    video.height = "400";
+
+    document.body.appendChild(video);
+  }
 });
 
 function normalizar(texto) {
