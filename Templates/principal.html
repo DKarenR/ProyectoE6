@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneSix</title>
+    <style>
+        #busqueda{
+            width: 800px;
+            height: 6px;
+            border-radius: 50px;
+            color: rgb(0, 0, 0);
+            background-color: white;
+            padding: 5px;
+            align-self: center;
+        }
+        body{
+            background-color: blue;
+        }
+        #busqueda::placeholder{
+            color: rgb(0, 0, 0);
+            font-style: italic;
+            font-weight: bold;
+        }
+        #menu{
+            margin-top: 10px;
+        }
+        .menu{
+            left: 0;
+            top: 0;
+            height: 486px;
+            width: 10px;
+            padding: 7px;
+            margin: 0px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #barraBusqueda{
+            display: flex;
+            justify-content: center;
+        }
+        .hamburguesa{
+            width: 20px;
+            height: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            top: 0;
+            margin: 0;
+        }
+        .hamburguesa span{
+            display: block;
+            height: 1.5px;
+            background-color: black;
+            border: radius  2px;
+        }
+        .menuDesplegable{
+            height: 500px;
+            width: 300px;
+            padding: 0px;
+            background-color: rgb(84, 108, 212);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="barraBusqueda"><input type="text" for="busqueda" id="busqueda" placeholder="Busca algo :D"></nav>
+    
+    <aside id="menu"> 
+        <div id="hamburguesas" class="menu">
+            <div id="hamburguesa" class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+        </div>
+    </aside>
+    <script>
+        let hamburguesas = document.getElementById("hamburguesa")
+        hamburguesa.addEventListener("click",()=>{
+            let menu = document.getElementById("menu")
+            if(menu.classList.contains("menuDesplegable"))
+                menu.classList.remove("menuDesplegable");
+            else
+                menu.classList.add("menuDesplegable");
+            
+        });
+    </script>
+</body>
+</html>
