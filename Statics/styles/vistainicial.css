@@ -30,6 +30,11 @@ body{
     text-align: left;
     margin-top: 10px;
 }
+.buscador::placeholder{
+            color: rgb(0, 0, 0);
+            font-style: italic;
+            font-weight: bold;
+}
 .menu{
     display: flex;
     width: 40px;
@@ -39,6 +44,7 @@ body{
     justify-self: left;
     border-radius: 51px;
     margin-left: 15px;
+    justify-content: center;
 }
 .debajoDelBuscador{
     width: 100%;
@@ -235,4 +241,25 @@ body{
 #mixMetal{
   background-color: #4e4b46;
   color:#eeeeee;
+}
+.hamburguesa{
+  width: 20px;
+  height: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  top: 0;
+  margin: 0;
+  margin-left: 0;
+}
+.hamburguesa span{
+  display: block;
+  height: 1.5px;
+  background-color: black;
+  border: radius  2px;
+  margin-left: 0;
+}
+#hamburguesas{
+  margin: 0;
 }
