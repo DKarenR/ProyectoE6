@@ -139,7 +139,7 @@ const baseDatosJSON = {
       id_artista: 1,
       album: "True",
       id_album: 1,
-      link: "KOpmMqbTtzU",
+      link: "3InXG9-5lOs",
       genero: "Música Electrónica",
       id_genero: 1
     },
@@ -173,6 +173,105 @@ const baseDatosJSON = {
       album: "True",
       id_album: 1,
       link: "mS_SggwPzkU",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 17,
+      nombre: "Where Them Girls At",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "hWH--BpE5Aw",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 18,
+      nombre: "Little Bad Girl",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "CKR1Tuphuxg",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 19,
+      nombre: "Sweat",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "-IJs0XD_LGA",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 20,
+      nombre: "The Alphabeat",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "po35jFEJo58",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 21,
+      nombre: "Lunar",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "PhUVvCs8HVE",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 22,
+      nombre: "Paris",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "_WdiDXszkRU",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 23,
+      nombre: "Turn Me On",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "a3V29ckxEYw",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 24,
+      nombre: "Sunshine",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "rOa4LsrmcNc",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 25,
+      nombre: "Without You",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "6R0xpZvPuKY",
       genero: "Música Electrónica",
       id_genero: 1
     }
