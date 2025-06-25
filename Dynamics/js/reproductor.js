@@ -98,337 +98,7 @@ const baseDatosJSON = {
       link: "T8TtE-enslA",
       genero: "Rock",
       id_genero: 3
-    },
-        {
-      id: 10,
-      nombre: "Addicted to you",
-      artista: "Avicii",
-      id_artista: 1,
-      album: "True",
-      id_album: 1,
-      link: "Q9JKNqaGLRY",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 11,
-      nombre: "Dear boy",
-      artista: "Avicii",
-      id_artista: 1,
-      album: "True",
-      id_album: 1,
-      link: "bKHHEziexDE",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 12,
-      nombre: "Shame On Me",
-      artista: "Avicii",
-      id_artista: 1,
-      album: "True",
-      id_album: 1,
-      link: "_R8R1IQkSko",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 13,
-      nombre: "You Make me",
-      artista: "Avicii",
-      id_artista: 1,
-      album: "True",
-      id_album: 1,
-      link: "3InXG9-5lOs",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 14,
-      nombre: "Lay Me Down",
-      artista: "Avicii",
-      id_artista: 1,
-      album: "True",
-      id_album: 1,
-      link: "Ltg8aa37b78",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 15,
-      nombre: "Liar Liar",
-      artista: "Avicii",
-      id_artista: 1,
-      album: "True",
-      id_album: 1,
-      link: "LbClJTVGD9Y",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 16,
-      nombre: "Hope There's someone",
-      artista: "Avicii",
-      id_artista: 1,
-      album: "True",
-      id_album: 1,
-      link: "mS_SggwPzkU",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 17,
-      nombre: "Where Them Girls At",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "hWH--BpE5Aw",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 18,
-      nombre: "Little Bad Girl",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "CKR1Tuphuxg",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 19,
-      nombre: "Sweat",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "-IJs0XD_LGA",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 20,
-      nombre: "The Alphabeat",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "po35jFEJo58",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 21,
-      nombre: "Lunar",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "PhUVvCs8HVE",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 22,
-      nombre: "Paris",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "_WdiDXszkRU",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 23,
-      nombre: "Turn Me On",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "a3V29ckxEYw",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 24,
-      nombre: "Sunshine",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "rOa4LsrmcNc",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 25,
-      nombre: "Without You",
-      artista: "David Guetta",
-      id_artista: 4,
-      album: "Nothing but the Beat",
-      id_album: 4,
-      link: "6R0xpZvPuKY",
-      genero: "Música Electrónica",
-      id_genero: 1
-    },
-    {
-      id: 26,
-      nombre: "Eraser",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "rkkxAvRpH4g",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 27,
-      nombre: "Dive",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "6Cnwze6i5i4",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 28,
-      nombre: "Perfect",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "s3VBGDtVzX4",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 29,
-      nombre: "New Man",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "ie0dQaS9Yq4",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 30,
-      nombre: "What Do I know?",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "l11mUSu7aeA",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 31,
-      nombre: "Supermarket Flowers",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "BaKwRXMoL1Q",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 32,
-      nombre: "Bibia Be Ye Ye",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "sC0DiCngRw0",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 33,
-      nombre: "Save Myself",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "sk2Ucb1nRHs",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 34,
-      nombre: "Castle on the Hill",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "8PE4R4-Auyo",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 35,
-      nombre: "Happier",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "zWQN7u6g62c",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 36,
-      nombre: "Hearts Don't Break Around Here",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "KyeaFdCdCsU",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 37,
-      nombre: "How Would You Feel",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "M6KSBYs0Chs",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 38,
-      nombre: "Barcelona",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "IyaQfwMoYVA",
-      genero: "Pop",
-      id_genero: 2
-    },
-    {
-      id: 39,
-      nombre: "Nancy Mulligan",
-      artista: "Ed Sheeran",
-      id_artista: 6,
-      album: "Divide",
-      id_album: 6,
-      link: "3woMHwjjN1Q",
-      genero: "Pop",
-      id_genero: 2
-    },
+    }
   ],
   artistas: [
     {
@@ -642,15 +312,15 @@ inputBusqueda.addEventListener("input", function () {
     return;
   for (let i = 0; i < bd[0].length; i++) {
     if(normalizar(bd[0][i]).includes(frase))
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} - Canción </p> `;     //Talvez necesite poner i+1 en el id
+      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} </p> `;     //Talvez necesite poner i+1 en el id
   }
   for (let i = 0; i < bd[1].length; i++) {
     if(normalizar(bd[1][i]).includes(frase))
-      resultadoAutor.innerHTML += ` <p> ${bd[1][i]} - Artista</p> `;
+      resultadoAutor.innerHTML += ` <p> ${bd[1][i]} </p> `;
   }
   for (let i = 0; i < bd[2].length; i++) {
     if(normalizar(bd[2][i]).includes(frase))
-      resultadoAlbum.innerHTML += ` <p> ${bd[2][i]} - Álbum </p> `;
+      resultadoAlbum.innerHTML += ` <p> ${bd[2][i]} </p> `;
   }
 
   if(resultadoCancion.innerHTML == '')
@@ -664,27 +334,106 @@ inputBusqueda.addEventListener("input", function () {
 //----------- Selecciona la opcion ------------------- 
 
 document.getElementById("resultadosBusqueda").addEventListener("click", function (evento) {
-       
+  let cancionLink    
   let padre = evento.target.closest("div");
   if(padre.id === "result-cancion")
   {
     let cancionNum = evento.target.id.slice(-1);
-    let cancionLink = baseDatosJSON.canciones[cancionNum].link;
-    let video = document.createElement('iframe');
-                                           
-    video.src = `https://www.youtube.com/embed/${cancionLink}`;
-    video.width = "600";
-    video.height = "400";
-
-    document.body.appendChild(video);
-    let cancionPedida = cancionLink;
-    
+    cancionLink = baseDatosJSON.canciones[cancionNum].link;
+    player.loadVideoById(cancionLink);
+    seekbar.max = player.getDuration();
+    //player.pauseVideo();
+    console.log(cancionLink)
   }
 });
-
 function normalizar(texto) {
   return texto
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 }
+// Inicia Reproductor 
+
+let player;
+let duration = 0;
+let lastVolume;
+let previousVolume;
+let updateInterval;
+
+const seekbar = document.getElementById("seekBar");
+const volumeSlider = document.getElementById("volumeSlider");
+const playPauseBtn = document.getElementById("playPauseBtn");
+
+function onYouTubeIframeAPIReady(){
+    player = new YT.Player("player",{
+        videoId: "LsXRIrUrCac",
+        playerVars:{
+            controls: 0
+        },
+        events:{
+            onReady: onPlayerReady
+        }
+    })
+}
+function onPlayerReady(){
+    duration = player.getDuration();
+    player.playVideo();
+    seekbar.max = duration;
+    volumeSlider.value = player.getVolume
+    updateInterval = setInterval(()=>{
+        if(player && player.getPlayerState() === YT.PlayerState.PLAYING){
+            seekbar.value = player.getCurrentTime();
+        }
+        currentVolume = player.getVolume();
+        if(currentVolume == currentVolume){
+            volumeSlider.value = currentVolume;
+            previousVolume = currentVolume;
+        }
+    }, 100);
+
+}
+
+//PlayPause
+playPauseBtn.addEventListener("click", ()=>{
+    let state = player.getPlayerState();
+    console.log(state);
+    if(state === YT.PlayerState.PLAYING){
+        player.pauseVideo();
+        playPauseBtn.innerHTML = ""
+        playPauseBtn.innerHTML = `<i class="fas fa-play"></i>`
+    }else{
+        player.playVideo();
+        playPauseBtn.innerHTML = `<i class="fas fa-pause"></i>`
+    }
+})
+
+//Volumen
+volumeSlider.addEventListener("input",()=>{
+    let volume = parseInt(volumeSlider.value,10);
+    player.setVolume(volume);
+
+    if(player.isMuted() && volume > 0){
+        player.unMute();
+    }
+    lastVolume = volume;
+    previousVolume = volume;
+
+})
+
+//Mute
+const muteBtn = document.getElementById("muteBtn");
+console.log(muteBtn)
+muteBtn.addEventListener("click",()=>{
+if(player.isMuted()){
+    player.unMute();
+    muteBtn.innerHTML=`<i class="fa-solid fa-volume-high"></i>`;
+    volumeSlider.value = lastVolume;
+}else{
+    player.mute();
+    muteBtn.innerHTML=`<i class="fa-solid fa-volume-off"></i>`;
+}
+})
+seekbar.addEventListener("input",()=>{
+    let seekTo = seekbar.value;
+    player.seekTo(seekTo, true);
+})
