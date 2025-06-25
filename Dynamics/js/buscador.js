@@ -98,6 +98,182 @@ const baseDatosJSON = {
       link: "T8TtE-enslA",
       genero: "Rock",
       id_genero: 3
+    },
+        {
+      id: 10,
+      nombre: "Addicted to you",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "Q9JKNqaGLRY",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 11,
+      nombre: "Dear boy",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "bKHHEziexDE",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 12,
+      nombre: "Shame On Me",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "_R8R1IQkSko",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 13,
+      nombre: "You Make me",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "3InXG9-5lOs",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 14,
+      nombre: "Lay Me Down",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "Ltg8aa37b78",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 15,
+      nombre: "Liar Liar",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "LbClJTVGD9Y",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 16,
+      nombre: "Hope There's someone",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "mS_SggwPzkU",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 17,
+      nombre: "Where Them Girls At",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "hWH--BpE5Aw",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 18,
+      nombre: "Little Bad Girl",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "CKR1Tuphuxg",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 19,
+      nombre: "Sweat",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "-IJs0XD_LGA",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 20,
+      nombre: "The Alphabeat",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "po35jFEJo58",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 21,
+      nombre: "Lunar",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "PhUVvCs8HVE",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 22,
+      nombre: "Paris",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "_WdiDXszkRU",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 23,
+      nombre: "Turn Me On",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "a3V29ckxEYw",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 24,
+      nombre: "Sunshine",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "rOa4LsrmcNc",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 25,
+      nombre: "Without You",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "6R0xpZvPuKY",
+      genero: "Música Electrónica",
+      id_genero: 1
     }
   ],
   artistas: [
@@ -312,15 +488,15 @@ inputBusqueda.addEventListener("input", function () {
     return;
   for (let i = 0; i < bd[0].length; i++) {
     if(normalizar(bd[0][i]).includes(frase))
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} </p> `;     //Talvez necesite poner i+1 en el id
+      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} - Canción </p> `;     //Talvez necesite poner i+1 en el id
   }
   for (let i = 0; i < bd[1].length; i++) {
     if(normalizar(bd[1][i]).includes(frase))
-      resultadoAutor.innerHTML += ` <p> ${bd[1][i]} </p> `;
+      resultadoAutor.innerHTML += ` <p> ${bd[1][i]} - Artista</p> `;
   }
   for (let i = 0; i < bd[2].length; i++) {
     if(normalizar(bd[2][i]).includes(frase))
-      resultadoAlbum.innerHTML += ` <p> ${bd[2][i]} </p> `;
+      resultadoAlbum.innerHTML += ` <p> ${bd[2][i]} - Álbum </p> `;
   }
 
   if(resultadoCancion.innerHTML == '')
