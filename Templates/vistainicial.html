@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista Inicial</title>
     <link rel="stylesheet" href="../Statics/styles/vistainicial.css">
+    <script src="../Dynamics/js/baseDeDatos.js"></script>
 </head>
 <body>
     <div class="contenedorBuscador">
@@ -30,7 +31,7 @@
                     <div class="seccionDerecha"><!--contenedor que incluye las 4 recomendaciones de canciones-->
                         <div class="dosRec">
                             <button class="recomendacion">
-                                <img src="../Statics/img/.jpg" class="item-img">
+                                <img src="../Statics/img/.png" class="item-img">
                                 <p>Recomendación1</p>
                             </button>
                             <button class="recomendacion">
@@ -49,7 +50,7 @@
                             </button>
                         </div>  
                         <div class="dosRec"><!--contenedor que incluye las recomendaciones de artistas y del álbum-->
-                            <button class="recomendacionMix">
+                            <button id="recomendacionMix">
                             <img src="../Statics/img/.jpg" class="album-img">
                             <p>(nombre del Albúm)</p>
                             </button>
@@ -62,7 +63,7 @@
                                     <img src="../Statics/img/.jpg" class="artista-img">
                                     <p>(nombre del artista2)</p>
                                 </button>
-                                <button class="noFormato">
+                                 <button class="noFormato">
                                     <img src="../Statics/img/.jpg" class="artista-img">
                                     <p>(nombre del artista3)</p>
                                 </button>

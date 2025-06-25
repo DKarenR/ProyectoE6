@@ -205,34 +205,28 @@ body{
   font-size: 30px;
   transform: scale(1.1);
 }
-#mixRomantica{
-  background-color: #c44464;
-}
-#mixClásica{
+#mixHipHop{
   background-color: #01b7c2;
 }
 #mixRock{
   background-color: #ffb82e;
 }
-#mixUrbano{
-  background-color: #3a5c3a;
-}
 #mixPop{
   background-color: #ff8fc3;
 }
-#mixIndie{
+#mixCountry{
   background-color: #4f80c9;
 }
-#mixAlternativa{
+#mixJazz{
   background-color: #ab64db;
 }
-#mixElectrónica{
+#mixMúsicaElectrónica{
   background-color: #2df1a6;
 }
-#mixRap{
+#mixRB{
   background-color: #f3852b;
-}
+}/*
 #mixMetal{
   background-color: #4e4b46;
   color:#eeeeee;
-}
+}*/
