@@ -428,7 +428,7 @@ const baseDatosJSON = {
       link: "3woMHwjjN1Q",
       genero: "Pop",
       id_genero: 2
-    },
+    }
   ],
   artistas: [
     {
