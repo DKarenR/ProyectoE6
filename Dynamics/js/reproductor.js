@@ -334,27 +334,106 @@ inputBusqueda.addEventListener("input", function () {
 //----------- Selecciona la opcion ------------------- 
 
 document.getElementById("resultadosBusqueda").addEventListener("click", function (evento) {
-       
+  let cancionLink    
   let padre = evento.target.closest("div");
   if(padre.id === "result-cancion")
   {
     let cancionNum = evento.target.id.slice(-1);
-    let cancionLink = baseDatosJSON.canciones[cancionNum].link;
-    let video = document.createElement('iframe');
-                                           
-    video.src = `https://www.youtube.com/embed/${cancionLink}`;
-    video.width = "600";
-    video.height = "400";
-
-    document.body.appendChild(video);
-    let cancionPedida = cancionLink;
-    
+    cancionLink = baseDatosJSON.canciones[cancionNum].link;
+    player.loadVideoById(cancionLink);
+    seekbar.max = player.getDuration();
+    //player.pauseVideo();
+    console.log(cancionLink)
   }
 });
-
 function normalizar(texto) {
   return texto
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 }
+// Inicia Reproductor 
+
+let player;
+let duration = 0;
+let lastVolume;
+let previousVolume;
+let updateInterval;
+
+const seekbar = document.getElementById("seekBar");
+const volumeSlider = document.getElementById("volumeSlider");
+const playPauseBtn = document.getElementById("playPauseBtn");
+
+function onYouTubeIframeAPIReady(){
+    player = new YT.Player("player",{
+        videoId: "LsXRIrUrCac",
+        playerVars:{
+            controls: 0
+        },
+        events:{
+            onReady: onPlayerReady
+        }
+    })
+}
+function onPlayerReady(){
+    duration = player.getDuration();
+    player.playVideo();
+    seekbar.max = duration;
+    volumeSlider.value = player.getVolume
+    updateInterval = setInterval(()=>{
+        if(player && player.getPlayerState() === YT.PlayerState.PLAYING){
+            seekbar.value = player.getCurrentTime();
+        }
+        currentVolume = player.getVolume();
+        if(currentVolume == currentVolume){
+            volumeSlider.value = currentVolume;
+            previousVolume = currentVolume;
+        }
+    }, 100);
+
+}
+
+//PlayPause
+playPauseBtn.addEventListener("click", ()=>{
+    let state = player.getPlayerState();
+    console.log(state);
+    if(state === YT.PlayerState.PLAYING){
+        player.pauseVideo();
+        playPauseBtn.innerHTML = ""
+        playPauseBtn.innerHTML = `<i class="fas fa-play"></i>`
+    }else{
+        player.playVideo();
+        playPauseBtn.innerHTML = `<i class="fas fa-pause"></i>`
+    }
+})
+
+//Volumen
+volumeSlider.addEventListener("input",()=>{
+    let volume = parseInt(volumeSlider.value,10);
+    player.setVolume(volume);
+
+    if(player.isMuted() && volume > 0){
+        player.unMute();
+    }
+    lastVolume = volume;
+    previousVolume = volume;
+
+})
+
+//Mute
+const muteBtn = document.getElementById("muteBtn");
+console.log(muteBtn)
+muteBtn.addEventListener("click",()=>{
+if(player.isMuted()){
+    player.unMute();
+    muteBtn.innerHTML=`<i class="fa-solid fa-volume-high"></i>`;
+    volumeSlider.value = lastVolume;
+}else{
+    player.mute();
+    muteBtn.innerHTML=`<i class="fa-solid fa-volume-off"></i>`;
+}
+})
+seekbar.addEventListener("input",()=>{
+    let seekTo = seekbar.value;
+    player.seekTo(seekTo, true);
+})
