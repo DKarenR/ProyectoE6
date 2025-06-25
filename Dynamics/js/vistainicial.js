@@ -23,3 +23,8 @@ botonesMix.forEach((botonMix, nume) => {
     const idMix = "mix" + mix;
     botonMix.id = idMix;
 });
+function toggleMenu() {
+  const menu = document.getElementById("menuDesplegable");
+  menu.classList.toggle('abierto');
+  console.log("hola")
+}

@@ -5,22 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista Inicial</title>
     <link rel="stylesheet" href="../Statics/styles/vistainicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="contenedorBuscador">
-      <input class="buscador" placeholder="   Busca Algo :D">  
-    </div>
-    
+        <input class="buscador" id="texto-input" placeholder="   Busca Algo :D">
+        <div id="resultadosBusqueda">
+            <div class="result-pantalla" id="result-cancion"> </div>
+            <div class="result-pantalla" id="result-autor"> </div>
+            <div class="result-pantalla" id="result-album"> </div>
+        </div>  
+      <img src="../Statics/media/imgs/logoTuneSix.png" class="logoTuneSix">
+    </div> 
     <div class="contenedorGrandote">
         <div class="debajoDelBuscador">
-            <div class="menu"><!--contenedor para la Barra del menú-->
-                <div id="hamburguesas" class="menu">
+            <div class="menu" ><!--contenedor para la Barra del menú-->
+                <div id="hamburguesas" onclick="toggleMenu()">
                     <div id="hamburguesa" class="hamburguesa">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                 </div>
+                <div class="menu-desplegable" id="menuDesplegable">
+                <div class="menu-item">
+                    <i class="fas fa-home"></i>
+                 <span>Inicio</span>
+                    </div>
+                    <div class="menu-item">
+                     <i class="fas fa-user"></i>
+                    <span>Artistas</span>
+                </div>
+                <div class="menu-item">
+                <i class="fas fa-music"></i>
+                <span>Canciones</span>
+                 </div>
+                <div class="menu-item">
+                 <i class="fas fa-compact-disc"></i>
+                 <span>Albums</span>
+                 </div>    
+                </div> 
             </div>
             <div class="seccionIzquierda">  
                 <div class="reproductorMusica">Reproductor de música</div><!--Aquí poner el reproductor de música-->  
@@ -83,5 +107,6 @@
     </div>
 
     <script src="../Dynamics/js/vistainicial.js"></script>
+    <script src="../Dynamics/js/buscador.js"></script>
 </body>
 </html>
