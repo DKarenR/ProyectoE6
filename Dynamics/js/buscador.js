@@ -312,15 +312,15 @@ inputBusqueda.addEventListener("input", function () {
     return;
   for (let i = 0; i < bd[0].length; i++) {
     if(normalizar(bd[0][i]).includes(frase))
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} </p> `;     //Talvez necesite poner i+1 en el id
+      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} - Canción </p> `;     //Talvez necesite poner i+1 en el id
   }
   for (let i = 0; i < bd[1].length; i++) {
     if(normalizar(bd[1][i]).includes(frase))
-      resultadoAutor.innerHTML += ` <p> ${bd[1][i]} </p> `;
+      resultadoAutor.innerHTML += ` <p> ${bd[1][i]} - Artista</p> `;
   }
   for (let i = 0; i < bd[2].length; i++) {
     if(normalizar(bd[2][i]).includes(frase))
-      resultadoAlbum.innerHTML += ` <p> ${bd[2][i]} </p> `;
+      resultadoAlbum.innerHTML += ` <p> ${bd[2][i]} - Álbum </p> `;
   }
 
   if(resultadoCancion.innerHTML == '')
