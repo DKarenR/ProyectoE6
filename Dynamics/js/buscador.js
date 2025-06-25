@@ -274,7 +274,161 @@ const baseDatosJSON = {
       link: "6R0xpZvPuKY",
       genero: "Música Electrónica",
       id_genero: 1
-    }
+    },
+    {
+      id: 26,
+      nombre: "Eraser",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "rkkxAvRpH4g",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 27,
+      nombre: "Dive",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "6Cnwze6i5i4",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 28,
+      nombre: "Perfect",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "s3VBGDtVzX4",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 29,
+      nombre: "New Man",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "ie0dQaS9Yq4",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 30,
+      nombre: "What Do I know?",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "l11mUSu7aeA",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 31,
+      nombre: "Supermarket Flowers",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "BaKwRXMoL1Q",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 32,
+      nombre: "Bibia Be Ye Ye",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "sC0DiCngRw0",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 33,
+      nombre: "Save Myself",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "sk2Ucb1nRHs",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 34,
+      nombre: "Castle on the Hill",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "8PE4R4-Auyo",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 35,
+      nombre: "Happier",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "zWQN7u6g62c",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 36,
+      nombre: "Hearts Don't Break Around Here",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "KyeaFdCdCsU",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 37,
+      nombre: "How Would You Feel",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "M6KSBYs0Chs",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 38,
+      nombre: "Barcelona",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "IyaQfwMoYVA",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 39,
+      nombre: "Nancy Mulligan",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "3woMHwjjN1Q",
+      genero: "Pop",
+      id_genero: 2
+    },
   ],
   artistas: [
     {
