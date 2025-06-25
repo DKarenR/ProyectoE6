@@ -98,6 +98,83 @@ const baseDatosJSON = {
       link: "T8TtE-enslA",
       genero: "Rock",
       id_genero: 3
+    },
+        {
+      id: 10,
+      nombre: "Addicted to you",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "Q9JKNqaGLRY",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 11,
+      nombre: "Dear boy",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "bKHHEziexDE",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 12,
+      nombre: "Shame On Me",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "_R8R1IQkSko",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 13,
+      nombre: "You Make me",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "KOpmMqbTtzU",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 14,
+      nombre: "Lay Me Down",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "Ltg8aa37b78",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 15,
+      nombre: "Liar Liar",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "LbClJTVGD9Y",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 16,
+      nombre: "Hope There's someone",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "mS_SggwPzkU",
+      genero: "Música Electrónica",
+      id_genero: 1
     }
   ],
   artistas: [
