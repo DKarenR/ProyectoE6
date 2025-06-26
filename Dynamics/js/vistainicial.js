@@ -67,10 +67,6 @@ let nRandom = Math.floor(Math.random() * baseDatosJSON.album.length);
 albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
 albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
 
-
-    const idMix = "mix" + mix;
-    botonMix.id = idMix;
-
 function toggleMenu() {
   const menu = document.getElementById("menuDesplegable");
   menu.classList.toggle('abierto');

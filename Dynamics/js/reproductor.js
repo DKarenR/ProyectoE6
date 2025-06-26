@@ -2,35 +2,37 @@ const inputBusqueda = document.getElementById("texto-input");
 const resultadoCancion = document.getElementById("result-cancion");
 const resultadoAutor = document.getElementById("result-autor");
 const resultadoAlbum = document.getElementById("result-album");
-//for(let i=0; i < baseDatosJSON.canciones.length; i++)
-//  bd[0].push(baseDatosJSON.canciones[i].nombre);
-baseDatosJSON.canciones.forEach(element => bd[0].push(element.nombre));
-for(let i=0; i < baseDatosJSON.artistas.length; i++)
-  bd[1].push(baseDatosJSON.artistas[i].nombre);
-for(let i=0; i < baseDatosJSON.album.length; i++)
-  bd[2].push(baseDatosJSON.album[i].nombre);
 
 inputBusqueda.addEventListener("input", function () {
 
-  let frase=normalizar(this.value);
+  let frase=normalizar(this.value);//normalizar(this.value);
+  let coincidenciasCancion = 0;
+  let coincidenciasArtista = 0;  
+  let coincidenciasAlbum = 0;  
 
   resultadoCancion.innerHTML = ``;
   resultadoAutor.innerHTML = '';
   resultadoAlbum.innerHTML = '';
-
+  
   if(frase == '')
     return;
-  for (let i = 0; i < bd[0].length; i++) {
-    if(normalizar(bd[0][i]).includes(frase))
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} </p> `;     //Talvez necesite poner i+1 en el id
+  for (let i = 0; i < baseDatosJSON.canciones.length; i++) {
+    if(normalizar(baseDatosJSON.canciones[i].nombre).includes(frase) && coincidenciasCancion < 5){
+      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${baseDatosJSON.canciones[i].nombre} </p> `;     //Talvez necesite poner i+1 en el id
+      coincidenciasCancion++;
+    }
   }
-  for (let i = 0; i < bd[1].length; i++) {
-    if(normalizar(bd[1][i]).includes(frase))
-      resultadoAutor.innerHTML += ` <p> ${bd[1][i]} </p> `;
+  for (let i = 0; i < baseDatosJSON.artistas.length; i++) {
+    if(normalizar(baseDatosJSON.artistas[i].nombre).includes(frase) && coincidenciasArtista < 5){
+      resultadoAutor.innerHTML += ` <p> ${baseDatosJSON.artistas[i].nombre} </p> `;
+      coincidenciasArtista++;
+    }
   }
-  for (let i = 0; i < bd[2].length; i++) {
-    if(normalizar(bd[2][i]).includes(frase))
-      resultadoAlbum.innerHTML += ` <p> ${bd[2][i]} </p> `;
+  for (let i = 0; i < baseDatosJSON.album.length; i++) {
+    if(normalizar(baseDatosJSON.album[i].nombre).includes(frase) && coincidenciasAlbum < 5){
+      resultadoAlbum.innerHTML += ` <p> ${baseDatosJSON.album[i].nombre} </p> `;
+      coincidenciasAlbum++;
+    }
   }
 
   if(resultadoCancion.innerHTML == '')
@@ -44,7 +46,7 @@ inputBusqueda.addEventListener("input", function () {
 //----------- Selecciona la opcion ------------------- 
 
 document.getElementById("resultadosBusqueda").addEventListener("click", function (evento) {
-  let cancionLink    
+  let cancionLink;
   let padre = evento.target.closest("div");
   if(padre.id === "result-cancion")
   {
@@ -53,8 +55,12 @@ document.getElementById("resultadosBusqueda").addEventListener("click", function
     player.loadVideoById(cancionLink);
     seekbar.max = player.getDuration();
     //player.pauseVideo();
-    console.log(cancionLink)
+    //console.log(cancionLink)
   }
+  resultadoCancion.innerHTML = ``;
+  resultadoAutor.innerHTML = '';
+  resultadoAlbum.innerHTML = '';
+  
 });
 function normalizar(texto) {
   return texto
@@ -106,7 +112,7 @@ function onPlayerReady(){
 //PlayPause
 playPauseBtn.addEventListener("click", ()=>{
     let state = player.getPlayerState();
-    console.log(state);
+//    console.log(state);
     if(state === YT.PlayerState.PLAYING){
         player.pauseVideo();
         playPauseBtn.innerHTML = ""
@@ -132,7 +138,7 @@ volumeSlider.addEventListener("input",()=>{
 
 //Mute
 const muteBtn = document.getElementById("muteBtn");
-console.log(muteBtn)
+//console.log(muteBtn)
 muteBtn.addEventListener("click",()=>{
 if(player.isMuted()){
     player.unMute();
@@ -147,5 +153,3 @@ seekbar.addEventListener("input",()=>{
     let seekTo = seekbar.value;
     player.seekTo(seekTo, true);
 })
-
-console.log("hola");
