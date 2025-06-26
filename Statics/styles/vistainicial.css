@@ -69,7 +69,7 @@ body{
 }
 .reproductorMusica{
     width: 100%;
-    height: 300px;
+    height: 370px;
     border-style: solid;
     border-color: white;
     border-radius: 20px;
@@ -289,7 +289,7 @@ body{
   gap: 1em
 }
 .menu-desplegable.abierto {
-  left: 60px; /* Se mueve para dejar ver la barra blanca */
+  left: 60px; 
 }
 .hamburguesa {
   font-size: 24px;
@@ -319,21 +319,44 @@ body{
 }
 #resultadosBusqueda {
   position: absolute;
+  height: auto;
   top: 100%; /* justo debajo del input */
   width: 80%;
-  background: white;
-}
-.result-pantalla {
-    font-family: 'Courier New', monospace;
-    color: black
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+  display: none;
 }
 #player{
   width: 70%;
   height: 200px;
   border-radius: 30px;
+
 }
 #playPauseBtn{
-    color: white;
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0; 
+    border-radius: 50%;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #3a3737;          
+    cursor: pointer;
+}
+#muteBtn{
+    width: 30px;
+    height: 20px;
+    background-color: #f0f0f0; 
+    border-radius: 50%;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #3a3737;          
     cursor: pointer;
 }
 .controls-bar{
@@ -347,8 +370,99 @@ body{
 }
 #volumen{
   display: flex;
+  justify-content: space-evenly;
 }
 #volumeSlider{
   width: 100%;
   accent-color: #eeeeee;
+}
+#datosdelReproductor{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  left: 100px;
+  align-content: center;
+  justify-content: center;
+}
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+#autorCancion{
+  color: #eeeeee;
+}
+#nombreCancion{
+  color:#eeeeee;
+}
+#imagenReproduciendo{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+#result-cancion{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+  color: black;
+}
+#result-autor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+  color: black;
+}
+#result-album{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+}
+.resultadoCancion{
+  width: 90%;
+  height: 25px;
+  background-color: #da8f8f;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+.resultadoArtista{
+  width: 90%;
+  height: 25px;
+  background-color: #9fdb77;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+.resultadoAlbum{
+  width: 90%;
+  height: 25px;
+  background-color: #75b7bb;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  cursor: pointer;
 }
