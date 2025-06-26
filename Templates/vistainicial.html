@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista Inicial</title>
     <link rel="stylesheet" href="../Statics/styles/vistainicial.css">
+    <script src="../Dynamics/js/baseDeDatos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -47,7 +48,17 @@
                 </div> 
             </div>
             <div class="seccionIzquierda">  
-                <div class="reproductorMusica">Reproductor de música</div><!--Aquí poner el reproductor de música-->  
+                <div class="reproductorMusica">
+                    <div id="player"></div>
+                    <div class="controls-bar">
+                        <input type="range" name="" id="seekBar">
+                        <i id="playPauseBtn"><i class="fas fa-play"></i></i>
+                        <div id="volumen">
+                            <button type="text" id="muteBtn"></button> 
+                        <input type="range" max="100"  id="volumeSlider">
+                        </div> 
+                    </div>
+                </div><!--Aquí poner el reproductor de música-->  
                 <br>
                 <div class="cuadroMixes"> <!--contenedor que incluye las tres recomendaciones principales-->
                     <button class="botonesMix botonesAnim" id="">Mix</button><br>
@@ -78,10 +89,15 @@
             </div>
         </div>
     </div>
-
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="../Dynamics/js/vistainicial.js"></script>
+<<<<<<< HEAD
     <script src="../Dynamics/js/buscador.js"></script>
     <script src="../Dynamics/js/script.js"></script>
     <script src="../Dynamics/js/generarArtistas.js"></script>
+=======
+    <script src="../Dynamics/js/reproductor.js"></script>
+    
+>>>>>>> ad09d669d363a79715c2ff4d070c8ac53e233a81
 </body>
 </html>

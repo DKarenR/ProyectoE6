@@ -144,9 +144,10 @@ body{
     border: none;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     justify-self: center;
     align-self: center;
+    gap: 15px;
 }
 .recomendacionMix{
     width: 215px;
@@ -186,10 +187,12 @@ body{
 .item-img{
   height: 70px;
   width: 70px;
+  border-radius: 10px;
 }
 .album-img{
   height: 160px;
   width: 160px;
+  border-radius: 10px;
 }
 .artista-img{
   height: 60px;
@@ -215,36 +218,26 @@ body{
   font-size: 30px;
   transform: scale(1.1);
 }
-#mixRomantica{
-  background-color: #c44464;
-}
-#mixClásica{
+#mixHipHop{
   background-color: #01b7c2;
 }
 #mixRock{
   background-color: #ffb82e;
 }
-#mixUrbano{
-  background-color: #3a5c3a;
-}
 #mixPop{
   background-color: #ff8fc3;
 }
-#mixIndie{
+#mixCountry{
   background-color: #4f80c9;
 }
-#mixAlternativa{
+#mixJazz{
   background-color: #ab64db;
 }
-#mixElectrónica{
+#mixMúsicaElectrónica{
   background-color: #2df1a6;
 }
-#mixRap{
+#mixRB{
   background-color: #f3852b;
-}
-#mixMetal{
-  background-color: #4e4b46;
-  color:#eeeeee;
 }
 .hamburguesa{
   width: 30px;
@@ -323,4 +316,29 @@ body{
 .result-pantalla {
     font-family: 'Courier New', monospace;
     color: black
+}
+#player{
+  width: 70%;
+  height: 200px;
+  border-radius: 30px;
+}
+#playPauseBtn{
+    color: white;
+    cursor: pointer;
+}
+.controls-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#seekBar{
+  width: 80%;
+  accent-color: #eeeeee;
+}
+#volumen{
+  display: flex;
+}
+#volumeSlider{
+  width: 100%;
+  accent-color: #eeeeee;
 }

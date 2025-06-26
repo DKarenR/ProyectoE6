@@ -98,6 +98,545 @@ const baseDatosJSON = {
       link: "T8TtE-enslA",
       genero: "Rock",
       id_genero: 3
+    },
+    {
+      id: 10,
+      nombre: "Addicted to you",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "Q9JKNqaGLRY",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 11,
+      nombre: "Dear boy",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "bKHHEziexDE",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 12,
+      nombre: "Shame On Me",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "_R8R1IQkSko",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 13,
+      nombre: "You Make me",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "3InXG9-5lOs",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 14,
+      nombre: "Lay Me Down",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "Ltg8aa37b78",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 15,
+      nombre: "Liar Liar",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "LbClJTVGD9Y",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 16,
+      nombre: "Hope There's someone",
+      artista: "Avicii",
+      id_artista: 1,
+      album: "True",
+      id_album: 1,
+      link: "mS_SggwPzkU",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 17,
+      nombre: "Where Them Girls At",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "hWH--BpE5Aw",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 18,
+      nombre: "Little Bad Girl",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "CKR1Tuphuxg",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 19,
+      nombre: "Sweat",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "-IJs0XD_LGA",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 20,
+      nombre: "The Alphabeat",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "po35jFEJo58",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 21,
+      nombre: "Lunar",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "PhUVvCs8HVE",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 22,
+      nombre: "Paris",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "_WdiDXszkRU",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 23,
+      nombre: "Turn Me On",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "a3V29ckxEYw",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 24,
+      nombre: "Sunshine",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "rOa4LsrmcNc",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 25,
+      nombre: "Without You",
+      artista: "David Guetta",
+      id_artista: 4,
+      album: "Nothing but the Beat",
+      id_album: 4,
+      link: "6R0xpZvPuKY",
+      genero: "Música Electrónica",
+      id_genero: 1
+    },
+    {
+      id: 26,
+      nombre: "Eraser",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "rkkxAvRpH4g",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 27,
+      nombre: "Dive",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "6Cnwze6i5i4",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 28,
+      nombre: "Perfect",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "s3VBGDtVzX4",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 29,
+      nombre: "New Man",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "ie0dQaS9Yq4",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 30,
+      nombre: "What Do I know?",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "l11mUSu7aeA",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 31,
+      nombre: "Supermarket Flowers",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "BaKwRXMoL1Q",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 32,
+      nombre: "Bibia Be Ye Ye",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "sC0DiCngRw0",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 33,
+      nombre: "Save Myself",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "sk2Ucb1nRHs",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 34,
+      nombre: "Castle on the Hill",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "8PE4R4-Auyo",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 35,
+      nombre: "Happier",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "zWQN7u6g62c",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 36,
+      nombre: "Hearts Don't Break Around Here",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "KyeaFdCdCsU",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 37,
+      nombre: "How Would You Feel",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "M6KSBYs0Chs",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 38,
+      nombre: "Barcelona",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "IyaQfwMoYVA",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 39,
+      nombre: "Nancy Mulligan",
+      artista: "Ed Sheeran",
+      id_artista: 6,
+      album: "Divide",
+      id_album: 6,
+      link: "3woMHwjjN1Q",
+      genero: "Pop",
+      id_genero: 2
+    },
+    {
+      id: 40,
+      nombre: "Death on Two Legs (Dedicated to...)",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "E0xc7TD6s7A",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 41,
+      nombre: "Lazing on a Sunday Afternoon",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "MP-kxJnoIpo",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 42,
+      nombre: "I'm in Love with My Car",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "a8EYUKmmnqc",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 43,
+      nombre: "You're My Best Friend",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "Jp3fu05GdsM",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 44,
+      nombre: "'39",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "exEeS19Mzq4",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 45,
+      nombre: "Sweet Lady",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "vHUBRapSU94",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 46,
+      nombre: "Seaside Rendezvous",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "N6WbgJtRplM",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 47,
+      nombre: "The Prophet's Song",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "WoiV60vqa1w",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 48,
+      nombre: "Love of My Life",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "p9woC3Mrq9w",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 49,
+      nombre: "Good Company",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "pmZUFM-B5aI",
+      genero: "Rock",
+      id_genero: 3
+    },
+        {
+      id: 50,
+      nombre: "Mátenme porque me muero",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "UfvfOA78RhI",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 51,
+      nombre: "Cuéntame tu vida",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "KlfftQ1jUeA",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 52,
+      nombre: "Nada",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "C89-NEk7Jq4",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 53,
+      nombre: "Será por eso",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "GXfCjf7_QrQ",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 54,
+      nombre: "Nunca me voy a transformar en ti",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "dVjl_QNY85k",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 55,
+      nombre: "Estás dormida",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "u-i6Hx3uBw4",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 56,
+      nombre: "La bestia humana",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "fxLjzRFyx3U",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 57,
+      nombre: "Perdí mi ojo de venado",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "VTIm_Bk5g2g",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 58,
+      nombre: "Los dioses ocultos",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "lXkijyJUK9U",
+      genero: "Rock",
+      id_genero: 3
     }
   ],
   artistas: [
@@ -347,6 +886,8 @@ document.getElementById("resultadosBusqueda").addEventListener("click", function
     video.height = "400";
 
     document.body.appendChild(video);
+    let cancionPedida = cancionLink;
+    
   }
 });
 
