@@ -7,12 +7,13 @@ body{
     background: hsl(204, 68%, 39%);
     background: radial-gradient(circle, rgba(32,114,169,1)0%, rgba(38,26,71,1)100%);
 }
-#vistaInicioSesion{
+/*inicio sesion*/
+#vistaInicioSesion{            /*div que tiene todo lo de inicio de sesión*/
     display: flex;
     flex-flow: column ;
     align-items: center;
 }
-#imgForm{
+#imgForm{                       /*contiene la imagen de inicio de sesión*/
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -20,7 +21,7 @@ body{
     height: 300px;
     border-radius: 10%;
 }
-#imgInicioSesion{
+#imgInicioSesion{               /*ref de img, absolute => se pone sobre de lo demás*/
     position: absolute;
     top: 0;
     left: 100px;
@@ -28,7 +29,7 @@ body{
     height: 100px;
     border-radius: 50%;
 }
-#incioSesion{
+#incioSesion{                  /*contenedor visual del form*/
     display: flex;
     background-color: #eeeeee83;
     flex-flow: column wrap; 
@@ -38,7 +39,12 @@ body{
     height: 250px;
     border-radius: 10%;
 }
-#usuario{
+#formInicioSesion{             /*acomoda x ∈ form de inicio de sesion*/
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+#usuario{                           
     background-color: #5a6f98;
     width: 250px;
     height: 30px;
@@ -56,6 +62,7 @@ body{
     text-align: center;
     color: rgba(0, 0, 0, 0.603);
 }
+/* Inicio de sesión y registrarse */
 .botonesISR{
     background-color: #c9f0f7;
     width: 60%;
@@ -70,20 +77,21 @@ body{
     margin-top: 5px;
     display: block;
 }
-#formInicioSesion{
+.inactivo{                    /*le da valor inicial display => ~aparecen las 2 vistas a la vez*/
+    display: none;
+}
+.activo{
+    display: block;
+}
+/*Registrarse */
+#formRegistrarse {
     display: flex;
     flex-flow: column;
-    align-items: center;
+    margin: 50px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.678);
+    border-radius: 10px;
 }
-#registrarseBtn{
-    border: none;
-    background-color: rgba(0, 0, 0, 0.315);
-    width: 50%;
-    height: 25px;
-    border-radius: 20px;
-}
-
-
 #nvoUsuario{
     background-color: #5a6f98;
     width: 250px;
@@ -98,50 +106,28 @@ body{
     border-radius: 20px;
     border: none;
 }
-
-.inactivo{
-    display: none;
-}
-.activo{
-    display: block;
-}
-
-
-#formRegistrarse{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #eeeeee83;
-    width: 500px;
-    padding: 20px;
-    border-radius: 20px;
-    margin: auto;
-    gap: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 .opciones {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+    }
 .opcion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.opcion input {
+    text-align: center;
+    }
+.opcion img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 2px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    }
+.opcion input[type="radio"] {
     display: none;
 }
-.opcion label {
-    cursor: pointer;
-}
-.opcion img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    transition: border-color 0.2s ease;
+#registrarseBtn{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.315);
+    width: 50%;
+    height: 25px;
+    border-radius: 20px;
 }
