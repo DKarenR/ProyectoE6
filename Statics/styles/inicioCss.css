@@ -1,8 +1,12 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 body{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh; 
+    align-items: center; 
     margin: 0; 
     background: hsl(204, 68%, 39%);
     background: radial-gradient(circle, rgba(32,114,169,1)0%, rgba(38,26,71,1)100%);
@@ -84,13 +88,24 @@ body{
     display: block;
 }
 /*Registrarse */
+#contieneFormReg{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.678);
+    border-radius: 10px;
+}
 #formRegistrarse {
     display: flex;
+    justify-content: center;
     flex-flow: column;
     margin: 50px;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.678);
     border-radius: 10px;
+    
 }
 #nvoUsuario{
     background-color: #5a6f98;
@@ -117,11 +132,19 @@ body{
     width: 100px;
     height: 100px;
     border-radius: 8px;
-    border: 2px;
+    border: 30px solid rgba(64, 224, 208, 0);
     cursor: pointer;
     flex-wrap: wrap;
     }
-.opcion input[type="radio"] {
+.opcionp img {
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    border: 30px solid rgba(64, 224, 208, 0);
+    cursor: pointer;
+    flex-wrap: wrap;
+    }
+.opciones input[type="radio"] {
     display: none;
 }
 #registrarseBtn{
