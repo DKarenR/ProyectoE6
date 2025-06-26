@@ -67,6 +67,66 @@ albumesList.forEach(album => {
 
 });
 
+//CAMBIO DE VISTA DEL ARTISTA | ÁLBUMES DEL ARTISTA (ALEATORIO)
+
+// FUNCIÓN: Mostrar álbumes por artista específico
+function mostrarAlbumesPorArtista(nombreArtista) {
+  // Oculta todas las vistas
+  document.querySelectorAll('.contenidoDerecho').forEach(seccion => {
+    seccion.style.display = 'none';
+  });
+
+  // Limpiar contenedor principal
+  const seccionInicio = document.getElementById("seccionInicio");
+  seccionInicio.innerHTML = "";
+
+  // Crear nuevo contenedor para mostrar álbumes del artista
+  const contenedor = document.createElement("div");
+  contenedor.classList.add("mostrarAlbumesDelArtista");
+
+  const titulo = document.createElement("h1");
+  titulo.textContent = "Álbumes del artista";
+  titulo.style.textAlign = "center";
+  titulo.style.margin = "20px";
+  contenedor.appendChild(titulo);
+
+  const cuadroAlbumes = document.createElement("div");
+  cuadroAlbumes.classList.add("cuadroAlbumesGrid");
+
+  const albumesFiltrados = baseDatosJSON.album.filter(album => album.artista === nombreArtista);
+
+  albumesFiltrados.forEach(album => {
+    const contenedorAlbum = document.createElement("div");
+    contenedorAlbum.classList.add("albumCard");
+
+    const img = document.createElement("img");
+    img.src = album.url_img;
+    img.classList.add("item-img");
+
+    const nombre = document.createElement("p");
+    nombre.textContent = album.nombre;
+
+    contenedorAlbum.appendChild(img);
+    contenedorAlbum.appendChild(nombre);
+    cuadroAlbumes.appendChild(contenedorAlbum);
+  });
+
+  contenedor.appendChild(cuadroAlbumes);
+  seccionInicio.appendChild(contenedor);
+  seccionInicio.style.display = 'block';
+}
+
+// ASIGNAR EVENTOS a botones de recomendacionArtista
+document.querySelectorAll(".recomendacionArtista .noFormato").forEach(boton => {
+  boton.addEventListener("click", () => {
+    const nombreArtista = boton.querySelector("p").textContent.trim();
+    mostrarAlbumesPorArtista(nombreArtista);
+  });
+});
+
+
+
+
 
 let bd = [[], [], [], []];
 baseDatosJSON.canciones.forEach(element => bd[0].push(element.id));
