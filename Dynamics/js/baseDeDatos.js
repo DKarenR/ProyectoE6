@@ -637,6 +637,105 @@ const baseDatosJSON = {
       link: "lXkijyJUK9U",
       genero: "Rock",
       id_genero: 3
+    },
+    {
+      id: "59",
+      nombre: "Ha Дне (Na Dne)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "4Vv4cXz8PtY",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "60",
+      nombre: "Tantsevat'",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "OELeneV5miU",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "61",
+      nombre: "Fil'my",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "vi7jOi9M3KY",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "62",
+      nombre: "Волны (Volny)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "xjg8IVxBRqY",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "63",
+      nombre: "Тоска (Toska)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "Pw5G-qQyi9w",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "64",
+      nombre: "Прогноз (Prognoz)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "2UgRN2nhQAc",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "65",
+      nombre: "Cyднo (Sudno)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "8uNEVAM-3h8",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "66",
+      nombre: "Коммерсанты (Kommersanty)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "OJRzf4LBTt8",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: "67",
+      nombre: "Клетка (Kletka)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "s76zxebdoEM",
+      genero: "Post-Punk",
+      id_genero: 5 
     }
   ],
   artistas: [
@@ -693,6 +792,12 @@ const baseDatosJSON = {
       nombre: "Daddy Yankee",
       descripcion: "Daddy Yankee es un cantante y compositor puertorriqueño, conocido como el 'Rey del Reguetón' y famoso por su éxito 'Despacito'.",
       url_img: "https://i.scdn.co/image/ab6761610000e5eb99a6ccc4aae5ae5404c9eb30"
+    },
+    {
+      id: 10,
+      nombre: "Molchat Doma",
+      descripción: "Molchat Doma es una banda de post punk ruso y coldwave bielorrusa fundada en Minsk en 2017. Su música combina elementos de post-punk, new wave, darkwave y synth-pop.",
+      url_img: "https://f4.bcbits.com/img/0036284521_10.jpg"
     }
   ],
   genero: [
@@ -718,13 +823,13 @@ const baseDatosJSON = {
     },
     {
       id: 5,
-      nombre: "R&B",
-      descripcion: "El R&B (Rhythm and Blues) es un género musical que combina elementos de soul, funk y pop, con un enfoque en las melodías vocales y ritmos pegajosos."
+      nombre: "Post-Punk",
+      descripcion: "El post-punk es un género musical que se originó a finales de la década de 1970, surgió después del declive del movimiento punk , es una versión más experimental y vanguardista del punk, es más lento, tiene letras más ricas y tonos más emocionales en comparación con el estilorápido y abrasivo del punk."
     },
     {
       id: 6,
-      nombre: "Country",
-      descripcion: "El country es un género musical estadounidense que se originó en el sur, caracterizado por sus historias narrativas y el uso de instrumentos como la guitarra acústica y el banjo."
+      nombre: "Alternativa",
+      descripcion: "La música alternativa es un genero que abarca una amplia gama de estilos, tanto oscuros como ligeros, de todas las culturas. Se le considera alternativo a “música producida por artistas que están fuera de la corriente musical dominante, que normalmente se considera más ecléctica, original o desafiante que la mayoría de la música popular."
     },
     {
       id: 7,
@@ -820,6 +925,14 @@ const baseDatosJSON = {
       id_artista: 8,
       descripcion: "'El Nervio del Volcán' es un álbum que muestra la evolución musical de Caifanes, con letras profundas y una fusión de géneros.",
       url_img: "https://i.scdn.co/image/ab67616d0000b27336aeaab4dc91a8dea53a2d8f"
+    },
+    {
+      id: 12,
+      nombre: "Этажи",
+      artista: "Molchat Doma",
+      id_artista: "10",
+      descripción: "Etazhi es el segundo álbum de estudio de la banda bielorrusa de post-punk Molchat Doma, lanzado por primera vez el 7 de septiembre de 2018 a través de Detriti Records.",
+      url_img: "https://m.media-amazon.com/images/I/91RCEYpDu8L.jpg"
     }
   ]
  };
