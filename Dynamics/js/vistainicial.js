@@ -68,61 +68,102 @@ albumesList.forEach(album => {
 });
 
 //CAMBIO DE VISTA DEL ARTISTA | ÁLBUMES DEL ARTISTA (ALEATORIO)
-
-// FUNCIÓN: Mostrar álbumes por artista específico
-function mostrarAlbumesPorArtista(nombreArtista) {
-  // Oculta todas las vistas
+// CAMBIO DE VISTA GENERAL
+function cambiarDeVista(idVista) {
   document.querySelectorAll('.contenidoDerecho').forEach(seccion => {
     seccion.style.display = 'none';
   });
+  document.getElementById(idVista).style.display = 'block';
+}
 
-  // Limpiar contenedor principal
-  const seccionInicio = document.getElementById("seccionInicio");
-  seccionInicio.innerHTML = "";
+// REFERENCIAS
+const contListArt = document.querySelector(".contenedorListaDeArtistas");
+const contAlbumes = document.querySelector(".contenedorDeTodosLosAlbumes");
+const artistasList = baseDatosJSON.artistas;
+const albumesList = baseDatosJSON.album;
+const seccionInicio = document.getElementById("seccionInicio");
 
-  // Crear nuevo contenedor para mostrar álbumes del artista
+console.log("contenedorListaDeArtistas bien:", contListArt);
+console.log("Artistas cargados:", artistasList.length);
+console.log("contenedorDeTodosLosAlbumes:", contAlbumes);
+console.log("Álbumes cargados:", albumesList.length);
+
+// GENERAR LISTA DE ARTISTAS
+artistasList.forEach(artista => {
+  let paraLaListaDeArtistas = document.createElement("div");
+  paraLaListaDeArtistas.classList.add("paraLaListaDeArtistas");
+
+  let divArtista = document.createElement("div");
+  divArtista.classList.add("artistasList");
+
+  let imgArtista = document.createElement("img");
+  imgArtista.src = artista.url_img;
+  imgArtista.classList.add("artista-img");
+
+  let nomArtista = document.createElement("p");
+  nomArtista.textContent = artista.nombre;
+
+  divArtista.appendChild(imgArtista);
+  divArtista.appendChild(nomArtista);
+  paraLaListaDeArtistas.appendChild(divArtista);
+  contListArt.appendChild(paraLaListaDeArtistas);
+
+  // EVENTO CLICK → Mostrar solo álbumes del artista
+  divArtista.addEventListener("click", () => {
+    mostrarAlbumesPorArtista(artista.nombre);
+  });
+});
+
+// FUNCIÓN: Mostrar álbumes solo del artista seleccionado
+function mostrarAlbumesPorArtista(nombreArtista) {
+  // Ocultar vistas originales
+  contListArt.style.display = "none";
+  contAlbumes.style.display = "none";
+
+  // Eliminar vista anterior si existe
+  const anterior = seccionInicio.querySelector(".mostrarAlbumesDelArtista");
+  if (anterior) anterior.remove();
+
+  // Crear nueva vista
   const contenedor = document.createElement("div");
   contenedor.classList.add("mostrarAlbumesDelArtista");
 
-  const titulo = document.createElement("h1");
-  titulo.textContent = "Álbumes del artista";
-  titulo.style.textAlign = "center";
-  titulo.style.margin = "20px";
+  const titulo = document.createElement("h2");
+  titulo.textContent = `Álbumes de ${nombreArtista}`;
   contenedor.appendChild(titulo);
+
+  const botonVolver = document.createElement("button");
+  botonVolver.textContent = "← Volver";
+  botonVolver.addEventListener("click", () => {
+    contenedor.remove(); // Oculta vista dinámica
+    contListArt.style.display = "flex";  // o "block", según tu CSS
+    contAlbumes.style.display = "flex";  // o "block"
+  });
+  contenedor.appendChild(botonVolver);
 
   const cuadroAlbumes = document.createElement("div");
   cuadroAlbumes.classList.add("cuadroAlbumesGrid");
 
-  const albumesFiltrados = baseDatosJSON.album.filter(album => album.artista === nombreArtista);
+  const albumesDelArtista = albumesList.filter(album => album.artista === nombreArtista);
+  albumesDelArtista.forEach(album => {
+    let card = document.createElement("div");
+    card.classList.add("albumCard");
 
-  albumesFiltrados.forEach(album => {
-    const contenedorAlbum = document.createElement("div");
-    contenedorAlbum.classList.add("albumCard");
-
-    const img = document.createElement("img");
+    let img = document.createElement("img");
     img.src = album.url_img;
     img.classList.add("item-img");
 
-    const nombre = document.createElement("p");
+    let nombre = document.createElement("p");
     nombre.textContent = album.nombre;
 
-    contenedorAlbum.appendChild(img);
-    contenedorAlbum.appendChild(nombre);
-    cuadroAlbumes.appendChild(contenedorAlbum);
+    card.appendChild(img);
+    card.appendChild(nombre);
+    cuadroAlbumes.appendChild(card);
   });
 
   contenedor.appendChild(cuadroAlbumes);
   seccionInicio.appendChild(contenedor);
-  seccionInicio.style.display = 'block';
 }
-
-// ASIGNAR EVENTOS a botones de recomendacionArtista
-document.querySelectorAll(".recomendacionArtista .noFormato").forEach(boton => {
-  boton.addEventListener("click", () => {
-    const nombreArtista = boton.querySelector("p").textContent.trim();
-    mostrarAlbumesPorArtista(nombreArtista);
-  });
-});
 
 
 
