@@ -875,6 +875,7 @@ inputBusqueda.addEventListener("input", function () {
 document.getElementById("resultadosBusqueda").addEventListener("click", function (evento) {
        
   let padre = evento.target.closest("div");
+  console.log(evento.target.id)
   if(padre.id === "result-cancion")
   {
     let cancionNum = evento.target.id.slice(-1);
