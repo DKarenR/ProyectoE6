@@ -9,6 +9,12 @@ function cambiarDeVista(idVista) {
   });
   //Mostrar vista de nuevo ----> artistas
   document.getElementById(idVista).style.display = 'block';
+  const mixes = document.getElementById('contenedorMixesOcultar'); //Ocultar los mixes
+    if (idVista === 'seccionInicio') {
+        mixes.style.display = 'flex';
+    } else {
+        mixes.style.display = 'none';
+    }
 }
 //PARA GENERAR CUADROS DE LOS ARTISTAS :d
 const contListArt = document.querySelector(".contenedorListaDeArtistas");
