@@ -60,16 +60,17 @@ body{
     display: flex;
     width: 40%;
     height: 90%;
-    justify-content: center;
+    /*justify-content: center;*/
     flex-direction: column;
     gap: 20px;
-    align-self: center;
+    /*align-self: center;*/
     margin-left: 50px;
     margin-right: 20px;
+    margin-top: 25px;
 }
 .reproductorMusica{
     width: 100%;
-    height: 300px;
+    height: 370px;
     border-style: solid;
     border-color: white;
     border-radius: 20px;
@@ -95,33 +96,43 @@ body{
     margin-bottom: 5px;
     margin-top: 40px;
 }
-.recomendacionesDia{
+.recomendacionesDia{ /*Lo modifiqué para que no afectara al estar dentro del ContenidoDerecho*/
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     justify-content: left;
     flex-direction: column;
-    margin-left: 5px;
-    align-self: center;
 }
 .todasRecomendaciones{
     display: flex;
+    width: 100%;
+    height: 100%;
     flex-direction: column;
     align-items: center;
 }
 .centrar{
     text-align: center;
 }
-.seccionDerecha{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: none;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+#seccionDerecha{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.ladoDerechaRecomen{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 .dosRec{
     display: flex;
@@ -149,7 +160,7 @@ body{
     align-self: center;
     gap: 15px;
 }
-.recomendacionMix{
+#recomendacionMix{
     width: 215px;
     height: 215px;
     background-color: #eeeeee;
@@ -189,10 +200,20 @@ body{
   width: 70px;
   border-radius: 10px;
 }
+.item-img:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  filter: brightness(40%);
+
+}
 .album-img{
   height: 160px;
   width: 160px;
   border-radius: 10px;
+}
+.album-img:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  filter: brightness(40%);
+
 }
 .artista-img{
   height: 60px;
@@ -279,7 +300,7 @@ body{
   gap: 1em
 }
 .menu-desplegable.abierto {
-  left: 60px; /* Se mueve para dejar ver la barra blanca */
+  left: 60px; 
 }
 .hamburguesa {
   font-size: 24px;
@@ -309,21 +330,44 @@ body{
 }
 #resultadosBusqueda {
   position: absolute;
+  height: auto;
   top: 100%; /* justo debajo del input */
   width: 80%;
-  background: white;
-}
-.result-pantalla {
-    font-family: 'Courier New', monospace;
-    color: black
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+  display: none;
 }
 #player{
   width: 70%;
   height: 200px;
   border-radius: 30px;
+
 }
 #playPauseBtn{
-    color: white;
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0; 
+    border-radius: 50%;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #3a3737;          
+    cursor: pointer;
+}
+#muteBtn{
+    width: 30px;
+    height: 20px;
+    background-color: #f0f0f0; 
+    border-radius: 50%;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #3a3737;          
     cursor: pointer;
 }
 .controls-bar{
@@ -337,8 +381,274 @@ body{
 }
 #volumen{
   display: flex;
+  justify-content: space-evenly;
 }
 #volumeSlider{
   width: 100%;
   accent-color: #eeeeee;
+}
+#datosdelReproductor{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  left: 100px;
+  align-content: center;
+  justify-content: center;
+}
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+#autorCancion{
+  color: #eeeeee;
+}
+#nombreCancion{
+  color:#eeeeee;
+}
+#imagenReproduciendo{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+#result-cancion{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+  color: black;
+}
+#result-autor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+  color: black;
+}
+#result-album{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+}
+.resultadoCancion{
+  width: 90%;
+  height: 25px;
+  background-color: #da8f8f;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+.resultadoArtista{
+  width: 90%;
+  height: 25px;
+  background-color: #9fdb77;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+.resultadoAlbum{
+  width: 90%;
+  height: 25px;
+  background-color: #75b7bb;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+/*PARA VISTA DE ARTISTAS y  VISTAS DE ALBÚMES TT*/
+:root{
+    --fondoArtist: rgb(1, 183, 194, 0.3);
+    --grisBlanco: rgb(250, 249, 247, 0.3);
+    --azulApagado: #5a6f98;
+    --cianIntenso: #01b7c2;
+    --blancoAleatorio: #eeeee0;
+}
+.centrarIconosDelHamburgesa{
+    display: flex;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+.secciónDerechaArtistas{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+}
+.contenedorDeArtistasGeneral{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: var(--fondoArtist);
+    flex-direction: column;
+}
+.contenedorTituloArtistas{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 15%;
+    border-radius: 50px;
+    background-color: var(--grisBlanco);
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+.contenedorListaDeArtistas{
+    display: flex;
+    width: 100%;
+    height: 85%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+    flex-direction: column;
+}
+.paraLaListaDeArtistas{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: none;
+    color: white;
+    margin: 5px;
+    width: 80%;
+    border-radius: 8px;
+    font-size: 20px;
+}
+.artistasList {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+.contenidoDerecho{
+    display: flex;
+    width: 60%;
+    height: 90%;
+    margin-left: 5px;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+}
+.secciónDerechaAlbumes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+}
+.contenedorDeTodosLosAlbumes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-content: flex-start;
+    justify-content: center;
+    overflow:auto;
+    flex-direction: row;
+    background-color: none;
+    flex-wrap: wrap;
+}
+.paraLaListaDeAlbumes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--cianIntenso);
+    color: white;
+    margin: 5px;
+    width: 40%;
+    border-radius: 8px;
+    font-size: 20px;
+    gap: 5px;
+    margin: 5px;
+}
+
+
+.mostrarAlbumesDelArtista {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mostrarAlbumesDelArtista h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Este cuadro ocupa la mayor parte de la pantalla */
+.cuadroAlbumesGrid {
+  width: 90%;
+  height: 70vh; /* proporcional a la altura de la pantalla */
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* siempre 2 columnas */
+  gap: 20px;
+  overflow-y: auto; /* scroll si hay muchos álbumes */
+}
+
+/* Tarjeta de cada álbum */
+.albumCard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.albumCard:hover {
+  transform: scale(1.03);
+}
+
+.albumCard img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.albumCard p {
+  margin-top: 8px;
+  font-size: 1rem;
 }

@@ -637,6 +637,435 @@ const baseDatosJSON = {
       link: "lXkijyJUK9U",
       genero: "Rock",
       id_genero: 3
+    },
+    {
+      id: 59,
+      nombre: "Without Me",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "YVkUvmDQ3HY",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 60,
+      nombre: "Cleanin' Out My Closet",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "RQ9_TKayu9s",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 61,
+      nombre: "Sing for the Moment",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "D4hAVemuQXY",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 62,
+      nombre: "Superman",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "Mx_yZk47YN4",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 63,
+      nombre: "Till I Collapse",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "ytQ5CYE1VZw",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 64,
+      nombre: "Business",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "P05bTId-92A",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 65,
+      nombre: "Hailie's Song",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "tD5oQQ-CQ4E",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 66,
+      nombre: "Say What You Say",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "8xNHdegQmIQ",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 67,
+      nombre: "When the Music Stops",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "HEVPKuxkWzA",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 68,
+      nombre: "My Dad's Gone Crazy",
+      artista: "Eminem",
+      id_artista: 13,
+      album: "The Eminem Show",
+      id_album: 13,
+      link: "kcm8jQBQ6kg",
+      genero: "Hip Hop",
+      id_genero: 4
+    },
+    {
+      id: 69,
+      nombre: "Ha Дне (Na Dne)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "4Vv4cXz8PtY",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 70,
+      nombre: "Tantsevat'",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "OELeneV5miU",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 71,
+      nombre: "Fil'my",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "vi7jOi9M3KY",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 72,
+      nombre: "Волны (Volny)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "xjg8IVxBRqY",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 73,
+      nombre: "Тоска (Toska)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "Pw5G-qQyi9w",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 74,
+      nombre: "Прогноз (Prognoz)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "2UgRN2nhQAc",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 75,
+      nombre: "Cyднo (Sudno)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "8uNEVAM-3h8",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 76,
+      nombre: "Коммерсанты (Kommersanty)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "OJRzf4LBTt8",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 77,
+      nombre: "Клетка (Kletka)",
+      artista: "Molchat Doma",
+      id_artista: 10,
+      album: "Этажи",
+      id_album: 12,
+      link: "s76zxebdoEM",
+      genero: "Post-Punk",
+      id_genero: 5 
+    },
+    {
+      id: 78,
+      nombre: "Smells Like Teen Spirit",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "hTWKbfoikeg",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 79,
+      nombre: "In Bloom",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "PbgKEjNBHqM",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 80,
+      nombre: "Come As You Are",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "vabnZ9-ex7o",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 81,
+      nombre: "Breed",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "J6EDW5WFb2M",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 82,
+      nombre: "Lithium",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "pkcJEvMcnEg",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 83,
+      nombre: "Polly",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "3H0NHHKBemg",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 84,
+      nombre: "Territorial Pissings",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "x6XBlkvTmv8",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 85,
+      nombre: "Drain You",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "dUb69RIqfO8",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 86,
+      nombre: "Lounge Act",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "7xeasq05zxc",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 87,
+      nombre: "Something In The Way",
+      artista: "Nirvana",
+      id_artista: 11,
+      album: "Nevermind",
+      id_album: 15,
+      link: "4VxdufqB9zg",
+      genero: "Alternativa",
+      id_genero: 6
+    },
+    {
+      id: 88,
+      nombre: "All Through the Night",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "tCTD6wQ45VU",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 89,
+      nombre: "Anything Goes",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "as-whCYL4ns",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 90,
+      nombre: "Miss Otis Regrets",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "rX-b1Ksetcc",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 91,
+      nombre: "Too Darn Hot",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "xhs3Qklz5a0",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 92,
+      nombre: "I Get a Kick Out of You",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "s06RUbCbYeo",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 93,
+      nombre: "Do I Love You?",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "7wvVrlz5lBI",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 94,
+      nombre: "Always True to You [in My Fashion]",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "_MDCec4LdEc",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 95,
+      nombre: "Let's Do It, Let's Fall in Love",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "z8NtdS98IRI",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 96,
+      nombre: "Just One of Those Things",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "RaRxPkoVS_E",
+      genero: "Jazz",
+      id_genero: 7
+    },
+    {
+      id: 97,
+      nombre: "Ev'ry Time We Say Goodbye",
+      artista: "Ella Fitzgerald",
+      id_artista: 12,
+      album: "Sings the Cole Porter Song Book",
+      id_album: 14,
+      link: "nP-8dzS1_rM",
+      genero: "Jazz",
+      id_genero: 7
     }
   ],
   artistas: [
@@ -693,6 +1122,30 @@ const baseDatosJSON = {
       nombre: "Daddy Yankee",
       descripcion: "Daddy Yankee es un cantante y compositor puertorriqueño, conocido como el 'Rey del Reguetón' y famoso por su éxito 'Despacito'.",
       url_img: "https://i.scdn.co/image/ab6761610000e5eb99a6ccc4aae5ae5404c9eb30"
+    },
+    {
+      id: 10,
+      nombre: "Molchat Doma",
+      descripción: "Molchat Doma es una banda de post punk ruso y coldwave bielorrusa fundada en Minsk en 2017. Su música combina elementos de post-punk, new wave, darkwave y synth-pop.",
+      url_img: "https://f4.bcbits.com/img/0036284521_10.jpg"
+    },
+    {
+      id: 11,
+      nombre: "Nirvana",
+      descripción: "Nirvana fue una influyente banda estadounidense de rock alternativo y grunge formada en Aberdeen, Washington, en 1987. Liderada por Kurt Cobain, marcó una revolución musical en los años 90 con letras introspectivas y un sonido crudo.",
+      url_img: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Nirvana_around_1992.jpg"
+    },
+    {
+      id: 12,
+      nombre: "Ella Fitzgerald",
+      descripción: "Ella Fitzgerald fue una cantante estadounidense de jazz apodada 'La primera dama de la canción'. Famosa por su tono puro, su impecable dicción y su capacidad para el scat, es una de las figuras más importantes del jazz vocal del siglo XX.",
+      url_img: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ella_Fitzgerald_1962.jpg"
+    },
+    {
+      id: 13,
+      nombre: "Eminem",
+      descripción: "Eminem, cuyo nombre real es Marshall Bruce Mathers III, es un rapero, compositor y productor estadounidense. Conocido por su velocidad, complejidad lírica y crudeza emocional, es uno de los artistas de hip hop más exitosos y controversiales de todos los tiempos.",
+      url_img: "https://upload.wikimedia.org/wikipedia/commons/9/90/Eminem_Lollapalooza_2011.jpg"
     }
   ],
   genero: [
@@ -718,13 +1171,13 @@ const baseDatosJSON = {
     },
     {
       id: 5,
-      nombre: "R&B",
-      descripcion: "El R&B (Rhythm and Blues) es un género musical que combina elementos de soul, funk y pop, con un enfoque en las melodías vocales y ritmos pegajosos."
+      nombre: "Post-Punk",
+      descripcion: "El post-punk es un género musical que se originó a finales de la década de 1970, surgió después del declive del movimiento punk , es una versión más experimental y vanguardista del punk, es más lento, tiene letras más ricas y tonos más emocionales en comparación con el estilorápido y abrasivo del punk."
     },
     {
       id: 6,
-      nombre: "Country",
-      descripcion: "El country es un género musical estadounidense que se originó en el sur, caracterizado por sus historias narrativas y el uso de instrumentos como la guitarra acústica y el banjo."
+      nombre: "Alternativa",
+      descripcion: "La música alternativa es un genero que abarca una amplia gama de estilos, tanto oscuros como ligeros, de todas las culturas. Se le considera alternativo a “música producida por artistas que están fuera de la corriente musical dominante, que normalmente se considera más ecléctica, original o desafiante que la mayoría de la música popular."
     },
     {
       id: 7,
@@ -820,6 +1273,40 @@ const baseDatosJSON = {
       id_artista: 8,
       descripcion: "'El Nervio del Volcán' es un álbum que muestra la evolución musical de Caifanes, con letras profundas y una fusión de géneros.",
       url_img: "https://i.scdn.co/image/ab67616d0000b27336aeaab4dc91a8dea53a2d8f"
+    },
+    {
+      id: 12,
+      nombre: "Этажи",
+      artista: "Molchat Doma",
+      id_artista: "10",
+      descripción: "Etazhi es el segundo álbum de estudio de la banda bielorrusa de post-punk Molchat Doma, lanzado por primera vez el 7 de septiembre de 2018 a través de Detriti Records.",
+      url_img: "https://m.media-amazon.com/images/I/91RCEYpDu8L.jpg"
+    },
+    {
+    id: 13,
+    nombre: "The Eminem Show",
+    artista: "Eminem",
+    id_artista: "4",
+    descripción: "The Eminem Show es el cuarto álbum de estudio del rapero estadounidense Eminem, lanzado el 26 de mayo de 2002. Es uno de sus álbumes más exitosos, con temáticas personales y sociales y éxitos como 'Without Me' y 'Cleanin' Out My Closet'.",
+    url_img: "https://i.scdn.co/image/ab67616d0000b2736ca5c90113b30c3c43ffb8f4"
+    },
+    {
+    id: 14,
+    nombre: "Ella Fitzgerald Sings the Cole Porter Song Book",
+    artista: "Ella Fitzgerald",
+    id_artista: "7",
+    descripción: "Este álbum es parte de la serie Song Book de Ella Fitzgerald, lanzado en 1956, donde interpreta las canciones del compositor Cole Porter con su inconfundible voz de jazz.",
+    url_img: "https://m.media-amazon.com/images/I/71QOCiTegfL._UF1000,1000_QL80_.jpg"
+    },
+    {
+    id: 15,
+    nombre: "Nevermind",
+    artista: "Nirvana",
+    id_artista: "6",
+    descripción: "Nevermind es el segundo álbum de estudio de Nirvana, lanzado en 1991. Es uno de los discos más influyentes del grunge y del rock alternativo, con éxitos como 'Smells Like Teen Spirit' y 'Come As You Are'.",
+    url_img: "https://m.media-amazon.com/images/I/61IwAnDdh2L._UF1000,1000_QL80_.jpg"
     }
   ]
  };
+
+ 

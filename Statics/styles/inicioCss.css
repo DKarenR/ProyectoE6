@@ -1,0 +1,167 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 0; 
+    background: hsl(204, 68%, 39%);
+    background: radial-gradient(circle, rgba(32,114,169,1)0%, rgba(38,26,71,1)100%);
+}
+/*inicio sesion*/
+#vistaInicioSesion{            /*div que tiene todo lo de inicio de sesión*/
+    display: flex;
+    flex-flow: column ;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+#imgForm{                       /*contiene la imagen de inicio de sesión*/
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+}
+#imgInicioSesion{               /*ref de img, absolute => se pone sobre de lo demás*/
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#incioSesion{                  /*contenedor visual del form*/
+    display: flex;
+    background-color: #eeeeee83;
+    flex-flow: column wrap; 
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    border-radius: 10%;
+}
+#formInicioSesion{             /*acomoda x ∈ form de inicio de sesion*/
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 5px;
+}
+#usuario{                           
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+#password{
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+::placeholder{ 
+    text-align: center;
+    color: rgba(0, 0, 0, 0.603);
+}
+/* Inicio de sesión y registrarse */
+.botonesISR{
+    background-color: #c9f0f7;
+    width: 60%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 5px;
+}
+.spansIS{
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+}
+.inactivo{                    /*le da valor inicial display => ~aparecen las 2 vistas a la vez*/
+    display: none;
+}
+.activo{
+    display: block;
+}
+/*Registrarse */
+#contieneFormReg{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    /*margin: auto;*/
+    padding: 30px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.678);
+    border-radius: 10px;
+}
+#formRegistrarse {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    margin: 50px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.678);
+    border-radius: 10px;
+    
+}
+#nvoUsuario{
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+#nvoPassword{
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    }
+.opcion {
+    text-align: center;
+    }
+.opcion img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 30px solid rgba(64, 224, 208, 0);
+    cursor: pointer;
+    flex-wrap: wrap;
+    }
+.opcionp img {
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    border: 30px solid rgba(64, 224, 208, 0);
+    cursor: pointer;
+    flex-wrap: wrap;
+    }
+.opciones input[type="radio"] {
+    display: none;
+}
+#registrarseBtn{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.315);
+    width: 50%;
+    height: 25px;
+    border-radius: 20px;
+}
+.contenedorParaInicio{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+}

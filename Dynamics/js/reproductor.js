@@ -2,6 +2,7 @@ const inputBusqueda = document.getElementById("texto-input");
 const resultadoCancion = document.getElementById("result-cancion");
 const resultadoAutor = document.getElementById("result-autor");
 const resultadoAlbum = document.getElementById("result-album");
+const contenedorBusqueda = document.getElementById("resultadosBusqueda");
 
 inputBusqueda.addEventListener("input", function () {
 
@@ -9,58 +10,72 @@ inputBusqueda.addEventListener("input", function () {
   let coincidenciasCancion = 0;
   let coincidenciasArtista = 0;  
   let coincidenciasAlbum = 0;  
-
+  contenedorBusqueda.style.display = "flex";
   resultadoCancion.innerHTML = ``;
   resultadoAutor.innerHTML = '';
   resultadoAlbum.innerHTML = '';
   
-  if(frase == '')
+  if(frase == ''){
+    contenedorBusqueda.style.display = "none";
     return;
+  }  
   for (let i = 0; i < baseDatosJSON.canciones.length; i++) {
     if(normalizar(baseDatosJSON.canciones[i].nombre).includes(frase) && coincidenciasCancion < 5){
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${baseDatosJSON.canciones[i].nombre} </p> `;     //Talvez necesite poner i+1 en el id
+      resultadoCancion.innerHTML += `<div class="resultadoCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista} </div>  `;     //Talvez necesite poner i+1 en el id
       coincidenciasCancion++;
     }
   }
   for (let i = 0; i < baseDatosJSON.artistas.length; i++) {
     if(normalizar(baseDatosJSON.artistas[i].nombre).includes(frase) && coincidenciasArtista < 5){
-      resultadoAutor.innerHTML += ` <p> ${baseDatosJSON.artistas[i].nombre} </p> `;
+      resultadoAutor.innerHTML += `<div class="resultadoArtista">${baseDatosJSON.artistas[i].nombre}-Artista</div> `;
       coincidenciasArtista++;
     }
   }
   for (let i = 0; i < baseDatosJSON.album.length; i++) {
     if(normalizar(baseDatosJSON.album[i].nombre).includes(frase) && coincidenciasAlbum < 5){
-      resultadoAlbum.innerHTML += ` <p> ${baseDatosJSON.album[i].nombre} </p> `;
+      resultadoAlbum.innerHTML += `<div class="resultadoAlbum">${baseDatosJSON.album[i].nombre}-Álbum</div> `;
       coincidenciasAlbum++;
     }
   }
 
   if(resultadoCancion.innerHTML == '')
-    resultadoCancion.innerHTML = '<p style="padding: 15px; " > No hay canciones registradas con ese nombre </p>';
+    resultadoCancion.innerHTML = '<div class="resultadoCancion"> No hay canciones registradas con ese nombre </div>';
   if(resultadoAutor.innerHTML == '')
-    resultadoAutor.innerHTML = '<p style="padding: 15px; " > No hay artistas registrados con ese nombre </p>';
+    resultadoAutor.innerHTML = '<div class="resultadoArtista"> No hay artistas registrados con ese nombre </div>';
   if(resultadoAlbum.innerHTML == '')
-    resultadoAlbum.innerHTML = '<p style="padding: 15px; " > No hay albumes registrados con ese nombre </p>';
+    resultadoAlbum.innerHTML = '<div class="resultadoAlbum"> No hay albumes registrados con ese nombre </div>';
 });
 
 //----------- Selecciona la opcion ------------------- 
-
-document.getElementById("resultadosBusqueda").addEventListener("click", function (evento) {
+let cancionReproduciendo = document.getElementById("nombreCancion");
+let artistaCancionReproduciendo = document.getElementById("autorCancion");
+let imagenCancionReproduciendo = document.getElementById("imagenReproduciendo");
+contenedorBusqueda.addEventListener("click", function (evento) {
   let cancionLink;
+  let nombreCancion;
+  let autorCancion;
+  let albumCancion;
+  let imagenCancion;
   let padre = evento.target.closest("div");
-  if(padre.id === "result-cancion")
+  let abuelo = padre.parentElement.closest("div");
+  if(abuelo.id === "result-cancion")
   {
-    let cancionNum = evento.target.id.slice(-1);
+    let cancionNum = evento.target.id.replace(/[a-zA-Z]/g, "");
     cancionLink = baseDatosJSON.canciones[cancionNum].link;
+    nombreCancion = baseDatosJSON.canciones[cancionNum].nombre;
+    autorCancion = baseDatosJSON.canciones[cancionNum].artista;
+    albumCancion = baseDatosJSON.canciones[cancionNum].id_album;
+    imagenCancion = baseDatosJSON.album[albumCancion-1].url_img;
+    //Inicializar Reproductor
     player.loadVideoById(cancionLink);
-    seekbar.max = player.getDuration();
-    //player.pauseVideo();
-    //console.log(cancionLink)
+    cancionReproduciendo.innerHTML = `${nombreCancion}`;
+    artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
+    imagenCancionReproduciendo.src = imagenCancion;
   }
   resultadoCancion.innerHTML = ``;
   resultadoAutor.innerHTML = '';
   resultadoAlbum.innerHTML = '';
-  
+  contenedorBusqueda.style.display = "none";
 });
 function normalizar(texto) {
   return texto
@@ -87,7 +102,8 @@ function onYouTubeIframeAPIReady(){
             controls: 0
         },
         events:{
-            onReady: onPlayerReady
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange
         }
     })
 }
@@ -107,6 +123,10 @@ function onPlayerReady(){
         }
     }, 100);
 
+}
+function onPlayerStateChange(){
+  duration = player.getDuration();
+  seekbar.max = duration;   
 }
 
 //PlayPause
@@ -138,7 +158,6 @@ volumeSlider.addEventListener("input",()=>{
 
 //Mute
 const muteBtn = document.getElementById("muteBtn");
-//console.log(muteBtn)
 muteBtn.addEventListener("click",()=>{
 if(player.isMuted()){
     player.unMute();

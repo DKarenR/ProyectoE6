@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..\Statics\styles\inicioCss.css">
+</head>
+<body>
+    <div class="contenedorParaInicio">
+       <div id="vistaInicioSesion">
+        <div id="imgForm" class="activo">
+            <img src="../Statics\media\imgs\usuarioInicioSesion.png" id="imgInicioSesion">
+            <div id="incioSesion">
+                <p> </p>
+                <br>
+                <form id="formInicioSesion" action="" method="post">
+                    <input type="text" id="usuario" name="usuario" placeholder="Usuario" >
+                    <span id="usuarioMal" class="spansIS"></span>
+                    <br>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" >
+                    <span id="contraCorta" class="spansIS"></span>
+                    <br>
+                    <button type="submit" id="inicioSesionBtn" class="botonesISR">Iniciar sesión</button>
+                    <button id="registrarseBtn">Registrarse</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div id="mensaje"></div>
+        </div> 
+    </div>
+    
+    <div id="vistaRegistrarse" class= "inactivo">
+        <div id="contieneFormReg">
+            <form id="formRegistrarse" action="" method="post">
+                
+                <label for="nvoUsuario">Ingresa un nuevo nombre de usuario:</label><br>
+                <input type="text" id="nvoUsuario">
+                <span id="usuarioVacio" class="spansIS"></span>
+                <label for="nvoPassword">Ingresa nueva contraseña con al menos 8 dígitos:</label><br>
+                <input type="password" id="nvoPassword">
+                <span id="contraNvaCorta" class="spansIS"></span>
+                <label for="descripcion">Añade alguna descripción o frase:</label><br>
+                <textarea id="descripcion" rows="4" cols="50"></textarea>
+                <span id="descripcionVacia" class="spansIS"></span>
+                <label for="correo">Correo electrónico:</label><br>
+                <input type="email" id="correo">
+                <span id="correoVacio" class="spansIS"></span>
+                <p>Elige una foto para tu perfil:</p>
+                <div class="opciones">
+                    <div class="opcion">
+                        <input type="radio" id="guepardo" name="fotoPerfil" value="guepardo">
+                        <label for="guepardo"><img src="../Statics\media\imgs\guepardo.jpg" alt="Guepardo"></label>
+                    </div>
+                    <div class="opcion">
+                        <input type="radio" id="conejo" name="fotoPerfil" value="conejo">
+                        <label for="conejo"><img src="../Statics\media\imgs\conejo.jpg" alt="Conejo"></label>
+                    </div>
+                    <div class="opcion">
+                        <input type="radio" id="tortuga" name="fotoPerfil" value="tortuga">
+                        <label for="tortuga"><img src="../Statics\media\imgs\tortuga.jpg" alt="Tortuga"></label>
+                    </div>
+                    <div class="opcion">
+                        <input type="radio" id="gato" name="fotoPerfil" value="gato">
+                        <label for="gato"><img src="../Statics\media\imgs\gato.jpg" alt="Gato"></label>
+                    </div>
+                    <div class="opcion">
+                        <input type="radio" id="ajolote" name="fotoPerfil" value="ajolote">
+                        <label for="ajolote"><img src="../Statics\media\imgs\ajolote.jpg" alt="Ajolote"></label>
+                    </div>
+                    <div class="opcion">
+                        <input type="radio" id="huron" name="fotoPerfil" value="huron">
+                        <label for="huron"><img src="../Statics\media\imgs\huron.jpg" alt="Hurón"></label>
+                    </div>
+                    <span id="fotoVacia" class="spansIS"></span><br><br>
+                </div>
+
+                <p>Elige una foto para tu portada:</p>
+                <div class="opciones">
+                    <div class="opcionp">
+                        <input type="radio" id="p1" name="fotoPortada" value="p1">
+                        <label for="p1"><img src="../Statics\media\imgs\p1.jpg" alt="Portada 1"></label>
+                    </div>
+                    <div class="opcionp">
+                        <input type="radio" id="p2" name="fotoPortada" value="p2">
+                        <label for="p2"><img src="../Statics\media\imgs\p2.jpg" alt="Portada 2"></label>
+                    </div>
+                    <div class="opcionp">
+                        <input type="radio" id="p3" name="fotoPortada" value="p3">
+                        <label for="p3"><img src="../Statics\media\imgs\p3.jpg" alt="Portada 3"></label>
+                    </div>
+                    <div class="opcionp">
+                        <input type="radio" id="p4" name="fotoPortada" value="p4">
+                        <label for="p4"><img src="../Statics\media\imgs\p4.jpg" alt="Portada 4"></label>
+                    </div>
+                    <div class="opcionp">
+                        <input type="radio" id="p5" name="fotoPortada" value="p5">
+                        <label for="p5"><img src="../Statics\media\imgs\p5.jpg" alt="Portada 5"></label>
+                    </div>
+                    <div class="opcionp">
+                        <input type="radio" id="p6" name="fotoPortada" value="p6">
+                        <label for="p6"><img src="../Statics\media\imgs\p6.jpg" alt="Portada 6"></label>
+                    </div>
+                    <span id="portadaVacia" class="spansIS"></span><br><br>
+                </div>
+                <button type="submit" id="crearUsuarioBtn" class="botonesISR">Crear cuenta</button>
+                <div id="mensaje"></div>
+            </form>
+        </div>
+    </div>
+    <script src="../Dynamics/js/inicioSesion.js" defer></script>
+</body>
+</html>
