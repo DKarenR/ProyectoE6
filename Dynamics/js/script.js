@@ -1,7 +1,11 @@
+function irAVista(nombreVista, datos = {}) {
+  const params = new URLSearchParams(datos).toString();
+  const urlFinal = params ? `${nombreVista}?${params}` : nombreVista;
+  window.location.href = urlFinal;
+}
 
-
-function irAVista(nombreArchivo) {
-      // Puedes hacer cosas aquí antes de cambiar
-      console.log("Redirigiendo a:", nombreArchivo);
-      window.location.href = nombreArchivo;
-    }
+// Lee el texto del <p> dentro del botón
+function redirigirDesdeBoton(boton) {
+  const artista = boton.querySelector("p").textContent.trim();
+  irAVista("vistaDeAlbumes.html", { artista: artista });
+}

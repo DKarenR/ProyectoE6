@@ -60,44 +60,17 @@
                 <div class="todasRecomendaciones">
                     <h1 class="centrar">Recomendaciones Del Día</h1>
                     <div class="seccionDerecha"><!--contenedor que incluye las 4 recomendaciones de canciones-->
-                        <div class="dosRec">
-                            <button class="recomendacion">
-                                <img src="../Statics/img/.jpg" class="item-img">
-                                <p>Recomendación1</p>
-                            </button>
-                            <button class="recomendacion">
-                                <img src="../Statics/img/.jpg" class="item-img">
-                                <p>Recomendación2</p>
-                            </button>
-                        </div>
-                        <div class="dosRec">
-                            <button class="recomendacion">
-                                <img src="../Statics/img/.jpg" class="item-img">
-                                <p>Recomendación3</p>
-                            </button>
-                            <button class="recomendacion">
-                                <img src="../Statics/img/.jpg" class="item-img">
-                                <p>Recomendación4</p>
-                            </button>
+                        <div class="dosRec" id="contenedor-canciones">
+                            
                         </div>  
                         <div class="dosRec"><!--contenedor que incluye las recomendaciones de artistas y del álbum-->
                             <button class="recomendacionMix">
-                            <img src="../Statics/img/.jpg" class="album-img">
-                            <p>(nombre del Albúm)</p>
+                            <img class="album-img" src="">
+                            <p></p>
                             </button>
-                            <div class="recomendacionArtista">
-                                <button class="noFormato">
-                                    <img src="../Statics/img/.jpg" class="artista-img">
-                                    <p>(nombre del artista1)</p>
-                                </button>
-                                <button class="noFormato">
-                                    <img src="../Statics/img/.jpg" class="artista-img">
-                                    <p>(nombre del artista2)</p>
-                                </button>
-                                <button class="noFormato">
-                                    <img src="../Statics/img/.jpg" class="artista-img">
-                                    <p>(nombre del artista3)</p>
-                                </button>
+
+                            <div class="recomendacionArtista" id="contenedor-artistas">
+                                <!--js crea los botones respectivos a los artistas-->
                             </div>  
                         </div>
                     </div>
@@ -108,5 +81,7 @@
 
     <script src="../Dynamics/js/vistainicial.js"></script>
     <script src="../Dynamics/js/buscador.js"></script>
+    <script src="../Dynamics/js/script.js"></script>
+    <script src="../Dynamics/js/generarArtistas.js"></script>
 </body>
 </html>
