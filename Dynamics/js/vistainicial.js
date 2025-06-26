@@ -1,4 +1,73 @@
 //const tiposDeMix = ["Romantica", "Clásica", "Rock", "Urbano", "Pop", "Indie", "Alternativa", "Electrónica", "Rap", "Metal" ];
+//AÑADÍ PARA GENERAR Y CAMBIAR DE VISTA
+
+//PARA LOS CAMBIOS DE VISTA:
+function cambiarDeVista(idVista) {
+  //PAra Escosder el contenidoDereccho
+  document.querySelectorAll('.contenidoDerecho').forEach(seccion => {
+    seccion.style.display = 'none';
+  });
+  //Mostrar vista de nuevo ----> artistas
+  document.getElementById(idVista).style.display = 'block';
+}
+//PARA GENERAR CUADROS DE LOS ARTISTAS :d
+const contListArt = document.querySelector(".contenedorListaDeArtistas");
+const artistasList = baseDatosJSON.artistas;
+console.log("contenedorListaDeArtistas bien:" + contListArt);
+console.log("Artistas cargados:", artistasList.length);
+
+artistasList.forEach(artista => {
+  let paraLaListaDeArtistas = document.createElement("div");
+  paraLaListaDeArtistas.classList.add("paraLaListaDeArtistas"); //Para poder añadirle formato a los divs
+
+  let divArtista = document.createElement("div");
+  divArtista.classList.add("artistasList");
+
+  let imgArtista = document.createElement("img");
+  imgArtista.src = artista.url_img; //le digo que lo agarre del url_img de la base de JSON
+  imgArtista.classList.add("artista-img"); //AQUÍ AÑADO EL ESTILO DE IMG LOLLL
+
+  let nomArtista = document.createElement("p");
+  nomArtista.textContent = artista.nombre; //que lo agarre del nombre del artista del JSON
+    //meow
+  divArtista.appendChild(imgArtista);
+  divArtista.appendChild(nomArtista);
+  paraLaListaDeArtistas.appendChild(divArtista);
+
+  contListArt.appendChild(paraLaListaDeArtistas);
+});
+console.log("Todo salió bien");
+//PARA GENERAR CUADROS DE LOS ALBUMES 
+const contAlbumes = document.querySelector(".contenedorDeTodosLosAlbumes");
+const albumesList = baseDatosJSON.album;
+console.log("contenedorDeTodosLosAlbumes:", contAlbumes);
+console.log("Álbumes cargados:", albumesList.length);
+
+albumesList.forEach(album => {
+  let paraLaListaDeAlbumes = document.createElement("div");
+  paraLaListaDeAlbumes.classList.add("paraLaListaDeAlbumes");
+
+  let divAlbum = document.createElement("div");
+  divAlbum.classList.add("albumesList");
+
+  let imgAlbum = document.createElement("img");
+  imgAlbum.src = album.url_img; //le digo que lo agarre del url_img de la base de JSON
+  imgAlbum.classList.add("item-img");
+
+  let nomAlbum = document.createElement("p");
+  nomAlbum.textContent = album.nombre; //que lo agarre del nombre del artista del JSON
+  let nomAlbumArtis = document.createElement("p");
+  nomAlbumArtis.textContent = album.artista;
+    //meow
+  divAlbum.appendChild(imgAlbum);
+  divAlbum.appendChild(nomAlbum);
+  divAlbum.appendChild(nomAlbumArtis);
+  paraLaListaDeAlbumes.appendChild(divAlbum);
+  contAlbumes.appendChild(paraLaListaDeAlbumes);
+
+});
+
+
 let bd = [[], [], [], []];
 baseDatosJSON.canciones.forEach(element => bd[0].push(element.id));
 baseDatosJSON.genero.forEach(element => bd[1].push(element.id));

@@ -96,25 +96,25 @@ body{
     margin-bottom: 5px;
     margin-top: 40px;
 }
-.recomendacionesDia{
+.recomendacionesDia{ /*Lo modifiqué para que no afectara al estar dentro del ContenidoDerecho*/
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     justify-content: left;
     flex-direction: column;
-    margin-left: 5px;
-    align-self: center;
 }
 .todasRecomendaciones{
     display: flex;
+    width: 100%;
+    height: 100%;
     flex-direction: column;
     align-items: center;
 }
 .centrar{
     text-align: center;
 }
-#seccionDerecha{
+.seccionDerecha{
     width: 100%;
     height: 100%;
     display: flex;
@@ -352,4 +352,124 @@ body{
 #volumeSlider{
   width: 100%;
   accent-color: #eeeeee;
+}
+/*PARA VISTA DE ARTISTAS y  VISTAS DE ALBÚMES TT*/
+:root{
+    --fondoArtist: rgb(1, 183, 194, 0.3);
+    --grisBlanco: rgb(250, 249, 247, 0.3);
+    --azulApagado: #5a6f98;
+    --cianIntenso: #01b7c2;
+    --blancoAleatorio: #eeeee0;
+}
+.centrarIconosDelHamburgesa{
+    display: flex;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+.secciónDerechaArtistas{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+}
+.contenedorDeArtistasGeneral{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: var(--fondoArtist);
+    flex-direction: column;
+}
+.contenedorTituloArtistas{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 15%;
+    border-radius: 50px;
+    background-color: var(--grisBlanco);
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+.contenedorListaDeArtistas{
+    display: flex;
+    width: 100%;
+    height: 85%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+    flex-direction: column;
+}
+.paraLaListaDeArtistas{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: none;
+    color: white;
+    margin: 5px;
+    width: 80%;
+    border-radius: 8px;
+    font-size: 20px;
+}
+.artistasList {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+.contenidoDerecho{
+    display: flex;
+    width: 60%;
+    height: 90%;
+    margin-left: 5px;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+}
+.secciónDerechaAlbumes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+}
+.contenedorDeTodosLosAlbumes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-content: flex-start;
+    justify-content: center;
+    overflow:auto;
+    flex-direction: row;
+    background-color: none;
+    flex-wrap: wrap;
+}
+.paraLaListaDeAlbumes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--cianIntenso);
+    color: white;
+    margin: 5px;
+    width: 40%;
+    border-radius: 8px;
+    font-size: 20px;
+    gap: 5px;
+    margin: 5px;
 }

@@ -30,21 +30,29 @@
                 </div>
                 <div class="menu-desplegable" id="menuDesplegable">
                 <div class="menu-item">
-                    <i class="fas fa-home"></i>
-                 <span>Inicio</span>
+                    <div class="centrarIconosDelHamburgesa" onclick="cambiarDeVista('seccionInicio')">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
                     </div>
-                    <div class="menu-item">
-                     <i class="fas fa-user"></i>
-                    <span>Artistas</span>
                 </div>
                 <div class="menu-item">
-                <i class="fas fa-music"></i>
-                <span>Canciones</span>
-                 </div>
+                    <div class="centrarIconosDelHamburgesa" onclick="cambiarDeVista('seccionArtistas')">
+                        <i class="fas fa-user"></i>
+                        <span>Artistas</span>
+                    </div>
+                </div>
                 <div class="menu-item">
-                 <i class="fas fa-compact-disc"></i>
-                 <span>Albums</span>
-                 </div>    
+                    <div class="centrarIconosDelHamburgesa">
+                        <i class="fas fa-music"></i>
+                        <span>Canciones</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="centrarIconosDelHamburgesa" onclick="cambiarDeVista('seccionAlbumes')">
+                        <i class="fas fa-compact-disc"></i>
+                        <span>Albums</span>
+                    </div>
+                </div>    
                 </div> 
             </div>
             <div class="seccionIzquierda">  
@@ -67,10 +75,12 @@
                 </div> 
             </div>
             <div class="lineaCentral"></div><!--Línea que aparece cerca del centro-->
-            <div class="recomendacionesDia"><!--contenedor que encapsula toda la sección derecha-->
+            <!--ESTO ES PARTE DE LA PANTALLA INICIAL-->  
+            <div id="seccionInicio" class="contenidoDerecho">
+                <div class="recomendacionesDia"><!--contenedor que encapsula toda la sección derecha-->
                 <div class="todasRecomendaciones">
                     <h1 class="centrar">Recomendaciones Del Día</h1>
-                    <div id="seccionDerecha"><!--contenedor que incluye las 4 recomendaciones de canciones-->
+                    <div class="seccionDerecha"><!--contenedor que incluye las 4 recomendaciones de canciones-->
                         <div class="dosRec">
                             <button class="recomendacion">
                                 <img src="../Statics/img/.png" class="item-img">
@@ -111,6 +121,31 @@
                                 </button>
                             </div>  
                         </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+            <!--ARTISTAS-->
+            <div id="seccionArtistas" class="contenidoDerecho" style="display: none;">
+                <div class="secciónDerechaArtistas">
+                <div class="contenedorDeArtistasGeneral">
+                    <div class="contenedorTituloArtistas">
+                        <div>
+                            <h1>Artistas</h1>
+                        </div>
+                    </div>
+                    <div class="contenedorListaDeArtistas">
+                        <!--LISTA DE ARTISTAS CON OVER-->
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!--ÁLBUMES-->
+            <div id="seccionAlbumes" class="contenidoDerecho" style="display: none;">
+                <div class="secciónDerechaAlbumes">
+                    <div class="contenedorDeTodosLosAlbumes">
+                    <!--AQUÍ VAN A APARECER LOS ALBUMES-->
                     </div>
                 </div>
             </div>
