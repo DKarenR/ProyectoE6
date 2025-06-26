@@ -114,15 +114,25 @@ body{
 .centrar{
     text-align: center;
 }
-.seccionDerecha{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: none;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+#seccionDerecha{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.ladoDerechaRecomen{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 .dosRec{
     display: flex;
