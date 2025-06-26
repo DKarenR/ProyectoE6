@@ -1,4 +1,5 @@
-////////// Validación Inicio de sesión /////////
+const mensaje = document.getElementById("mensaje");
+//////// Validación Inicio de sesión /////////
 document.getElementById("formInicioSesion").addEventListener("submit", function(event){
     const passwordInput = document.getElementById("password");
     const passwordSpan = document.getElementById("contraCorta");
@@ -20,6 +21,28 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
     if (errores){
         event.preventDefault();
         return;
+    }
+    ////////// Inicio de sesión funcionalidad /////////
+    const usuario = usuarioInput.value.trim();
+    const password = passwordInput.value;
+    const cookies = document.cookie.split("; ");
+    let datos = null;
+    for (let cookie of cookies) {
+      const [key, valor] = cookie.split("=");
+      if (key === usuario) {
+        datos = decodeURIComponent(valor);
+        break;
+      }
+    }
+    if (!datos){
+      mensaje.innerHTML = "<span id='spansIS'>Usuario no encontrado</span>";
+      return;
+    }
+    datos = JSON.parse(datos);
+    if (datos.password === password){
+      mensaje.innerHTML = `<span style='color: green;'>Inicio de sesión exitoso. Bienvenido ${datos.nombre}</span>`;
+    } else {
+      General.innerHTML = "<span span id='spansIS'>Contraseña incorrecta</span>";
     }
 });
 ////////// Aparece vista de registro /////////
@@ -94,7 +117,7 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
       fotoVaciaSpan.textContent = ""; 
     }
     for (let i = 0; i < fotoPortadaRadios.length; i++){
-      if (fotoPortadaRadios[i].checked) {
+      if (fotoPortadaRadios[i].checked){
         seleccionadoP = true;
         break;
       }
@@ -118,4 +141,8 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     const valorCookie = encodeURIComponent(JSON.stringify(datos));
     const duracion = 60 * 60 * 24 * 7;
     document.cookie = `${nombre}=${valorCookie}; max-age=${duracion}`;
+    ////////// Regresar a inicio de sesión /////////
+    vistaR.style.display = "none";
+    vistaIS.style.display = "block";
+    mensaje.innerHTML = `<span 'spansIS'>Cuenta creada exitosamente. Ahora puedes iniciar sesión.</span>`;
 });
