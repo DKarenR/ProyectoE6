@@ -10,7 +10,7 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
         errores = true;
         passwordSpan.textContent = "La contraseña debe tener al menos 8 caracteres.";
     } else {
-        usuarioSpan.textContent = ""; 
+        passwordSpan.textContent = "";
     }
     if (usuarioInput.value.length < 1){
         errores = true;
@@ -96,10 +96,10 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     if (correoInput.value.length < 1){
         correoVacioSpan.textContent = "Rellena éste campo";
         errores = true;
-    } else if (correoInput.includes(" ")){
+    } else if (correoInput.value.includes(" ")){
         correoVacioSpan.textContent = "Escribiste espacios :c";
         errores = true;
-    } else if (!correo.includes("@") || !correo.includes(".")){
+    } else if (!correoInput.value.includes("@") || !correoInput.value.includes(".")){
         correoVacioSpan.textContent = "El correo debe contener '@' y'.'";
         errores = true;
     } else {
@@ -133,18 +133,26 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
         event.preventDefault();
         return;
     }
+    let fotoPerfilSeleccionada = "";
+    fotoPerfilRadios.forEach(r => { 
+        if (r.checked) fotoPerfilSeleccionada = r.value 
+    });
+    let fotoPortadaSeleccionada = "";
+    fotoPortadaRadios.forEach(r => { 
+        if (r.checked) fotoPortadaSeleccionada = r.value 
+    });
     ////////// Crear cookie /////////
     const nombre = nvoUsuarioInput.value.trim();
     const password = nvoPasswordInput.value.trim();
     const descripcion = descripcionInput.value.trim();
     const correo = correoInput.value.trim();
-    const datos = {nombre, password, descripcion, correo, fotoPerfil: seleccionadoF,fotoPortada: seleccionadoP};
+    const datos = {nombre, password, descripcion, correo, fotoPerfil: fotoPerfilSeleccionada,fotoPortada: fotoPortadaSeleccionada};
     const valorCookie = encodeURIComponent(JSON.stringify(datos));
     const duracion = 60 * 60 * 24 * 7;
     document.cookie = `${nombre}=${valorCookie}; max-age=${duracion}`;
     ////////// Regresar a inicio de sesión /////////
     vistaR.style.display = "none";
     vistaIS.style.display = "block";
-    mensaje.innerHTML = `<span 'spansIS'>Cuenta creada exitosamente. Ahora puedes iniciar sesión.</span>`;
+    mensaje.innerHTML = mensaje.innerHTML = `<span id='spansIS'>Cuenta creada. Ahora inicia sesión.</span>`;
     console.log(document.cookie);
 });
