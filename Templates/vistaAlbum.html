@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Statics/styles/vistaAlbum.css">
+  <title>Reproductor Linkin Park</title>
+</head>
+<body>
+  <div class="menu-lateral">
+    <div class="icono-perfil"></div>
+    <div style="width: 20px; height: 20px; background: white; border-radius: 3px;"></div>
+  </div>
+
+  <div class="contenido">
+    <div class="columna-izquierda">
+      <div class="caratula"></div>
+      <div class="cancion-btn"><span>1</span> <div><strong>Canción 1</strong><br>Autor</div></div>
+      <div class="cancion-btn"><span>2</span> <div><strong>Canción 2</strong><br>Autor</div></div>
+      <div class="cancion-btn"><span>3</span> <div><strong>Canción 3</strong><br>Autor</div></div>
+    </div>
+
+    <div class="cuerpo-central">
+      <div class="info-album">
+        <h2>Hybrid Theory</h2>
+        <p>Linkin Park</p>
+      </div>
+      <div class="reproductor"></div>
+      <div class="barra-volumen"></div>
+      <div class="controles">
+        <button>🔀</button>
+        <button>⏮️</button>
+        <button>⏯️</button>
+        <button>⏭️</button>
+        <button>🔁</button>
+      </div>
+    </div>
+
+    <div class="columna-derecha">
+      <div class="sugerencias">
+        <h4>También te podría gustar:</h4>
+        <div class="sugerencia_cancion"></div>
+        <p><strong>Come As You Are</strong><br>Nirvana</p>
+        <div class="sugerencia_album"></div>
+        <p><strong>Faint</strong><br>Linkin Park</p>
+      </div>
+      <button onclick="mostrarSugerencias()">Otra sugerencia</button>
+      <div class="artista">
+        <div class="img-artista"></div>
+        <span>Linkin Park</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="barra-superior">
+    <input type="text" placeholder="Busca algo :D">
+    <div class="icono-musica"></div>
+  </div>
+<script src="../Dynamics/js/generarArtistas.js"></script>
+</body>
+</html>
