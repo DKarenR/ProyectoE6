@@ -1,0 +1,147 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0; 
+    background: hsl(204, 68%, 39%);
+    background: radial-gradient(circle, rgba(32,114,169,1)0%, rgba(38,26,71,1)100%);
+}
+#vistaInicioSesion{
+    display: flex;
+    flex-flow: column ;
+    align-items: center;
+}
+#imgForm{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+}
+#imgInicioSesion{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#incioSesion{
+    display: flex;
+    background-color: #eeeeee83;
+    flex-flow: column wrap; 
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    border-radius: 10%;
+}
+#usuario{
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+#password{
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+::placeholder{ 
+    text-align: center;
+    color: rgba(0, 0, 0, 0.603);
+}
+.botonesISR{
+    background-color: #c9f0f7;
+    width: 60%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+.spansIS{
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+}
+#formInicioSesion{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+#registrarseBtn{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.315);
+    width: 50%;
+    height: 25px;
+    border-radius: 20px;
+}
+
+
+#nvoUsuario{
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+#nvoPassword{
+    background-color: #5a6f98;
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+
+.inactivo{
+    display: none;
+}
+.activo{
+    display: block;
+}
+
+
+#formRegistrarse{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee83;
+    width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
+    gap: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.opcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.opcion input {
+    display: none;
+}
+.opcion label {
+    cursor: pointer;
+}
+.opcion img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
