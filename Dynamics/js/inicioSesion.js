@@ -1,23 +1,28 @@
 ////////// Validación Inicio de sesión /////////
-    document.getElementById("formInicioSesion").addEventListener("submit", function(event){
-        const passwordInput = document.getElementById("password");
-        const passwordSpan = document.getElementById("contraCorta");
-        const usuarioInput = document.getElementById("usuario");
-        const usuarioSpan = document.getElementById("usuarioMal");
-        if (passwordInput.value.length < 8){
-            event.preventDefault();
-            passwordSpan.textContent = "La contraseña debe tener al menos 8 caracteres.";
-        } else {
-            usuarioSpan.textContent = ""; 
-        }
-        if (usuarioInput.value.length < 1){
-            event.preventDefault();
-            usuarioSpan.textContent = "Rellena éste campo.";
-        } else {
-            usuarioSpan.textContent = ""; 
-        }
-    });
-////////// Registrarse aparecer /////////
+document.getElementById("formInicioSesion").addEventListener("submit", function(event){
+    const passwordInput = document.getElementById("password");
+    const passwordSpan = document.getElementById("contraCorta");
+    const usuarioInput = document.getElementById("usuario");
+    const usuarioSpan = document.getElementById("usuarioMal");
+    let errores = false;
+    if (passwordInput.value.length < 8){
+        errores = true;
+        passwordSpan.textContent = "La contraseña debe tener al menos 8 caracteres.";
+    } else {
+        usuarioSpan.textContent = ""; 
+    }
+    if (usuarioInput.value.length < 1){
+        errores = true;
+        usuarioSpan.textContent = "Rellena éste campo.";
+    } else {
+        usuarioSpan.textContent = ""; 
+    }
+    if (errores){
+        event.preventDefault();
+        return;
+    }
+});
+////////// Aparece vista de registro /////////
 const btnReg = document.getElementById("registrarseBtn");
 const vistaIS = document.getElementById("vistaInicioSesion");
 const vistaR = document.getElementById("vistaRegistrarse");
@@ -25,7 +30,7 @@ btnReg.addEventListener("click", () => {
     vistaIS.style.display = "none";
     vistaR.style.display = "block";
 });
-////////// Validación registro/////////
+////////// Funcionalidad registro /////////
 document.getElementById("formRegistrarse").addEventListener("submit", function(event){
     const nvoUsuarioInput = document.getElementById("nvoUsuario");
     const usuarioVacioSpan = document.getElementById("usuarioVacio");
@@ -41,56 +46,76 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     const fotoPortadaRadios = document.getElementsByName("fotoPortada");
     const portadaVaciaSpan = document.getElementById("portadaVacia");
     let seleccionadoP = false;
-    const crearUsuarioBtn = document.getElementById("crearUsuarioBtn");
+    ////////// Validación registro /////////
+    let errores = false;
     if (nvoUsuarioInput.value.length < 1){
         event.preventDefault();
         usuarioVacioSpan.textContent = "Rellena éste campo.";
+        errores = true;
     } else {
         usuarioVacioSpan.textContent = ""; 
     }
-    if (nvoUsuarioInput.value.length < 8){
+    if (nvoPasswordInput.value.length < 8){
         event.preventDefault();
         contraNvaCortaSpan.textContent = "La contraseña debe tener al menos 8 caracteres.";
+        errores = true;
     } else {
         contraNvaCortaSpan.textContent = ""; 
     }
     if (descripcionInput.value.length < 1){
         event.preventDefault();
         descripcionVaciaSpan.textContent = "Rellena éste campo.";
+        errores = true;
     } else {
         descripcionVaciaSpan.textContent = ""; 
     }
-    if (correoInput.value.length < 1) {
+    if (correoInput.value.length < 1){
         correoVacioSpan.textContent = "Rellena éste campo";
-    } else if (correo.includes(" ")) {
+        errores = true;
+    } else if (correo.includes(" ")){
         correoVacioSpan.textContent = "Escribiste espacios :c";
-    } else if (!correo.includes("@") || !correo.includes(".")) {
+        errores = true;
+    } else if (!correo.includes("@") || !correo.includes(".")){
         correoVacioSpan.textContent = "El correo debe contener '@' y'.'";
+        errores = true;
     } else {
         correoVacioSpan.textContent = "";
     }
-    for (let i = 0; i < fotoPerfilRadios.length; i++) {
+    for (let i = 0; i < fotoPerfilRadios.length; i++){
       if (fotoPerfilRadios[i].checked) {
         seleccionadoF = true;
         break;
       }
     }
-    if (!seleccionadoF) {
-      event.preventDefault();
+    if (!seleccionadoF){
       fotoVaciaSpan.textContent = "Selecciona una foto";
+      errores = true;
     } else {
       fotoVaciaSpan.textContent = ""; 
     }
-    for (let i = 0; i < fotoPortadaRadios.length; i++) {
+    for (let i = 0; i < fotoPortadaRadios.length; i++){
       if (fotoPortadaRadios[i].checked) {
         seleccionadoP = true;
         break;
       }
     }
-    if (!seleccionadoP) {
-      event.preventDefault();
+    if (!seleccionadoP){
       portadaVaciaSpan.textContent = "Selecciona una foto";
+      errores = true;
     } else {
       portadaVaciaSpan.textContent = ""; 
     }
+    if (errores){
+        event.preventDefault();
+        return;
+    }
+    ////////// Crear cookie /////////
+    const nombre = nvoUsuarioInput.value.trim();
+    const password = nvoPasswordInput.value.trim();
+    const descripcion = descripcionInput.value.trim();
+    const correo = correoInput.value.trim();
+    const datos = {nombre, password, descripcion, correo, fotoPerfil: fotoPerfilSeleccionada,fotoPortada: fotoPortadaSeleccionada};
+    const valorCookie = encodeURIComponent(JSON.stringify(datos));
+    const duracion = 60 * 60 * 24 * 7;
+    document.cookie = `${nombre}=${valorCookie}; max-age=${duracion}`;
 });
