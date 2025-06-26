@@ -145,4 +145,5 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     vistaR.style.display = "none";
     vistaIS.style.display = "block";
     mensaje.innerHTML = `<span 'spansIS'>Cuenta creada exitosamente. Ahora puedes iniciar sesión.</span>`;
+    console.log(document.cookie);
 });

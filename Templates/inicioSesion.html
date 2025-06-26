@@ -16,10 +16,10 @@
                 <br>
                 <form id="formInicioSesion" action="" method="post">
                     <input type="text" id="usuario" name="usuario" placeholder="Usuario" >
-                    <span id="usuarioMal" class="spansIS" style="color:red;"></span>
+                    <span id="usuarioMal" class="spansIS"></span>
                     <br>
                     <input type="password" id="password" name="password" placeholder="Contraseña" >
-                    <span id="contraCorta" class="spansIS" style="color:red;"></span>
+                    <span id="contraCorta" class="spansIS"></span>
                     <br>
                     <button type="submit" id="inicioSesionBtn" class="botonesISR">Iniciar sesión</button>
                     <button id="registrarseBtn">Registrarse</button>
@@ -37,16 +37,16 @@
                 
                 <label for="nvoUsuario">Ingresa un nuevo nombre de usuario:</label><br>
                 <input type="text" id="nvoUsuario">
-                <span id="usuarioVacio" class="spansIS" style="color:red;"></span>
+                <span id="usuarioVacio" class="spansIS"></span>
                 <label for="nvoPassword">Ingresa nueva contraseña con al menos 8 dígitos:</label><br>
                 <input type="password" id="nvoPassword">
-                <span id="contraNvaCorta" class="spansIS" style="color:red;"></span>
+                <span id="contraNvaCorta" class="spansIS"></span>
                 <label for="descripcion">Añade alguna descripción o frase:</label><br>
                 <textarea id="descripcion" rows="4" cols="50"></textarea>
-                <span id="descripcionVacia" class="spansIS" style="color:red;"></span>
+                <span id="descripcionVacia" class="spansIS"></span>
                 <label for="correo">Correo electrónico:</label><br>
                 <input type="email" id="correo">
-                <span id="correoVacio" class="spansIS" style="color:red;"></span>
+                <span id="correoVacio" class="spansIS"></span>
                 <p>Elige una foto para tu perfil:</p>
                 <div class="opciones">
                     <div class="opcion">
@@ -73,7 +73,7 @@
                         <input type="radio" id="huron" name="fotoPerfil" value="huron">
                         <label for="huron"><img src="../Statics\media\imgs\huron.jpg" alt="Hurón"></label>
                     </div>
-                    <span id="fotoVacia" style="color: red;"></span><br><br>
+                    <span id="fotoVacia" class="spansIS"></span><br><br>
                 </div>
 
                 <p>Elige una foto para tu portada:</p>
@@ -102,7 +102,7 @@
                         <input type="radio" id="p6" name="fotoPortada" value="p6">
                         <label for="p6"><img src="../Statics\media\imgs\p6.jpg" alt="Portada 6"></label>
                     </div>
-                    <span id="portadaVacia" style="color: red;"></span><br><br>
+                    <span id="portadaVacia" class="spansIS"></span><br><br>
                 </div>
                 <button type="submit" id="crearUsuarioBtn" class="botonesISR">Crear cuenta</button>
                 <div id="mensaje"></div>
