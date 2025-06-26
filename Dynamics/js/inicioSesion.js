@@ -26,7 +26,7 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
     const usuario = usuarioInput.value.trim();
     const password = passwordInput.value;
     const cookies = document.cookie.split("; ");
-    let datos = null;
+    let datos;
     for (let cookie of cookies) {
       const [key, valor] = cookie.split("=");
       if (key === usuario) {
@@ -43,7 +43,7 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
         console.log(datos);
       mensaje.innerHTML = `<span style='color: green;'>Inicio de sesión exitoso. Bienvenido ${datos.nombre}</span>`;
     } else {
-      General.innerHTML = "<span span id='spansIS'>Contraseña incorrecta</span>";
+      mensaje.innerHTML = "<span span id='spansIS'>Contraseña incorrecta</span>";
     }
 });
 ////////// Aparece vista de registro /////////
@@ -96,7 +96,7 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     if (correoInput.value.length < 1){
         correoVacioSpan.textContent = "Rellena éste campo";
         errores = true;
-    } else if (correo.includes(" ")){
+    } else if (correoInput.includes(" ")){
         correoVacioSpan.textContent = "Escribiste espacios :c";
         errores = true;
     } else if (!correo.includes("@") || !correo.includes(".")){
@@ -138,7 +138,7 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     const password = nvoPasswordInput.value.trim();
     const descripcion = descripcionInput.value.trim();
     const correo = correoInput.value.trim();
-    const datos = {nombre, password, descripcion, correo, fotoPerfil: fotoPerfilSeleccionada,fotoPortada: fotoPortadaSeleccionada};
+    const datos = {nombre, password, descripcion, correo, fotoPerfil: seleccionadoF,fotoPortada: seleccionadoP};
     const valorCookie = encodeURIComponent(JSON.stringify(datos));
     const duracion = 60 * 60 * 24 * 7;
     document.cookie = `${nombre}=${valorCookie}; max-age=${duracion}`;
