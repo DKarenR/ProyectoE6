@@ -1133,19 +1133,19 @@ const baseDatosJSON = {
       id: 11,
       nombre: "Nirvana",
       descripción: "Nirvana fue una influyente banda estadounidense de rock alternativo y grunge formada en Aberdeen, Washington, en 1987. Liderada por Kurt Cobain, marcó una revolución musical en los años 90 con letras introspectivas y un sonido crudo.",
-      url_img: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Nirvana_around_1992.jpg"
+      url_img: "https://m.media-amazon.com/images/I/514Xih3e9+L._AC_UF894,1000_QL80_.jpg"
     },
     {
       id: 12,
       nombre: "Ella Fitzgerald",
       descripción: "Ella Fitzgerald fue una cantante estadounidense de jazz apodada 'La primera dama de la canción'. Famosa por su tono puro, su impecable dicción y su capacidad para el scat, es una de las figuras más importantes del jazz vocal del siglo XX.",
-      url_img: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ella_Fitzgerald_1962.jpg"
+      url_img: "https://res.cloudinary.com/teepublic/image/private/s--JYty-pik--/c_crop,x_10,y_10/c_fit,h_830/c_crop,g_north_west,h_1038,w_1038,x_-169,y_-104/l_upload:v1565806151:production:blanks:vdbwo35fw6qtflw9kezw/fl_layer_apply,g_north_west,x_-280,y_-215/b_rgb:000000/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1671603303/production/designs/37611797_0.jpg"
     },
     {
       id: 13,
       nombre: "Eminem",
       descripción: "Eminem, cuyo nombre real es Marshall Bruce Mathers III, es un rapero, compositor y productor estadounidense. Conocido por su velocidad, complejidad lírica y crudeza emocional, es uno de los artistas de hip hop más exitosos y controversiales de todos los tiempos.",
-      url_img: "https://upload.wikimedia.org/wikipedia/commons/9/90/Eminem_Lollapalooza_2011.jpg"
+      url_img: "https://i.pinimg.com/280x280_RS/ba/c2/27/bac227c2f20f62b00d3810d5a7e0d30f.jpg"
     }
   ],
   genero: [
