@@ -8,13 +8,13 @@
     <script src="../Dynamics/js/baseDeDatos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body> 
     <div class="contenedorBuscador">
         <input class="buscador" id="texto-input" placeholder="   Busca Algo :D">
         <div id="resultadosBusqueda">
-            <div class="result-pantalla" id="result-cancion"> </div>
-            <div class="result-pantalla" id="result-autor"> </div>
-            <div class="result-pantalla" id="result-album"> </div>
+            <div  id="result-cancion"> </div>
+            <div  id="result-autor"> </div>
+            <div  id="result-album"> </div>
         </div>  
       <img src="../Statics/media/imgs/logoTuneSix.png" class="logoTuneSix">
     </div> 
@@ -57,12 +57,19 @@
             </div>
             <div class="seccionIzquierda">  
                 <div class="reproductorMusica">
+                    <div id="datosdelReproductor">
+                        <img id="imagenReproduciendo">
+                        <div id="info">
+                            <div id="nombreCancion"></div>
+                            <div id="autorCancion"></div>
+                        </div>
+                    </div>
                     <div id="player"></div>
                     <div class="controls-bar">
                         <input type="range" name="" id="seekBar">
-                        <i id="playPauseBtn"><i class="fas fa-play"></i></i>
+                            <i id="playPauseBtn"><i class="fas fa-play"></i></i>
                         <div id="volumen">
-                            <button type="text" id="muteBtn"></button> 
+                            <i id="muteBtn"><i class="fa-solid fa-volume-high"></i></i> 
                         <input type="range" max="100"  id="volumeSlider">
                         </div> 
                     </div>
@@ -75,12 +82,13 @@
                 </div> 
             </div>
             <div class="lineaCentral"></div><!--Línea que aparece cerca del centro-->
+            
             <!--ESTO ES PARTE DE LA PANTALLA INICIAL-->  
             <div id="seccionInicio" class="contenidoDerecho">
                 <div class="recomendacionesDia"><!--contenedor que encapsula toda la sección derecha-->
                 <div class="todasRecomendaciones">
                     <h1 class="centrar">Recomendaciones Del Día</h1>
-                    <div class="seccionDerecha"><!--contenedor que incluye las 4 recomendaciones de canciones-->
+                    <div id="seccionDerecha" class="ladoDerechaRecomen"><!--contenedor que incluye las 4 recomendaciones de canciones-->
                         <div class="dosRec">
                             <button class="recomendacion">
                                 <img src="../Statics/img/.png" class="item-img">
