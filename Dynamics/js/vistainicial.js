@@ -10,6 +10,11 @@ function cambiarDeVista(idVista) {
   //Mostrar vista de nuevo ----> artistas
   document.getElementById(idVista).style.display = 'block';
 }
+//Vista de Álbum
+
+
+
+
 //PARA GENERAR CUADROS DE LOS ARTISTAS :d
 const contListArt = document.querySelector(".contenedorListaDeArtistas");
 const artistasList = baseDatosJSON.artistas;
@@ -132,7 +137,7 @@ document.querySelectorAll(".noFormato").forEach(element => {
 
 let albumRecomend = document.getElementById("recomendacionMix");
 let nRandom = Math.floor(Math.random() * baseDatosJSON.album.length);
-
+albumRecomend.id = `recomendAlbum${baseDatosJSON.album[nRandom].id}`
 albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
 albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
 
@@ -161,6 +166,7 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
     imagenCancionReproduciendo.src = imagenCancion;
   }
+  if(padre.id.includes(""))
 });
 
 function toggleMenu() {
