@@ -44,14 +44,13 @@ document.querySelectorAll(".recomendacion").forEach(element => {
   let datos = element.lastElementChild;
   let imagenCancion = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].id_artista;
 
+  element.id = `recomendCancion${baseDatosJSON.canciones[cancionesRecomend[cont]-1].id}`;
   imagenCancionElement.src = baseDatosJSON.album[imagenCancion-1].url_img;
   datos.textContent = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].nombre;
   datos.textContent += ` - ${baseDatosJSON.canciones[cancionesRecomend[cont] - 1].artista}`;
-  console.log(cont)
   cont++;
 });
 cont = 0;
-
 document.querySelectorAll(".noFormato").forEach(element => {
   let imagenElement = element.firstElementChild;
   let datos = element.lastElementChild;
@@ -68,8 +67,20 @@ let nRandom = Math.floor(Math.random() * baseDatosJSON.album.length);
 albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
 albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
 
+document.getElementById("seccionDerecha").addEventListener("click", (evento) => {
+  let cancionLink;
+  let padre = evento.target.closest("button");
+  if(padre.id.includes("recomendCancion"))
+  {
+    let cancionNum = padre.id.replace(/[a-zA-Z]/g, "");
+    cancionLink = baseDatosJSON.canciones[cancionNum-1].link;
+    player.loadVideoById(cancionLink);
+    seekbar.max = player.getDuration();
+  }
+});
+
 function toggleMenu() {
   const menu = document.getElementById("menuDesplegable");
   menu.classList.toggle('abierto');
-  console.log("hola")
+  //console.log("hola")
 }
