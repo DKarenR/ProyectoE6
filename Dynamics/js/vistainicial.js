@@ -19,8 +19,6 @@ function cambiarDeVista(idVista) {
 //PARA GENERAR CUADROS DE LOS ARTISTAS :d
 const contListArt = document.querySelector(".contenedorListaDeArtistas");
 const artistasList = baseDatosJSON.artistas;
-console.log("contenedorListaDeArtistas bien:" + contListArt);
-console.log("Artistas cargados:", artistasList.length);
 
 artistasList.forEach(artista => {
   let paraLaListaDeArtistas = document.createElement("div");
@@ -42,12 +40,9 @@ artistasList.forEach(artista => {
 
   contListArt.appendChild(paraLaListaDeArtistas);
 });
-console.log("Todo salió bien");
 //PARA GENERAR CUADROS DE LOS ALBUMES 
 const contAlbumes = document.querySelector(".contenedorDeTodosLosAlbumes");
 const albumesList = baseDatosJSON.album;
-console.log("contenedorDeTodosLosAlbumes:", contAlbumes);
-console.log("Álbumes cargados:", albumesList.length);
 
 albumesList.forEach(album => {
   let paraLaListaDeAlbumes = document.createElement("div");
@@ -108,7 +103,7 @@ let botonesMix= document.querySelectorAll(".botonesMix");
 botonesMix.forEach((botonMix, nume) => {
   const mix = baseDatosJSON.genero[bd[1][cont]-1].nombre;
   botonMix.textContent = `Mix ${mix}`;
-  let idGenero = mix.replace(/[\u0020-\u002F]/g, "");
+  let idGenero = mix.replace(" ", "");
   const idMix = "mix" + idGenero;
   botonMix.id = idMix;
   cont++;
@@ -117,10 +112,10 @@ cont = 0;
 document.querySelectorAll(".recomendacion").forEach(element => {
   let imagenCancionElement = element.firstElementChild;
   let datos = element.lastElementChild;
-  let imagenCancion = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].id_artista;
+  let imagenCancion = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].id_album;
 
   element.id = `recomendCancion${baseDatosJSON.canciones[cancionesRecomend[cont]-1].id}`;
-  imagenCancionElement.src = baseDatosJSON.album[imagenCancion-1].url_img;
+  imagenCancionElement.src = baseDatosJSON.album[imagenCancion - 1].url_img;
   datos.textContent = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].nombre;
   datos.textContent += ` - ${baseDatosJSON.canciones[cancionesRecomend[cont] - 1].artista}`;
   cont++;
@@ -169,6 +164,19 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
   }
 });
 
+document.getElementById("contenedorMixesOcultar").addEventListener("click", (evento) => {
+  let padre = evento.target.closest("button");
+  let generoMix = padre.id.slice(3);//.replace(/[\u0020-\u002F]/g, "");
+  colaDeReproduccion.length = 0;
+
+  for(let j = 0; j < baseDatosJSON.canciones.length; j++)
+  {
+    if(generoMix == baseDatosJSON.canciones[j].genero.replace(" ", ""))
+      colaDeReproduccion.push(baseDatosJSON.canciones[j].link)
+  }
+  posicionCola = 0;
+  player.loadVideoById(colaDeReproduccion[posicionCola]);
+});
 function toggleMenu() {
   const menu = document.getElementById("menuDesplegable");
   menu.classList.toggle('abierto');
