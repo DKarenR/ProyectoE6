@@ -156,3 +156,4 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     mensaje.innerHTML = mensaje.innerHTML = `<span id='spansIS'>Cuenta creada. Ahora inicia sesión.</span>`;
     console.log(document.cookie);
 });
+console.log("llegué")
