@@ -50,7 +50,7 @@ document.getElementById("resultadosBusqueda").addEventListener("click", function
   let padre = evento.target.closest("div");
   if(padre.id === "result-cancion")
   {
-    let cancionNum = evento.target.id.slice(-1);
+    let cancionNum = evento.target.id.replace(/[a-zA-Z]/g, "")
     cancionLink = baseDatosJSON.canciones[cancionNum].link;
     player.loadVideoById(cancionLink);
     seekbar.max = player.getDuration();
@@ -87,7 +87,8 @@ function onYouTubeIframeAPIReady(){
             controls: 0
         },
         events:{
-            onReady: onPlayerReady
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange
         }
     })
 }
@@ -107,6 +108,10 @@ function onPlayerReady(){
         }
     }, 100);
 
+}
+function onPlayerStateChange(){
+  duration = player.getDuration();
+  seekbar.max = duration;   
 }
 
 //PlayPause
@@ -138,7 +143,6 @@ volumeSlider.addEventListener("input",()=>{
 
 //Mute
 const muteBtn = document.getElementById("muteBtn");
-//console.log(muteBtn)
 muteBtn.addEventListener("click",()=>{
 if(player.isMuted()){
     player.unMute();

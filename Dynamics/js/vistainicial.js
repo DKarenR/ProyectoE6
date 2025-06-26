@@ -27,7 +27,7 @@ let cont = 0;
 
 shuffle(cancionesRecomend);
 shuffle(artistaRecomend);
-cancionesRecomend.splice(4);
+
 
 let botonesMix= document.querySelectorAll(".botonesMix");
 botonesMix.forEach((botonMix, nume) => {
@@ -46,7 +46,8 @@ document.querySelectorAll(".recomendacion").forEach(element => {
 
   imagenCancionElement.src = baseDatosJSON.album[imagenCancion-1].url_img;
   datos.textContent = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].nombre;
-  
+  datos.textContent += ` - ${baseDatosJSON.canciones[cancionesRecomend[cont] - 1].artista}`;
+  console.log(cont)
   cont++;
 });
 cont = 0;

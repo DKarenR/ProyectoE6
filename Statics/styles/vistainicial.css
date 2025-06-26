@@ -149,7 +149,7 @@ body{
     align-self: center;
     gap: 15px;
 }
-.recomendacionMix{
+#recomendacionMix{
     width: 215px;
     height: 215px;
     background-color: #eeeeee;
@@ -189,10 +189,20 @@ body{
   width: 70px;
   border-radius: 10px;
 }
+.item-img:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  filter: brightness(40%);
+
+}
 .album-img{
   height: 160px;
   width: 160px;
   border-radius: 10px;
+}
+.album-img:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  filter: brightness(40%);
+
 }
 .artista-img{
   height: 60px;
