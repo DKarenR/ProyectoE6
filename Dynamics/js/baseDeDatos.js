@@ -450,7 +450,8 @@ const baseDatosJSON = {
       link: "MP-kxJnoIpo",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 42,
       nombre: "I'm in Love with My Car",
       artista: "Queen",
@@ -460,7 +461,8 @@ const baseDatosJSON = {
       link: "a8EYUKmmnqc",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 43,
       nombre: "You're My Best Friend",
       artista: "Queen",
@@ -470,7 +472,8 @@ const baseDatosJSON = {
       link: "Jp3fu05GdsM",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 44,
       nombre: "'39",
       artista: "Queen",
@@ -480,7 +483,8 @@ const baseDatosJSON = {
       link: "exEeS19Mzq4",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 45,
       nombre: "Sweet Lady",
       artista: "Queen",
@@ -490,7 +494,8 @@ const baseDatosJSON = {
       link: "vHUBRapSU94",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 46,
       nombre: "Seaside Rendezvous",
       artista: "Queen",
@@ -500,7 +505,8 @@ const baseDatosJSON = {
       link: "N6WbgJtRplM",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 47,
       nombre: "The Prophet's Song",
       artista: "Queen",
@@ -510,7 +516,8 @@ const baseDatosJSON = {
       link: "WoiV60vqa1w",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 48,
       nombre: "Love of My Life",
       artista: "Queen",
@@ -520,7 +527,8 @@ const baseDatosJSON = {
       link: "p9woC3Mrq9w",
       genero: "Rock",
       id_genero: 3
-    },{
+    },
+    {
       id: 49,
       nombre: "Good Company",
       artista: "Queen",
@@ -528,6 +536,105 @@ const baseDatosJSON = {
       album: "A Night at the Opera",
       id_album: 7,
       link: "pmZUFM-B5aI",
+      genero: "Rock",
+      id_genero: 3
+    },
+        {
+      id: 50,
+      nombre: "Mátenme porque me muero",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "UfvfOA78RhI",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 51,
+      nombre: "Cuéntame tu vida",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "KlfftQ1jUeA",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 52,
+      nombre: "Nada",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "C89-NEk7Jq4",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 53,
+      nombre: "Será por eso",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "GXfCjf7_QrQ",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 54,
+      nombre: "Nunca me voy a transformar en ti",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "dVjl_QNY85k",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 55,
+      nombre: "Estás dormida",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "u-i6Hx3uBw4",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 56,
+      nombre: "La bestia humana",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "fxLjzRFyx3U",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 57,
+      nombre: "Perdí mi ojo de venado",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "VTIm_Bk5g2g",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 58,
+      nombre: "Los dioses ocultos",
+      artista: "Caifanes",
+      id_artista: 8,
+      album: "Caifanes",
+      id_album: 8,
+      link: "lXkijyJUK9U",
       genero: "Rock",
       id_genero: 3
     }
