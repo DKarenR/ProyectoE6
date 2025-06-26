@@ -40,6 +40,7 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
     }
     datos = JSON.parse(datos);
     if (datos.password === password){
+        console.log(datos);
       mensaje.innerHTML = `<span style='color: green;'>Inicio de sesión exitoso. Bienvenido ${datos.nombre}</span>`;
     } else {
       General.innerHTML = "<span span id='spansIS'>Contraseña incorrecta</span>";
