@@ -15,6 +15,8 @@ body{
     display: flex;
     flex-flow: column ;
     align-items: center;
+    align-content: center;
+    align-self: center;
 }
 #imgForm{                       /*contiene la imagen de inicio de sesión*/
     position: relative;
@@ -46,6 +48,7 @@ body{
     display: flex;
     flex-flow: column;
     align-items: center;
+    gap: 5px;
 }
 #usuario{                           
     background-color: #5a6f98;
@@ -72,6 +75,7 @@ body{
     height: 30px;
     border-radius: 20px;
     border: none;
+    margin-bottom: 5px;
 }
 .spansIS{
     color: red;
@@ -153,4 +157,11 @@ body{
     width: 50%;
     height: 25px;
     border-radius: 20px;
+}
+.contenedorParaInicio{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
 }
