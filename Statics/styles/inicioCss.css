@@ -48,7 +48,8 @@ body{
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 5px;
+    gap: none;
+    justify-content: center;
 }
 #usuario{                           
     background-color: #5a6f98;
