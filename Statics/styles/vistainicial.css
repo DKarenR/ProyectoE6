@@ -144,9 +144,10 @@ body{
     border: none;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     justify-self: center;
     align-self: center;
+    gap: 15px;
 }
 .recomendacionMix{
     width: 215px;
@@ -186,10 +187,12 @@ body{
 .item-img{
   height: 70px;
   width: 70px;
+  border-radius: 10px;
 }
 .album-img{
   height: 160px;
   width: 160px;
+  border-radius: 10px;
 }
 .artista-img{
   height: 60px;
