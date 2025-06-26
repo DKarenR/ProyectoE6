@@ -428,6 +428,108 @@ const baseDatosJSON = {
       link: "3woMHwjjN1Q",
       genero: "Pop",
       id_genero: 2
+    },
+    {
+      id: 40,
+      nombre: "Death on Two Legs (Dedicated to...)",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "E0xc7TD6s7A",
+      genero: "Rock",
+      id_genero: 3
+    },
+    {
+      id: 41,
+      nombre: "Lazing on a Sunday Afternoon",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "MP-kxJnoIpo",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 42,
+      nombre: "I'm in Love with My Car",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "a8EYUKmmnqc",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 43,
+      nombre: "You're My Best Friend",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "Jp3fu05GdsM",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 44,
+      nombre: "'39",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "exEeS19Mzq4",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 45,
+      nombre: "Sweet Lady",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "vHUBRapSU94",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 46,
+      nombre: "Seaside Rendezvous",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "N6WbgJtRplM",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 47,
+      nombre: "The Prophet's Song",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "WoiV60vqa1w",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 48,
+      nombre: "Love of My Life",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "p9woC3Mrq9w",
+      genero: "Rock",
+      id_genero: 3
+    },{
+      id: 49,
+      nombre: "Good Company",
+      artista: "Queen",
+      id_artista: 7,
+      album: "A Night at the Opera",
+      id_album: 7,
+      link: "pmZUFM-B5aI",
+      genero: "Rock",
+      id_genero: 3
     }
   ],
   artistas: [
