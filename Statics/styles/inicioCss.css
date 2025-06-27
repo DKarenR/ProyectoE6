@@ -1,3 +1,7 @@
+*{
+    cursor: url('../media/imgs/Normal\ Select.cur'), auto;
+}
+
 body{
     display: flex;
     justify-content: center;
