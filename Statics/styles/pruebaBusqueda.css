@@ -1,3 +1,7 @@
+*{
+    cursor: url('../media/imgs/Normal\ Select.cur'), auto;
+}
+
 body {
     font-family: sans-serif;
     max-width: 500px;
