@@ -61,7 +61,7 @@ albumesList.forEach(album => {
 
   let imgAlbum = document.createElement("img");
   imgAlbum.src = album.url_img; //le digo que lo agarre del url_img de la base de JSON
-  imgAlbum.classList.add("item-img");
+  imgAlbum.classList.add("album-img");
 
   let nomAlbum = document.createElement("p");
   nomAlbum.textContent = album.nombre; //que lo agarre del nombre del artista del JSON
@@ -95,7 +95,7 @@ for (let i = 0; i < albumesEnLista.length; i++) {
       for(i=0;i<baseDatosJSON.canciones.length;i++)
       {  
         if(baseDatosJSON.canciones[i].id_album == albumNum)
-          contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+          contenedorCanciones.innerHTML += `<div class="contenedorAlbumCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}</div>`; //El id cancion es la localidad de la cancion en el arreglo de canciones
       }
     }
   });
@@ -170,10 +170,14 @@ function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
 
     const img = document.createElement("img");
     img.src = album.url_img;
-    img.classList.add("item-img");
+    img.classList.add("album-img");
 
     const nombre = document.createElement("p");
     nombre.textContent = album.nombre;
+
+    card.addEventListener("click", () => {
+      mostrarInfoDelAlbum(album); //--->en esta solo voy a hacer una función que tenga algo ya estaba antes  
+    });
 
     card.appendChild(img);
     card.appendChild(nombre);
@@ -182,6 +186,27 @@ function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
 
   contenedor.appendChild(titulo);
   contenedor.appendChild(cuadroAlbumes);
+}
+
+function mostrarInfoDelAlbum(album) {
+  cambiarDeVista("seccionAlbum");
+
+  document.getElementById("nombreAlbum").textContent = album.nombre;
+  document.getElementById("autorAlbum").textContent = `-${album.artista}`;
+  document.getElementById("imagendelAlbum").src = album.url_img;
+
+  const contenedorCanciones = document.getElementById("contenedorDeCanciones");
+  contenedorCanciones.innerHTML = "";
+
+  baseDatosJSON.canciones.forEach((cancion, i) => {
+    if (cancion.id_album === album.id) {
+      const cancionDiv = document.createElement("div");
+      cancionDiv.classList.add("contenedorAlbumCancion");
+      cancionDiv.id = `cancion${i}`;
+      cancionDiv.textContent = cancion.nombre;
+      contenedorCanciones.appendChild(cancionDiv);
+    }
+  });
 }
 
 
@@ -295,7 +320,7 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     {
       
       if(baseDatosJSON.canciones[i].id_album == albumNum)
-        contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+        contenedorCanciones.innerHTML += `<div class="contenedorAlbumCancion" id=cancion${i}>${baseDatosJSON.canciones[i].nombre}</div>`; //El id cancion es la localidad de la cancion en el arreglo de canciones
     }
 
   }
@@ -313,7 +338,7 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
   posicionCola = 0;
   colaDeReproduccion = colaDeReproduccion.slice(-7); //Tiene 7 canciones
   shuffle(colaDeReproduccion); 
-  console.log(colaDeReproduccion)
+  console.log(colaDeReproduccion);
   player.loadVideoById(colaDeReproduccion[posicionCola]);
   cambiarDeVista(`seccionMix`)
   document.getElementById("nombreMix").innerHTML += generoMix;
@@ -321,7 +346,8 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
     for(let i = 0; i < baseDatosJSON.canciones.length; i++)
     {
       if(element == baseDatosJSON.canciones[i].link)
-        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div id="contenedorMixCancion">${baseDatosJSON.canciones[i].nombre}</div>`
+        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div class="contenedorMixCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista}</div>` 
+        //El id cancion es la localidad de la cancion en el arreglo de canciones
     }
   })
 });
@@ -330,3 +356,18 @@ function toggleMenu() {
   menu.classList.toggle('abierto');
   //console.log("hola")
 }
+//Eventos en la zona de contenedorDeCanciones Album
+document.getElementById("contenedorDeCanciones").addEventListener("click",(evento) =>{
+  let padreCancion = evento.target.closest("div")
+  let cancionNum = padreCancion.id.replace(/[a-zA-Z]/g, "");
+  cancionLink = baseDatosJSON.canciones[cancionNum].link;
+  player.loadVideoById(cancionLink);
+});
+
+//Eventos en la zona de contenedorDeCancionesMix Mix
+document.getElementById("contenedorDeCancionesMix").addEventListener("click",(evento) =>{
+  let padreCancion = evento.target.closest("div")
+  let cancionNum = padreCancion.id.replace(/[a-zA-Z]/g, "");
+  cancionLink = baseDatosJSON.canciones[cancionNum].link;
+  player.loadVideoById(cancionLink);
+});
