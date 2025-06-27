@@ -42,6 +42,7 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
     if (datos.password === password){
         console.log(datos);
       mensaje.innerHTML = `<span style='color: green;'>Inicio de sesión exitoso. Bienvenido ${datos.nombre}</span>`;
+      
     } else {
       mensaje.innerHTML = "<span span id='spansIS'>Contraseña incorrecta</span>";
     }
