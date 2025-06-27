@@ -1,7 +1,10 @@
 *{
-  cursor: url('../media/imgs/Normal\ Select.cur'), auto;
+    cursor: url('../media/imgs/Normal\ Select.cur'), auto;
 }
-
+button:hover {
+  cursor: pointer;
+  background-color: #01042046
+}
 body{
     background: #2072A9;
     background: radial-gradient(circle, rgba(32, 114, 169, 1) 0%, rgba(38, 26, 71, 1) 100%);
