@@ -71,7 +71,6 @@ albumesList.forEach(album => {
 });
 let albumesEnLista = document.getElementsByClassName("paraLaListaDeAlbumes")
 for (let i = 0; i < albumesEnLista.length; i++) {
-  console.log("hola")
   albumesEnLista[i].addEventListener("click", function(evento) {
     let padre = evento.target.closest("div");
     if(padre.id.includes("album")){
@@ -87,7 +86,7 @@ for (let i = 0; i < albumesEnLista.length; i++) {
       document.getElementById("autorAlbum").innerHTML = `-${artAlbum}`;
       document.getElementById("imagendelAlbum").src = imgAlbum;
       console.log(albumNum)
-      for(i=0;i<baseDatosJSON.canciones.length;i++)
+    for(i=0;i<baseDatosJSON.canciones.length;i++)
       {  
         if(baseDatosJSON.canciones[i].id_album == albumNum)
         {
@@ -239,11 +238,11 @@ document.querySelectorAll(".noFormato").forEach(element => {
 
 let albumRecomend = document.getElementById("recomendacionMix");
 let nRandom = Math.floor(Math.random() * baseDatosJSON.album.length);
+albumRecomend.classList.add("recomendacionMix");
 albumRecomend.id = `recomendAlbum${baseDatosJSON.album[nRandom].id}`
 albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
 albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
 console.log(albumRecomend.id)
-
 document.getElementById("seccionDerecha").addEventListener("click", (evento) => {  
   let cancionReproduciendo = document.getElementById("nombreCancion");
   let artistaCancionReproduciendo = document.getElementById("autorCancion");
@@ -253,7 +252,7 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
   let autorCancion;
   let albumCancion;
   let imagenCancion;
-  let padre = evento.target.closest("button");
+  let padre = evento.target.closest("div");
   if(padre.id.includes("recomendCancion"))
   {
     let cancionNum = padre.id.replace(/[a-zA-Z]/g, "");
