@@ -6,6 +6,7 @@
     <title>Vista Inicial</title>
     <link rel="stylesheet" href="../Statics/styles/vistainicial.css">
     <script src="../Dynamics/js/baseDeDatos.js"></script>
+    <link rel="icon" href="../Statics/media/imgs/logoTuneSix.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body> 
@@ -71,7 +72,11 @@
                     <div id="player"></div>
                     <div class="controls-bar">
                         <input type="range" name="" id="seekBar">
+                        <div id="controlBtns">
+                            <i id="cancionAntes" ><i class="fas fa-backward"></i></i>
                             <i id="playPauseBtn"><i class="fas fa-play"></i></i>
+                            <i id="cancionDespues"> <i class="fas fa-forward"></i></i>
+                        </div>                        
                         <div id="volumen">
                             <i id="muteBtn"><i class="fa-solid fa-volume-high"></i></i> 
                         <input type="range" max="100"  id="volumeSlider">
