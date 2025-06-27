@@ -155,7 +155,11 @@ function onPlayerReady(){
 }
 function onPlayerStateChange(evento){
   duration = player.getDuration();
-  seekbar.max = duration;   
+  seekbar.max = duration;
+  let videoData = player.getVideoData();
+  let idVideoReproduciendo = videoData.video_id
+  console.log(idVideoReproduciendo)
+
   if(colaDeReproduccion[0] != "")
   {
     if(evento.data === YT.PlayerState.ENDED)
