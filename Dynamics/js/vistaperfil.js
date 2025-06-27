@@ -75,7 +75,7 @@ btnGuardarCambios.addEventListener("click", () => {
     const nuevaCookie = encodeURIComponent(JSON.stringify(datosUsuario));
     document.cookie = `${nuevoNombre}=${nuevaCookie}; path=/; max-age=${duracion}`;
     document.cookie = `usuarioActivo=${nuevoNombre}; path=/; max-age=${duracion}`;
-    document.cookie = `${usuarioActivo}=; path=/; max-age=0`;
+    document.cookie = `${usuarioActivo}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
     usuarioActivo = nuevoNombre;
     //////// Desaparece editar perfil /////////
     formularioEdicion.style.display = "none";
