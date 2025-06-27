@@ -534,6 +534,7 @@ body{
     justify-content: center;
     overflow: auto;
     flex-direction: column;
+    justify-content: space-around;
 }
 .paraLaListaDeArtistas{
     display: flex;
@@ -749,6 +750,7 @@ body{
     color: white;
     text-align: center;
     justify-content: center;
+    justify-content: space-around;
 }
 .contenedorListaDeCanciones{
     display: flex;
