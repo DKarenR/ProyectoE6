@@ -5,6 +5,10 @@
   padding: 0;
   cursor: url('../media/imgs/Normal\ Select.cur'), auto;
 }
+button:hover {
+  cursor: pointer;
+  background-color: #01042046
+}
 
 body {
   background: radial-gradient(circle at center, #234976, #121c2b);

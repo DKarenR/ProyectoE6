@@ -1,7 +1,10 @@
 *{
     cursor: url('../media/imgs/Normal\ Select.cur'), auto;
 }
-
+button:hover {
+  cursor: pointer;
+  background-color: #01042046
+}
 body {
     font-family: sans-serif;
     max-width: 500px;

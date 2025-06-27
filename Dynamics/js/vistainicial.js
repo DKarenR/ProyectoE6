@@ -34,6 +34,13 @@ artistasList.forEach(artista => {
   let nomArtista = document.createElement("p");
   nomArtista.textContent = artista.nombre; //que lo agarre del nombre del artista del JSON
     //meow
+
+//Para que cada div tenga la función
+  paraLaListaDeArtistas.addEventListener("click", () => {
+    mostrarAlbumesPorArtistaEnSeccion(artista.nombre);
+    cambiarDeVista("seccionAlbumes");
+  });
+
   divArtista.appendChild(imgArtista);
   divArtista.appendChild(nomArtista);
   paraLaListaDeArtistas.appendChild(divArtista);
@@ -93,47 +100,73 @@ for (let i = 0; i < albumesEnLista.length; i++) {
     }
   });
 }
+//PARA GENERAR LOS CUADROS A LAS CANCIONES 
+//-OK SI BYE
+const contListcanciomes = document.querySelector(".contenedorListaDeCanciones");
+const cancionesList = baseDatosJSON.canciones;
+let albumIMGS =  baseDatosJSON.album.url_img;
 
+  cancionesList.forEach(cancion => {
 
+  let idAlbum = cancion.id_album;
+  let album = albumesList[idAlbum - 1];
 
+  let paraLaListaDeCanciones = document.createElement("div");
+  paraLaListaDeCanciones.classList.add("paraLaListaDeCanciones"); //Para poder añadirle formato a los divs
+
+  let divCancion = document.createElement("div");
+  divCancion.classList.add("cancionesList");
+
+  let imgCancion = document.createElement("img");
+  imgCancion.src = album.url_img; //le digo que lo agarre del url_img de la base de JSON
+  imgCancion.classList.add("item-img"); //AQUÍ AÑADO EL ESTILO DE IMG LOLLL
+
+  let nomCancion = document.createElement("p");
+  nomCancion.textContent = cancion.nombre; //que lo agarre del nombre del artista del JSON
+  let nomCancionArtist = document.createElement("p");
+  nomCancionArtist.textContent = cancion.artista;
+  //meow
+  divCancion.appendChild(imgCancion);
+  divCancion.appendChild(nomCancion);
+  divCancion.appendChild(nomCancionArtist);
+  paraLaListaDeCanciones.appendChild(divCancion);
+
+  contListcanciomes.appendChild(paraLaListaDeCanciones);
+});
 
 //CAMBIO DE VISTA DEL ARTISTA | ÁLBUMES DEL ARTISTA (ALEATORIO)
 
 
 
+//PARA MOSTRAR LAS VISTAS DE LOS ALBUMES --->OCULTAR LA INICIAL
+//Este detecta los botones que tienen a los artistas y espera al click
+document.querySelectorAll(".recomendacionArtista .noFormato").forEach(boton => {
+  boton.addEventListener("click", () => {
+    const nombreArtista = boton.querySelector("p").textContent.trim();
 
-// FUNCIÓN: Mostrar álbumes por artista específico
-function mostrarAlbumesPorArtista(nombreArtista) {
-  // Ocultar todas las vistas
-  document.querySelectorAll('.contenidoDerecho').forEach(seccion => {
-    seccion.style.display = 'none';
+    //cambiar de
+    mostrarAlbumesPorArtistaEnSeccion(nombreArtista);
+    cambiarDeVista("seccionAlbumes");
   });
+});
+//Esto también es parte de mostrar artistas ---> En base a lo anterios :o
+function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
+  const contenedor = document.querySelector("#seccionAlbumes .contenedorDeTodosLosAlbumes");
+  contenedor.innerHTML = ""; // limpiar contenido anterior
 
-  // Limpiar contenedor principal
-  const seccionInicio = document.getElementById("seccionInicio");
-  seccionInicio.style.display = "none";
-
-  // Crear nuevo contenedor para mostrar álbumes del artista
-  const contenedor = document.createElement("div");
-  contenedor.classList.add("mostrarAlbumesDelArtista");
-
-  // Título
   const titulo = document.createElement("h1");
-  titulo.textContent = "Álbumes del artista";
+  titulo.textContent = `Álbumes de ${nombreArtista}`;
   titulo.style.textAlign = "center";
   titulo.style.margin = "20px";
-  contenedor.appendChild(titulo);
 
-  // Cuadro grande que contiene los álbumes
   const cuadroAlbumes = document.createElement("div");
-  cuadroAlbumes.classList.add("cuadroAlbumesGrid"); // clase para diseño responsivo
+  cuadroAlbumes.classList.add("cuadroAlbumesGrid");
 
-  // Filtrar álbumes por nombre del artista
   const albumesFiltrados = baseDatosJSON.album.filter(album => album.artista === nombreArtista);
 
   albumesFiltrados.forEach(album => {
-    const contenedorAlbum = document.createElement("div");
-    contenedorAlbum.classList.add("albumCard");
+    const card = document.createElement("div");
+    card.classList.add("albumCard");
 
     const img = document.createElement("img");
     img.src = album.url_img;
@@ -142,32 +175,14 @@ function mostrarAlbumesPorArtista(nombreArtista) {
     const nombre = document.createElement("p");
     nombre.textContent = album.nombre;
 
-    contenedorAlbum.appendChild(img);
-    contenedorAlbum.appendChild(nombre);
-    cuadroAlbumes.appendChild(contenedorAlbum);
+    card.appendChild(img);
+    card.appendChild(nombre);
+    cuadroAlbumes.appendChild(card);
   });
 
+  contenedor.appendChild(titulo);
   contenedor.appendChild(cuadroAlbumes);
-  seccionInicio.appendChild(contenedor);
-  seccionInicio.style.display = 'block';
 }
-
-// ASIGNAR EVENTOS a botones de recomendacionArtista
-document.querySelectorAll(".recomendacionArtista .noFormato").forEach(boton => {
-  boton.addEventListener("click", () => {
-    const nombreArtista = boton.querySelector("p").textContent.trim();
-    mostrarAlbumesPorArtista(nombreArtista);
-  });
-});
-
-//Elimina vistas anteriores si ya existen
-const existente = document.getElementById("vistaAlbumesArtista");
-if (existente) {
-  existente.remove();
-}
-
-
-
 
 
 let bd = [[], [], [], []];

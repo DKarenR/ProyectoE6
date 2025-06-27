@@ -1,5 +1,5 @@
 const mensaje = document.getElementById("mensaje");
-const duracion = 60 * 60 * 24 * 7;
+const duracion = 60 * 60 * 24 * 14;
 //////// Validación Inicio de sesión /////////
 document.getElementById("formInicioSesion").addEventListener("submit", function(event){
     const passwordInput = document.getElementById("password");
@@ -145,6 +145,14 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     const password = nvoPasswordInput.value.trim();
     const descripcion = descripcionInput.value.trim();
     const correo = correoInput.value.trim();
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        const [key] = cookie.split("=");
+      if (key === nombre) {
+        usuarioVacioSpan.textContent = "Ese nombre ya está en uso.";
+        return;
+      }
+    }
     const datos = {nombre, password, descripcion, correo, fotoPerfil: fotoPerfilSeleccionada,fotoPortada: fotoPortadaSeleccionada};
     const valorCookie = encodeURIComponent(JSON.stringify(datos));
     document.cookie = `${nombre}=${valorCookie}; max-age=${duracion}`;

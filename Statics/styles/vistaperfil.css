@@ -1,83 +1,131 @@
 *{
     cursor: url('../media/imgs/Normal\ Select.cur'), auto;
 }
-
+button:hover {
+  cursor: pointer;
+  background-color: #01042046
+}
 body{
     background: #2072A9;
     background: radial-gradient(circle, rgba(32, 114, 169, 1) 0%, rgba(38, 26, 71, 1) 100%);
     color: white;
     height: 100%;
 }
-.contenedorPerfil{
+.contenedorPerfil {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 100%;
 }
-.ladoIzquierdoPerfil{
-    display: flex;
+.ladoIzquierdoPerfil {
     width: 10%;
-    height: 100%;
 }
-.ladoDerechoPerfil{
-    display: flex;
+.ladoDerechoPerfil {
     width: 90%;
     flex-direction: column;
     margin-top: 80px;
 }
-.fotos{
-    display: flex;
-    justify-self: right;
+.fotos {
     position: relative;
     width: 100%;
-    justify-content: flex-end;
-}
-.sobreFondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: left;
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    justify-content: center;
     align-items: center;
+    object-fit: cover;
 }
 .fondoDelPerfil {
-    width: 98%;
-    height: auto;
-    display: block;
+    width: 95%;
+    height: 200px;
     border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
 }
-.fotoDelPerfil{
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    border: 4px solid white;
+.sobreFondo {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.editarPerfilBtn{
+.fotoDelPerfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  margin: 30px;
+}
+#nombreTitulo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+}
+.editarPerfilBtn {
     display: flex;
+    justify-content: center;
     width: 100%;
-    justify-content: right;
     margin-top: 20px;
 }
-#editarPerfil{
-    display: flex;
+#regresarBtn{
+background-color: #4da6ff96;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#editarPerfil {
     background-color: #5a6f98;
     color: white;
     border-radius: 51px;
     border: none;
     width: 250px;
     height: 60px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    font-size: 18px;
 }
-.infoDelUsuario{
-    display: flex;
+#editarPerfil:hover {
+    background-color: #3e4f72;
+}
+#editarInfoPer {
+    display: none;
+    margin: 20px 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+#editarInfoPer label,
+#editarInfoPer input {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.452);
+}
+#editarInfoPer input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+#guardarCambios {
+    background-color: #008236d2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+#guardarCambios:hover {
+    background-color: #008236ad;
+}
+.infoDelUsuario {
     margin-left: 40px;
+    display: flex;
     flex-direction: column;
-    gap: none;
     font-size: 23px;
+    margin-top: 20px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
 }
