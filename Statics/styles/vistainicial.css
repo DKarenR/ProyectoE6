@@ -167,7 +167,7 @@ body{
     align-self: center;
     gap: 15px;
 }
-#recomendacionMix{
+.recomendacionMix{
     width: 215px;
     height: 215px;
     background-color: #eeeeee;
@@ -178,14 +178,15 @@ body{
     align-content: center;
     align-items: center;
     justify-items: center;
+    font-size: 20px;
+    color: #000000;
 }
 .recomendacionArtista{
-    width: 200px;
-    height: 200px;
+    width: 235px;
+    height: 235px;
     background-color: #eeeeee;
     border-radius: 15px;
     text-align: center;
-    padding: 10px;
     align-content: center;
     gap:10px;
 }
@@ -247,25 +248,32 @@ body{
   transform: scale(1.1);
 }
 #mixHipHop{
-  background-color: rgb(1, 183, 194);
+  background-color: #01b7c2;
+  border:#01b7c2;
 }
 #mixRock{
   background-color: #ffb82e;
+  border-color:#ffb82e;
 }
 #mixPop{
   background-color: #ff8fc3;
+  border-color:  #ff8fc3;
 }
 #mixCountry{
   background-color: #4f80c9;
+  border-color: #4f80c9;
 }
 #mixJazz{
   background-color: #ab64db;
+  border-color: #ab64db;
 }
 #mixMúsicaElectrónica{
   background-color: #2df1a6;
+  border-color: #2df1a6;
 }
 #mixRB{
   background-color: #f3852b;
+  border-color: #f3852b;
 }
 .hamburguesa{
   width: 30px;
@@ -346,6 +354,7 @@ body{
   flex-direction: column;
   gap: 0.5em;
   display: none;
+  z-index: 100;
 }
 #player{
   width: 70%;
@@ -418,6 +427,7 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 5px;
+    display: none;
 }
 #result-cancion{
   display: flex;
@@ -608,16 +618,49 @@ body{
     margin: 5px;
 }
 #infoDelAlbum{
-  width: 80%;
+  width: 60%;
   border: 3px solid #75b7bb;;
   border-radius: 30px;
   display: flex;
   align-items: center;
-  align-content: center;
   position: relative;
   gap: 3em;
   padding: 10px;
   background-color: rgb(255, 255, 255);
+}
+#infoDelMix{
+  width: 60%;
+  border: 3px solid #bba875;;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 3em;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+}
+#contenedorDeCancionesMix{
+  width: 80%;
+  position: relative;
+  border-radius: 30px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+#contenedorMixCancion{
+  width: 80%;
+  border-radius: 30px;
+  background-color: white;
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #bba875;
+  cursor: pointer;
+  font-size: 20px;
 }
 #imagendelAlbum{
   width: 150px;
@@ -631,11 +674,21 @@ body{
     font-size: 30px;
     width: 400px;
 }
+#infoMix{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+    width: 400px;
+}
 #autorAlbum{
   color: #000000;
 }
 #nombreAlbum{
   color:#000000;
+}
+#nombreMix{
+  color: #000000;
 }
 .seccionDerechaAlbum{
   display: flex;
@@ -644,19 +697,26 @@ body{
   position: relative;
   top: 50px;
 }
+.seccionDerechaMix{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 50px;
+}
 #contenedorDeCanciones{
-  height: 750px;
   width: 80%;
   position: relative;
   border-radius: 30px;
-  top: 50px;
+  top: 40px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1em;
 }
 #contenedorAlbumCancion{
-  width: 100%;
-  height: 50px;
+  width: 80%;
   border-radius: 30px;
   background-color: white;
   display: flex;
@@ -665,7 +725,7 @@ body{
   justify-content: center;
   border: 5px solid #75b7bb;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
 }
 #contenedorAlbumCancion:hover{
    transform: scale(1.1);
@@ -723,6 +783,25 @@ body{
 .albumCard p {
   margin-top: 8px;
   font-size: 1rem;
+}
+.TuMix{
+  width: 100%;
+  height: 70px;
+  color: black;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+  text-align: center;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.TuMix:hover{
+  border-color: rgb(216, 222, 226);
+  color: #efe9d3;
+  font-size: 30px;
+  transform: scale(1.1);
 }
 /*Para las canciones*/
 .seccionDerechaCanciones{
