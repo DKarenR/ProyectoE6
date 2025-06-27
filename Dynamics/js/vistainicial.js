@@ -34,6 +34,13 @@ artistasList.forEach(artista => {
   let nomArtista = document.createElement("p");
   nomArtista.textContent = artista.nombre; //que lo agarre del nombre del artista del JSON
     //meow
+
+//Para que cada botón tenga la función
+  paraLaListaDeArtistas.addEventListener("click", () => {
+    mostrarAlbumesPorArtistaEnSeccion(artista.nombre);
+    cambiarDeVista("seccionAlbumes");
+  });
+
   divArtista.appendChild(imgArtista);
   divArtista.appendChild(nomArtista);
   paraLaListaDeArtistas.appendChild(divArtista);
