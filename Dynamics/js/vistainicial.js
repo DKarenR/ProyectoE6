@@ -371,3 +371,23 @@ document.getElementById("contenedorDeCancionesMix").addEventListener("click",(ev
   cancionLink = baseDatosJSON.canciones[cancionNum].link;
   player.loadVideoById(cancionLink);
 });
+
+//CAMBIO A VISTA INICIAL (CONTENEDORES PRINCIPALES)
+
+function mostrarInicio() {
+  const contenedor = document.querySelector('.contenidoDerecho');
+  const vistaActual = contenedor.querySelector('.visible');
+  const vistaInicio = document.getElementById('inicio');
+
+  // Si ya estamos en inicio, no hacer nada
+  if (vistaActual === vistaInicio) return;
+  
+if (vistaActual && vistaActual !== vistaInicio) {
+  vistaActual.classList.replace('visible', 'oculto');
+}
+
+if (vistaInicio.classList.contains('oculto')) {
+  vistaInicio.classList.replace('oculto', 'visible');
+}
+
+}

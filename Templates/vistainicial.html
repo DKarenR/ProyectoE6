@@ -23,6 +23,11 @@
                     <img src="../Statics/media/imgs/logoTuneSix.png" class="logoTuneSix">      <!--Logo que lleva a perfil-->
                 </a>              
         </article>
+        <article class="volverInicio" title="Volver al inicio">
+            <a href="#" onclick="mostrarInicio()">
+                <img src="../Statics/media/imgs/BackgroundEraser_20250627_045615081.jpg" alt="Volver al inicio">
+            </a>
+        </article>
     </div> 
     <div class="contenedorGrandote">
         <div class="debajoDelBuscador">
@@ -103,7 +108,8 @@
             </div>
             <div class="lineaCentral"></div><!--Línea que aparece cerca del centro-->
             
-            <!--ESTO ES PARTE DE LA PANTALLA INICIAL-->  
+            <!--ESTO ES PARTE DE LA PANTALLA INICIAL-->
+    <section id="inicio" class="vista visible oculto">
         <div class="cambiarDeVistaaArtista" style="width: 100%;margin-top: 25px;height: 95%;" >
             <div id="seccionInicio" class="contenidoDerecho">
                 <div class="recomendacionesDia"><!--contenedor que encapsula toda la sección derecha-->
@@ -243,7 +249,8 @@
             </div>    
         </div>
         </div>
-    </div>
+        </div>
+    </section>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="../Dynamics/js/vistainicial.js"></script>
     <script src="../Dynamics/js/reproductor.js"></script>
