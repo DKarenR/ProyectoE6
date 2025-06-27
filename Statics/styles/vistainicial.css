@@ -114,15 +114,25 @@ body{
 .centrar{
     text-align: center;
 }
-.seccionDerecha{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: none;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+#seccionDerecha{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.ladoDerechaRecomen{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: none;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 .dosRec{
     display: flex;
@@ -472,7 +482,7 @@ body{
     --fondoArtist: rgb(1, 183, 194, 0.3);
     --grisBlanco: rgb(250, 249, 247, 0.3);
     --azulApagado: #5a6f98;
-    --cianIntenso: #01b7c2;
+    --cianIntenso: #177479;
     --blancoAleatorio: #eeeee0;
 }
 .centrarIconosDelHamburgesa{
@@ -586,4 +596,61 @@ body{
     font-size: 20px;
     gap: 5px;
     margin: 5px;
+}
+#infoDelAlbum{
+  width: 80%;
+  border: 3px solid #75b7bb;;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  gap: 3em;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+}
+#imagendelAlbum{
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+}
+#infoAlbum{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    width: 400px;
+}
+#autorAlbum{
+  color: #000000;
+}
+#nombreAlbum{
+  color:#000000;
+}
+.seccionDerechaAlbum{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contenedorDeCanciones{
+  height: 750px;
+  width: 80%;
+  position: relative;
+  border-radius: 30px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+#contenedorAlbumCancion{
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  background-color: white;
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #75b7bb;
+  font-size: 25px;
 }

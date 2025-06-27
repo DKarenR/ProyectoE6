@@ -75,19 +75,20 @@
                     </div>
                 </div>
                 <br>
-                <div class="cuadroMixes" id="contenedorMixes"> <!--contenedor que incluye las tres recomendaciones principales-->
+                <div class="cuadroMixes" id="contenedorMixesOcultar"> <!--contenedor que incluye las tres recomendaciones principales-->
                     <button class="botonesMix botonesAnim" id="">Mix</button><br>
                     <button class="botonesMix botonesAnim" id="">Mix</button><br>
                     <button class="botonesMix botonesAnim" id="">Mix</button>
                 </div> 
             </div>
             <div class="lineaCentral"></div><!--Línea que aparece cerca del centro-->
+            
             <!--ESTO ES PARTE DE LA PANTALLA INICIAL-->  
             <div id="seccionInicio" class="contenidoDerecho">
                 <div class="recomendacionesDia"><!--contenedor que encapsula toda la sección derecha-->
                 <div class="todasRecomendaciones">
                     <h1 class="centrar">Recomendaciones Del Día</h1>
-                    <div class="seccionDerecha" id="seccionDerecha"><!--contenedor que incluye las 4 recomendaciones de canciones-->
+                    <div id="seccionDerecha" class="ladoDerechaRecomen"><!--contenedor que incluye las 4 recomendaciones de canciones-->
                         <div class="dosRec">
                             <button class="recomendacion">
                                 <img src="../Statics/img/.png" class="item-img">
@@ -142,8 +143,7 @@
                         </div>
                     </div>
                     <div class="contenedorListaDeArtistas">
-                        <!--LISTA DE ARTISTAS CON OVER-->
-                        
+                        <!--LISTA DE ARTISTAS CON OVER-->  
                     </div>
                 </div>
             </div>
@@ -156,7 +156,20 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <!--ALBUMSOLITO-->
+            <div id="seccionAlbum" class="contenidoDerecho" style="display: none;">
+                <div class="seccionDerechaAlbum">
+                    <div id="infoDelAlbum">
+                        <img id="imagendelAlbum">
+                        <div id="infoAlbum" >
+                            <div id="nombreAlbum"></div>
+                            <div id="autorAlbum"></div>
+                        </div>
+                    </div>
+                    <div id="contenedorDeCanciones">
+                    </div>
+                </div>
+            </div>
     </div>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="../Dynamics/js/vistainicial.js"></script>

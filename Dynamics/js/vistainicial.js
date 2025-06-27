@@ -8,13 +8,15 @@ function cambiarDeVista(idVista) {
     seccion.style.display = 'none';
   });
   //Mostrar vista de nuevo ----> artistas
-  document.getElementById(idVista).style.display = 'block';
+  console.log(idVista)
+  document.getElementById(idVista).style.display = 'flex';
+  const mixes = document.getElementById('contenedorMixesOcultar'); //Ocultar los mixes
+    if (idVista === 'seccionInicio') {
+        mixes.style.display = 'flex';
+    } else {
+        mixes.style.display = 'none';
+    }
 }
-//Vista de Álbum
-
-
-
-
 //PARA GENERAR CUADROS DE LOS ARTISTAS :d
 const contListArt = document.querySelector(".contenedorListaDeArtistas");
 const artistasList = baseDatosJSON.artistas;
@@ -54,6 +56,7 @@ albumesList.forEach(album => {
 
   let divAlbum = document.createElement("div");
   divAlbum.classList.add("albumesList");
+  divAlbum.id = `album${album.id}`
 
   let imgAlbum = document.createElement("img");
   imgAlbum.src = album.url_img; //le digo que lo agarre del url_img de la base de JSON
@@ -71,7 +74,35 @@ albumesList.forEach(album => {
   contAlbumes.appendChild(paraLaListaDeAlbumes);
 
 });
-
+let albumesEnLista = document.getElementsByClassName("paraLaListaDeAlbumes")
+for (let i = 0; i < albumesEnLista.length; i++) {
+  console.log("hola")
+  albumesEnLista[i].addEventListener("click", function(evento) {
+    let padre = evento.target.closest("div");
+    if(padre.id.includes("album")){
+      let albumNum = padre.id.replace(/[a-zA-Z]/g, "");
+      console.log(albumNum)
+      let nomAlbum = baseDatosJSON.album[albumNum-1].nombre;
+      let artAlbum = baseDatosJSON.album[albumNum-1].artista;
+      let imgAlbum = baseDatosJSON.album[albumNum-1].url_img;
+      let contenedorCanciones = document.getElementById("contenedorDeCanciones")
+      contenedorCanciones.innerHTML = ``
+      cambiarDeVista(`seccionAlbum`);
+      document.getElementById("nombreAlbum").innerHTML = nomAlbum;
+      document.getElementById("autorAlbum").innerHTML = `-${artAlbum}`;
+      document.getElementById("imagendelAlbum").src = imgAlbum;
+      console.log(albumNum)
+      for(i=0;i<baseDatosJSON.canciones.length;i++)
+      {  
+        if(baseDatosJSON.canciones[i].id_album == albumNum)
+        {
+          contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+          console.log(baseDatosJSON.canciones[i].nombre);
+       }
+      }
+    }
+  });
+}
 
 let bd = [[], [], [], []];
 baseDatosJSON.canciones.forEach(element => bd[0].push(element.id));
@@ -140,9 +171,9 @@ let nRandom = Math.floor(Math.random() * baseDatosJSON.album.length);
 albumRecomend.id = `recomendAlbum${baseDatosJSON.album[nRandom].id}`
 albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
 albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
+console.log(albumRecomend.id)
 
-document.getElementById("seccionDerecha").addEventListener("click", (evento) => {
-  
+document.getElementById("seccionDerecha").addEventListener("click", (evento) => {  
   let cancionReproduciendo = document.getElementById("nombreCancion");
   let artistaCancionReproduciendo = document.getElementById("autorCancion");
   let imagenCancionReproduciendo = document.getElementById("imagenReproduciendo");
@@ -166,8 +197,31 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
     imagenCancionReproduciendo.src = imagenCancion;
   }
-  if(padre.id.includes(""))
+  if(padre.id.includes("recomendAlbum")){
+    let albumNum = padre.id.replace(/[a-zA-Z]/g, "");
+    let nomAlbum = baseDatosJSON.album[albumNum-1].nombre;
+    let artAlbum = baseDatosJSON.album[albumNum-1].artista;
+    let imgAlbum = baseDatosJSON.album[albumNum-1].url_img;
+    let contenedorCanciones = document.getElementById("contenedorDeCanciones")
+    contenedorCanciones.innerHTML = ``
+    cambiarDeVista(`seccionAlbum`);
+    document.getElementById("nombreAlbum").innerHTML = nomAlbum;
+    document.getElementById("autorAlbum").innerHTML = `-${artAlbum}`;
+    document.getElementById("imagendelAlbum").src = imgAlbum;
+    console.log(albumNum)
+    for(i=0;i<baseDatosJSON.canciones.length;i++)
+    {
+      
+      if(baseDatosJSON.canciones[i].id_album == albumNum)
+      {
+        contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+        console.log(baseDatosJSON.canciones[i].nombre);
+      }
+    }
+
+  }
 });
+
 
 function toggleMenu() {
   const menu = document.getElementById("menuDesplegable");

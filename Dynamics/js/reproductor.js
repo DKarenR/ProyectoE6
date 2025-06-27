@@ -33,7 +33,7 @@ inputBusqueda.addEventListener("input", function () {
   }
   for (let i = 0; i < baseDatosJSON.album.length; i++) {
     if(normalizar(baseDatosJSON.album[i].nombre).includes(frase) && coincidenciasAlbum < 5){
-      resultadoAlbum.innerHTML += `<div class="resultadoAlbum">${baseDatosJSON.album[i].nombre}-Álbum</div> `;
+      resultadoAlbum.innerHTML += `<div class="resultadoAlbum" id="album${i}">${baseDatosJSON.album[i].nombre}-Álbum</div> `;
       coincidenciasAlbum++;
     }
   }
@@ -71,6 +71,33 @@ contenedorBusqueda.addEventListener("click", function (evento) {
     cancionReproduciendo.innerHTML = `${nombreCancion}`;
     artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
     imagenCancionReproduciendo.src = imagenCancion;
+  }
+  console.log(padre.id)
+  console.log(abuelo.id)
+  if(abuelo.id === "result-album"){
+    let albumNum = padre.id.replace(/[a-zA-Z]/g, "");
+    console.log(albumNum)
+    let nomAlbum = baseDatosJSON.album[albumNum].nombre;
+    let artAlbum = baseDatosJSON.album[albumNum].artista;
+    let imgAlbum = baseDatosJSON.album[albumNum].url_img;
+    let contenedorCanciones = document.getElementById("contenedorDeCanciones")
+    contenedorCanciones.innerHTML = ``
+    cambiarDeVista(`seccionAlbum`);
+    document.getElementById("nombreAlbum").innerHTML = nomAlbum;
+    document.getElementById("autorAlbum").innerHTML = `-${artAlbum}`;
+    document.getElementById("imagendelAlbum").src = imgAlbum;
+    console.log(albumNum)
+    albumNum++
+    console.log(contenedorCanciones.innerHTML)
+    for(i=0;i<baseDatosJSON.canciones.length;i++)
+    {
+      if(baseDatosJSON.canciones[i].id_album == albumNum)
+      {
+        contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+        console.log(baseDatosJSON.canciones[i].nombre);
+      }
+    }
+    
   }
   resultadoCancion.innerHTML = ``;
   resultadoAutor.innerHTML = '';
