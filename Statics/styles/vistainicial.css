@@ -777,27 +777,30 @@ body{
 
 /* Este cuadro ocupa la mayor parte de la pantalla */
 .cuadroAlbumesGrid {
-  width: 90%;
-  height: 70vh; /* proporcional a la altura de la pantalla */
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 20px;
-  box-sizing: border-box;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* siempre 2 columnas */
-  gap: 20px;
-  overflow-y: auto; /* scroll si hay muchos álbumes */
+    align-content: center;
+    width: 90%;
+    height: 70vh;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    overflow-y: auto;
+    justify-items: center;
 }
 
 /* Tarjeta de cada álbum */
 .albumCard {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  transition: transform 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    width: max-content;
+    height: max-content;
 }
 
 .albumCard:hover {
