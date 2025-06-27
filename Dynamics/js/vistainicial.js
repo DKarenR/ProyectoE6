@@ -209,11 +209,12 @@ shuffle(bd[1]);
 // Agrega imagenes y titulo a botones, tambien funcionamiento
 let cancionesRecomend = bd[0];
 let artistaRecomend = bd[3];
+let albumesRecomend = bd[2];
 let cont = 0;
 
 shuffle(cancionesRecomend);
 shuffle(artistaRecomend);
-
+shuffle(albumesRecomend);
 
 let botonesMix= document.querySelectorAll(".botonesMix");
 botonesMix.forEach((botonMix, nume) => {
@@ -247,13 +248,18 @@ document.querySelectorAll(".noFormato").forEach(element => {
   cont++;
 });
 
-let albumRecomend = document.getElementById("recomendacionMix");
-let nRandom = Math.floor(Math.random() * baseDatosJSON.album.length);
-albumRecomend.classList.add("recomendacionMix");
-albumRecomend.id = `recomendAlbum${baseDatosJSON.album[nRandom].id}`
-albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
-albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
-console.log(albumRecomend.id)
+//Carrucel albumes
+cont = 0;
+let albumActual = document.getElementById("recomendacionAlbum");
+setInterval( () => {
+  albumActual.id = `recomendAlbum${albumesRecomend[cont]}`;
+  albumActual.firstElementChild.src = baseDatosJSON.album[albumesRecomend[cont]-1].url_img;
+  albumActual.lastElementChild.textContent = baseDatosJSON.album[albumesRecomend[cont]-1].nombre;
+  cont++;
+  if(cont == 3)
+    cont = 0;
+}, 3000);
+
 document.getElementById("seccionDerecha").addEventListener("click", (evento) => {  
   let cancionLink;
   let nombreCancion;
