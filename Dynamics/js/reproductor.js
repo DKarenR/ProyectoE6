@@ -122,6 +122,7 @@ let updateInterval;
 let colaDeReproduccion = [];
 let posicionCola = 1;
 
+const siguienteCancionDiv = document.getElementById("colaRep");
 const seekbar = document.getElementById("seekBar");
 const volumeSlider = document.getElementById("volumeSlider");
 const playPauseBtn = document.getElementById("playPauseBtn");
@@ -160,7 +161,6 @@ function onPlayerStateChange(evento){
   seekbar.max = duration;
   let videoData = player.getVideoData();
   let idVideoReproduciendo = videoData.video_id
-  console.log(idVideoReproduciendo)
   for(let i=0;i<baseDatosJSON.canciones.length;i++)
   {
     
@@ -170,12 +170,10 @@ function onPlayerStateChange(evento){
       albumCancion = baseDatosJSON.canciones[i].id_album;
       imagenCancion = baseDatosJSON.album[albumCancion-1].url_img;
       cancionReproduciendo.innerHTML = `${nombreCancion}`;
-      console.log(imagenCancionReproduciendo)
       imagenCancionReproduciendo.style=`display: flex`;
-      console.log(imagenCancionReproduciendo)
       artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
       imagenCancionReproduciendo.src = imagenCancion;
-      return;
+      break;
     }
   }
   if(colaDeReproduccion[0] != "")
@@ -184,7 +182,7 @@ function onPlayerStateChange(evento){
     {
       posicionCola++;
       if(posicionCola < colaDeReproduccion.length)
-        player.loadVideoById(colaDeReproduccion[posicionCola]);
+        reproduceCancion(colaDeReproduccion[posicionCola]);
     }
   }
 }
@@ -232,3 +230,41 @@ seekbar.addEventListener("input",()=>{
     let seekTo = seekbar.value;
     player.seekTo(seekTo, true);
 })
+
+//pruebaCancionSiguiente
+function reproduceCancion(cancion)
+{
+  player.loadVideoById(cancion);
+  let siguienteImagen = document.getElementById('siguienteImagenId');
+  let siguienteCancionP = document.getElementById('siguienteCancionId');
+  if(colaDeReproduccion[posicionCola+1])
+  {
+    if(!siguienteImagen) 
+    {
+      siguienteImagen = document.createElement('img');
+      siguienteImagen.id = 'siguienteImagenId';
+      siguienteCancionDiv.appendChild(siguienteImagen);
+
+      siguienteCancionP = document.createElement('p');
+      siguienteCancionP.id = 'siguienteCancionId';
+      siguienteCancionDiv.appendChild(siguienteCancionP);
+    }
+    let siguienteCancion = colaDeReproduccion[posicionCola+1];
+    for(let i = 0; i < baseDatosJSON.canciones.length; i++)
+    {
+      if(baseDatosJSON.canciones[i].link == siguienteCancion)
+      {
+        siguienteCancion = baseDatosJSON.canciones[i].id;
+        break;
+      }
+    }
+    let albumSiguiente = baseDatosJSON.canciones[siguienteCancion-1].id_album;
+    siguienteImagen.src = baseDatosJSON.album[albumSiguiente-1].url_img;
+    siguienteCancionP.innerHTML = baseDatosJSON.canciones[siguienteCancion-1].nombre;
+  }
+  if(!colaDeReproduccion[posicionCola+1] && siguienteImagen)
+  {
+    siguienteImagen.remove();
+    siguienteCancionP.remove();
+  }
+}

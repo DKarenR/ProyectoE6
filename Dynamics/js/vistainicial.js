@@ -328,18 +328,17 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
 document.getElementById("contenedorMixesOcultar").addEventListener("click", (evento) => {
   let padre = evento.target.closest("button");
   let generoMix = padre.id.slice(3);//.replace(/[\u0020-\u002F]/g, "");
-  console.log(generoMix)
   colaDeReproduccion.length = 0;
   for(let j = 0; j < baseDatosJSON.canciones.length; j++)
   {
     if(generoMix == baseDatosJSON.canciones[j].genero.replace(" ", ""))
-      colaDeReproduccion.push(baseDatosJSON.canciones[j].link)
+      colaDeReproduccion.push(baseDatosJSON.canciones[j].link);
   }
   posicionCola = 0;
-  colaDeReproduccion = colaDeReproduccion.slice(-7); //Tiene 7 canciones
-  shuffle(colaDeReproduccion); 
-  console.log(colaDeReproduccion)
-  player.loadVideoById(colaDeReproduccion[posicionCola]);
+  shuffle(colaDeReproduccion);
+  colaDeReproduccion = colaDeReproduccion.slice(0, 7); //Tiene 7 canciones
+  reproduceCancion(colaDeReproduccion[posicionCola]); 
+  //player.loadVideoById(colaDeReproduccion[posicionCola]);
   cambiarDeVista(`seccionMix`)
   document.getElementById("nombreMix").innerHTML += generoMix;
   colaDeReproduccion.forEach((element)=>{
@@ -349,7 +348,7 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
         document.getElementById("contenedorDeCancionesMix").innerHTML += `<div class="contenedorMixCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista}</div>` 
         //El id cancion es la localidad de la cancion en el arreglo de canciones
     }
-  })
+  });
 });
 function toggleMenu() {
   const menu = document.getElementById("menuDesplegable");
