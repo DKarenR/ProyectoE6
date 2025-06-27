@@ -901,3 +901,14 @@ body{
   border: 3px solid white;
   border-radius: 20px;
 }
+#infoDeTuMix{
+  width: 60%;
+  border: 3px solid #000000;;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 3em;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+}

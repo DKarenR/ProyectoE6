@@ -16,6 +16,9 @@ function cambiarDeVista(idVista) {
         mixes.style.display = 'none';
     }
 }
+function vidCargar(link){
+  player.loadVideoById(link)
+}
 //PARA GENERAR CUADROS DE LOS ARTISTAS :d
 const contListArt = document.querySelector(".contenedorListaDeArtistas");
 const artistasList = baseDatosJSON.artistas;
@@ -374,3 +377,9 @@ document.getElementById("contenedorDeCancionesMix").addEventListener("click",(ev
   cancionLink = baseDatosJSON.canciones[cancionNum].link;
   player.loadVideoById(cancionLink);
 });
+
+//TUMIXSECCION
+let irATumix = document.getElementById("tuMix")
+irATumix.addEventListener("click",()=>{
+  cambiarDeVista(`seccionTuMix`)
+})
