@@ -252,14 +252,17 @@ botonesMix.forEach((botonMix, nume) => {
 });
 cont = 0;
 document.querySelectorAll(".recomendacion").forEach(element => {
-  let imagenCancionElement = element.firstElementChild;
-  let datos = element.lastElementChild;
+  let imagenCancionElement = element.children[0];
+  let datos = element.children[1];
   let imagenCancion = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].id_album;
-
+  let colAdd = element.children[2]
+  console.log(element)
   element.id = `recomendCancion${baseDatosJSON.canciones[cancionesRecomend[cont]-1].id}`;
   imagenCancionElement.src = baseDatosJSON.album[imagenCancion - 1].url_img;
   datos.textContent = baseDatosJSON.canciones[cancionesRecomend[cont] - 1].nombre;
   datos.textContent += ` - ${baseDatosJSON.canciones[cancionesRecomend[cont] - 1].artista}`;
+
+
   cont++;
 });
 cont = 0;
