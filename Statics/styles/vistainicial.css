@@ -182,6 +182,7 @@ body{
     color: #000000;
 }
 .recomendacionArtista{
+    display: flex;
     width: 235px;
     height: 235px;
     background-color: #eeeeee;
@@ -189,6 +190,8 @@ body{
     text-align: center;
     align-content: center;
     gap:10px;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .noFormato{
     width: 100%;
@@ -196,12 +199,14 @@ body{
     display: flex;
     border-style: none;
     border: none;
+    border-radius: 7px;
     align-content: center;
     align-items: center;
     justify-content: center;
     justify-self: center;
     align-self: center;
     background-color: none;
+    justify-content: space-evenly;
 }
 .item-img{
   height: 70px;
@@ -777,27 +782,30 @@ body{
 
 /* Este cuadro ocupa la mayor parte de la pantalla */
 .cuadroAlbumesGrid {
-  width: 90%;
-  height: 70vh; /* proporcional a la altura de la pantalla */
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 20px;
-  box-sizing: border-box;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* siempre 2 columnas */
-  gap: 20px;
-  overflow-y: auto; /* scroll si hay muchos álbumes */
+    align-content: center;
+    width: 90%;
+    height: 70vh;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    overflow-y: auto;
+    justify-items: center;
 }
 
 /* Tarjeta de cada álbum */
 .albumCard {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  transition: transform 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    width: max-content;
+    height: max-content;
 }
 
 .albumCard:hover {
@@ -905,4 +913,10 @@ body{
   position: absolute;
   left: 80px;
   top: 5px;
+}
+#colaRep{
+  width: 100%;
+  height: 200px;
+  border: 3px solid white;
+  border-radius: 20px;
 }

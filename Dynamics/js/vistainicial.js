@@ -61,7 +61,7 @@ albumesList.forEach(album => {
 
   let imgAlbum = document.createElement("img");
   imgAlbum.src = album.url_img; //le digo que lo agarre del url_img de la base de JSON
-  imgAlbum.classList.add("item-img");
+  imgAlbum.classList.add("album-img");
 
   let nomAlbum = document.createElement("p");
   nomAlbum.textContent = album.nombre; //que lo agarre del nombre del artista del JSON
@@ -170,7 +170,7 @@ function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
 
     const img = document.createElement("img");
     img.src = album.url_img;
-    img.classList.add("item-img");
+    img.classList.add("album-img");
 
     const nombre = document.createElement("p");
     nombre.textContent = album.nombre;
@@ -338,7 +338,7 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
   posicionCola = 0;
   colaDeReproduccion = colaDeReproduccion.slice(-7); //Tiene 7 canciones
   shuffle(colaDeReproduccion); 
-  console.log(colaDeReproduccion)
+  console.log(colaDeReproduccion);
   player.loadVideoById(colaDeReproduccion[posicionCola]);
   cambiarDeVista(`seccionMix`)
   document.getElementById("nombreMix").innerHTML += generoMix;
