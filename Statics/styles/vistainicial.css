@@ -895,3 +895,14 @@ body{
     gap: 10px;
     justify-content: center;
 }
+.oculto { display: none; }
+.visible { display: block; }
+
+.contenedorBuscador article.volverInicio img {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  position: absolute;
+  left: 80px;
+  top: 5px;
+}
