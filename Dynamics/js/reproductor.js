@@ -21,7 +21,7 @@ inputBusqueda.addEventListener("input", function () {
   }  
   for (let i = 0; i < baseDatosJSON.canciones.length; i++) {
     if(normalizar(baseDatosJSON.canciones[i].nombre).includes(frase) && coincidenciasCancion < 5){
-      resultadoCancion.innerHTML += `<div class="resultadoCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista} </div>  `;     //Talvez necesite poner i+1 en el id
+      resultadoCancion.innerHTML += `<div class="resultadoCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista} <i class="fa-solid fa-heart" id="corazoncito"></i> </div>  `;     //Talvez necesite poner i+1 en el id
       coincidenciasCancion++;
     }
   }
@@ -62,10 +62,6 @@ contenedorBusqueda.addEventListener("click", function (evento) {
   {
     let cancionNum = evento.target.id.replace(/[a-zA-Z]/g, "");
     cancionLink = baseDatosJSON.canciones[cancionNum].link;
-    nombreCancion = baseDatosJSON.canciones[cancionNum].nombre;
-    autorCancion = baseDatosJSON.canciones[cancionNum].artista;
-    albumCancion = baseDatosJSON.canciones[cancionNum].id_album;
-    imagenCancion = baseDatosJSON.album[albumCancion-1].url_img;
     //Inicializar Reproductor
     player.loadVideoById(cancionLink);
     cancionReproduciendo.innerHTML = `${nombreCancion}`;
@@ -159,7 +155,23 @@ function onPlayerStateChange(evento){
   let videoData = player.getVideoData();
   let idVideoReproduciendo = videoData.video_id
   console.log(idVideoReproduciendo)
-
+  for(let i=0;i<baseDatosJSON.canciones.length;i++)
+  {
+    
+    if(baseDatosJSON.canciones[i].link == idVideoReproduciendo){
+      nombreCancion = baseDatosJSON.canciones[i].nombre;
+      autorCancion = baseDatosJSON.canciones[i].artista;
+      albumCancion = baseDatosJSON.canciones[i].id_album;
+      imagenCancion = baseDatosJSON.album[albumCancion-1].url_img;
+      cancionReproduciendo.innerHTML = `${nombreCancion}`;
+      console.log(imagenCancionReproduciendo)
+      imagenCancionReproduciendo.style=`display: flex`;
+      console.log(imagenCancionReproduciendo)
+      artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
+      imagenCancionReproduciendo.src = imagenCancion;
+      return;
+    }
+  }
   if(colaDeReproduccion[0] != "")
   {
     if(evento.data === YT.PlayerState.ENDED)

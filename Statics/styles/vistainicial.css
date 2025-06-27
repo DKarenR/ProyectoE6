@@ -246,24 +246,31 @@ body{
 }
 #mixHipHop{
   background-color: #01b7c2;
+  border:#01b7c2;
 }
 #mixRock{
   background-color: #ffb82e;
+  border-color:#ffb82e;
 }
 #mixPop{
   background-color: #ff8fc3;
+  border-color:  #ff8fc3;
 }
 #mixCountry{
   background-color: #4f80c9;
+  border-color: #4f80c9;
 }
 #mixJazz{
   background-color: #ab64db;
+  border-color: #ab64db;
 }
 #mixMúsicaElectrónica{
   background-color: #2df1a6;
+  border-color: #2df1a6;
 }
 #mixRB{
   background-color: #f3852b;
+  border-color: #f3852b;
 }
 .hamburguesa{
   width: 30px;
@@ -417,6 +424,7 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 5px;
+    display: none;
 }
 #result-cancion{
   display: flex;
@@ -627,7 +635,18 @@ body{
   padding: 10px;
   background-color: rgb(255, 255, 255);
 }
-#contenedorAlbumMix{
+#contenedorDeCancionesMix{
+  width: 80%;
+  position: relative;
+  border-radius: 30px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+#contenedorMixCancion{
   width: 80%;
   border-radius: 30px;
   background-color: white;
@@ -649,6 +668,13 @@ body{
     flex-direction: column;
     justify-content: center;
     font-size: 30px;
+    width: 400px;
+}
+#infoMix{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
     width: 400px;
 }
 #autorAlbum{
@@ -753,4 +779,23 @@ body{
 .albumCard p {
   margin-top: 8px;
   font-size: 1rem;
+}
+.TuMix{
+  width: 100%;
+  height: 70px;
+  color: black;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+  text-align: center;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.TuMix:hover{
+  border-color: rgb(216, 222, 226);
+  color: #efe9d3;
+  font-size: 30px;
+  transform: scale(1.1);
 }

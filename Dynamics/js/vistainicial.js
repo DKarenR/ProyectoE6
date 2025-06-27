@@ -240,9 +240,6 @@ albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
 albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
 console.log(albumRecomend.id)
 document.getElementById("seccionDerecha").addEventListener("click", (evento) => {  
-  let cancionReproduciendo = document.getElementById("nombreCancion");
-  let artistaCancionReproduciendo = document.getElementById("autorCancion");
-  let imagenCancionReproduciendo = document.getElementById("imagenReproduciendo");
   let cancionLink;
   let nombreCancion;
   let autorCancion;
@@ -261,9 +258,6 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     imagenCancion = baseDatosJSON.album[albumCancion-1].url_img;
     player.loadVideoById(cancionLink);
     seekbar.max = player.getDuration();
-    cancionReproduciendo.innerHTML = `${nombreCancion}`;
-    artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
-    imagenCancionReproduciendo.src = imagenCancion;
   }
   if(padreAlbum.id.includes("recomendAlbum")){
     let albumNum = padreAlbum.id.replace(/[a-zA-Z]/g, "");
@@ -288,17 +282,27 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
 document.getElementById("contenedorMixesOcultar").addEventListener("click", (evento) => {
   let padre = evento.target.closest("button");
   let generoMix = padre.id.slice(3);//.replace(/[\u0020-\u002F]/g, "");
+  console.log(generoMix)
   colaDeReproduccion.length = 0;
-
   for(let j = 0; j < baseDatosJSON.canciones.length; j++)
   {
     if(generoMix == baseDatosJSON.canciones[j].genero.replace(" ", ""))
       colaDeReproduccion.push(baseDatosJSON.canciones[j].link)
   }
   posicionCola = 0;
+  colaDeReproduccion = colaDeReproduccion.slice(-7); //Tiene 7 canciones
+  shuffle(colaDeReproduccion); 
   console.log(colaDeReproduccion)
-  shuffle(colaDeReproduccion);
   player.loadVideoById(colaDeReproduccion[posicionCola]);
+  cambiarDeVista(`seccionMix`)
+  document.getElementById("nombreMix").innerHTML += generoMix;
+  colaDeReproduccion.forEach((element)=>{
+    for(let i = 0; i < baseDatosJSON.canciones.length; i++)
+    {
+      if(element == baseDatosJSON.canciones[i].link)
+        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div id="contenedorMixCancion">${baseDatosJSON.canciones[i].nombre}</div>`
+    }
+  })
 });
 function toggleMenu() {
   const menu = document.getElementById("menuDesplegable");

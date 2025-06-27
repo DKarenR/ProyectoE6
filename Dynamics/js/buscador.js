@@ -851,7 +851,7 @@ inputBusqueda.addEventListener("input", function () {
     return;
   for (let i = 0; i < bd[0].length; i++) {
     if(normalizar(bd[0][i]).includes(frase))
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} - Canción </p> <button>+</button>`;     //Talvez necesite poner i+1 en el id
+      //resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} - Canción </p> <button>+</button>`;     //Talvez necesite poner i+1 en el id
   }
   for (let i = 0; i < bd[1].length; i++) {
     if(normalizar(bd[1][i]).includes(frase))
