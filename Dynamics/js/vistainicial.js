@@ -114,9 +114,12 @@ let albumIMGS =  baseDatosJSON.album.url_img;
 
   let nomCancion = document.createElement("p");
   nomCancion.textContent = cancion.nombre; //que lo agarre del nombre del artista del JSON
-    //meow
+  let nomCancionArtist = document.createElement("p");
+  nomCancionArtist.textContent = cancion.artista;
+  //meow
   divCancion.appendChild(imgCancion);
   divCancion.appendChild(nomCancion);
+  divCancion.appendChild(nomCancionArtist);
   paraLaListaDeCanciones.appendChild(divCancion);
 
   contListcanciomes.appendChild(paraLaListaDeCanciones);
