@@ -98,9 +98,36 @@ for (let i = 0; i < albumesEnLista.length; i++) {
     }
   });
 }
+//PARA GENERAR LOS CUADROS A LAS CANCIONES 
+//-OK SI BYE
+const contListcanciomes = document.querySelector(".contenedorListaDeCanciones");
+const cancionesList = baseDatosJSON.canciones;
+let albumIMGS =  baseDatosJSON.album.url_img;
 
+  cancionesList.forEach(cancion => {
 
+  let idAlbum = cancion.id_album;
+  let album = albumesList[idAlbum - 1];
 
+  let paraLaListaDeCanciones = document.createElement("div");
+  paraLaListaDeCanciones.classList.add("paraLaListaDeCanciones"); //Para poder añadirle formato a los divs
+
+  let divCancion = document.createElement("div");
+  divCancion.classList.add("cancionesList");
+
+  let imgCancion = document.createElement("img");
+  imgCancion.src = album.url_img; //le digo que lo agarre del url_img de la base de JSON
+  imgCancion.classList.add("item-img"); //AQUÍ AÑADO EL ESTILO DE IMG LOLLL
+
+  let nomCancion = document.createElement("p");
+  nomCancion.textContent = cancion.nombre; //que lo agarre del nombre del artista del JSON
+    //meow
+  divCancion.appendChild(imgCancion);
+  divCancion.appendChild(nomCancion);
+  paraLaListaDeCanciones.appendChild(divCancion);
+
+  contListcanciomes.appendChild(paraLaListaDeCanciones);
+});
 
 //CAMBIO DE VISTA DEL ARTISTA | ÁLBUMES DEL ARTISTA (ALEATORIO)
 
