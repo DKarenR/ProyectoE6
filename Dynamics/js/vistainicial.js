@@ -338,7 +338,7 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
   posicionCola = 0;
   colaDeReproduccion = colaDeReproduccion.slice(-7); //Tiene 7 canciones
   shuffle(colaDeReproduccion); 
-  console.log(colaDeReproduccion)
+  console.log(colaDeReproduccion);
   player.loadVideoById(colaDeReproduccion[posicionCola]);
   cambiarDeVista(`seccionMix`)
   document.getElementById("nombreMix").innerHTML += generoMix;
