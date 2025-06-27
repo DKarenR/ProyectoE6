@@ -1,4 +1,5 @@
 const mensaje = document.getElementById("mensaje");
+const duracion = 60 * 60 * 24 * 7;
 //////// Validación Inicio de sesión /////////
 document.getElementById("formInicioSesion").addEventListener("submit", function(event){
     const passwordInput = document.getElementById("password");
@@ -6,6 +7,7 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
     const usuarioInput = document.getElementById("usuario");
     const usuarioSpan = document.getElementById("usuarioMal");
     let errores = false;
+    event.preventDefault();
     if (passwordInput.value.length < 8){
         errores = true;
         passwordSpan.textContent = "La contraseña debe tener al menos 8 caracteres.";
@@ -19,7 +21,6 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
         usuarioSpan.textContent = ""; 
     }
     if (errores){
-        event.preventDefault();
         return;
     }
     ////////// Inicio de sesión funcionalidad /////////
@@ -40,8 +41,8 @@ document.getElementById("formInicioSesion").addEventListener("submit", function(
     }
     datos = JSON.parse(datos);
     if (datos.password === password){
-        console.log(datos);
       mensaje.innerHTML = `<span style='color: green;'>Inicio de sesión exitoso. Bienvenido ${datos.nombre}</span>`;
+      document.cookie = `usuarioActivo=${usuario}; path=/; max-age=${duracion}`;
       window.location.href = "../Templates/vistainicial.html";
     } else {
       mensaje.innerHTML = "<span span id='spansIS'>Contraseña incorrecta</span>";
@@ -73,22 +74,20 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     let seleccionadoP = false;
     ////////// Validación registro /////////
     let errores = false;
+    event.preventDefault();
     if (nvoUsuarioInput.value.length < 1){
-        event.preventDefault();
         usuarioVacioSpan.textContent = "Rellena éste campo.";
         errores = true;
     } else {
         usuarioVacioSpan.textContent = ""; 
     }
     if (nvoPasswordInput.value.length < 8){
-        event.preventDefault();
         contraNvaCortaSpan.textContent = "La contraseña debe tener al menos 8 caracteres.";
         errores = true;
     } else {
         contraNvaCortaSpan.textContent = ""; 
     }
     if (descripcionInput.value.length < 1){
-        event.preventDefault();
         descripcionVaciaSpan.textContent = "Rellena éste campo.";
         errores = true;
     } else {
@@ -131,7 +130,6 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
       portadaVaciaSpan.textContent = ""; 
     }
     if (errores){
-        event.preventDefault();
         return;
     }
     let fotoPerfilSeleccionada = "";
@@ -149,7 +147,6 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     const correo = correoInput.value.trim();
     const datos = {nombre, password, descripcion, correo, fotoPerfil: fotoPerfilSeleccionada,fotoPortada: fotoPortadaSeleccionada};
     const valorCookie = encodeURIComponent(JSON.stringify(datos));
-    const duracion = 60 * 60 * 24 * 7;
     document.cookie = `${nombre}=${valorCookie}; max-age=${duracion}`;
     ////////// Regresar a inicio de sesión /////////
     vistaR.style.display = "none";
@@ -157,4 +154,3 @@ document.getElementById("formRegistrarse").addEventListener("submit", function(e
     mensaje.innerHTML = mensaje.innerHTML = `<span id='spansIS'>Cuenta creada. Ahora inicia sesión.</span>`;
     console.log(document.cookie);
 });
-console.log("llegué")

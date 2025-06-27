@@ -1,3 +1,7 @@
+*{
+  cursor: url('../media/imgs/Normal\ Select.cur'), auto;
+}
+
 .rectangulo {
       font-family: "Tipografiadelmetro",sans-serif;
       width: 400px; /* Ancho del rectángulo */

@@ -1,12 +1,13 @@
-html, body {
-    margin: 0;
-    padding: 0;
+*{
+    cursor: url('../media/imgs/Normal\ Select.cur'), auto;
 }
+
 body{
     display: flex;
     justify-content: center;
     align-items: center; 
     margin: 0; 
+    padding: 0;
     background: hsl(204, 68%, 39%);
     background: radial-gradient(circle, rgba(32,114,169,1)0%, rgba(38,26,71,1)100%);
 }
@@ -39,6 +40,7 @@ body{
     background-color: #eeeeee83;
     flex-flow: column wrap; 
     justify-content: center;
+    flex-direction: row-reverse;
     align-items: center;
     width: 300px;
     height: 250px;
@@ -48,7 +50,8 @@ body{
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
+    margin-top: 50px;
 }
 #usuario{                           
     background-color: #5a6f98;
@@ -76,6 +79,7 @@ body{
     border-radius: 20px;
     border: none;
     margin-bottom: 5px;
+    align-self: center;
 }
 .spansIS{
     color: red;
@@ -97,9 +101,11 @@ body{
     flex-flow: column;
     /*margin: auto;*/
     padding: 30px;
-    width: 50%;
+    width: 53%;
     background-color: rgba(255, 255, 255, 0.678);
     border-radius: 10px;
+    height: 100%;
+    margin: 0;
 }
 #formRegistrarse {
     display: flex;
