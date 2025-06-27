@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Inicial</title>
+    <link rel="stylesheet" href="../Statics/styles/vistainicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../Statics/styles/creditos.css">
+</head>
+<body>
+    <div class="contenedorBuscador">
+        <input class="buscador" id="texto-input" placeholder="   Busca Algo :D">
+        <div id="resultadosBusqueda">
+            <div class="result-pantalla" id="result-cancion"> </div>
+            <div class="result-pantalla" id="result-autor"> </div>
+            <div class="result-pantalla" id="result-album"> </div>
+        </div>  
+      <img src="../Statics/media/imgs/logoTuneSix.png" class="logoTuneSix">
+    </div> 
+    <div class="contenedorGrandote">
+        <div class="debajoDelBuscador">
+            <div class="menu" ><!--contenedor para la Barra del menú-->
+                <div id="hamburguesas" onclick="toggleMenu()">
+                    <div id="hamburguesa" class="hamburguesa">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="menu-desplegable" id="menuDesplegable">
+                <div class="menu-item">
+                    <i class="fas fa-home"></i>
+                 <span>Inicio</span>
+                    </div>
+                    <div class="menu-item">
+                     <i class="fas fa-user"></i>
+                    <span>Artistas</span>
+                </div>
+                <div class="menu-item">
+                <i class="fas fa-music"></i>
+                <span>Canciones</span>
+                 </div>
+                <div class="menu-item">
+                 <i class="fas fa-compact-disc"></i>
+                 <span>Albums</span>
+                 </div>    
+                </div> 
+            </div>
+            <div class="recomendacionesDia">
+                <div class="rectangulo">
+                    <h1>Créditos Equipo 6</h1>
+                    </div>    
+                    <br>
+                     <h3 id="frida" class="parrafo-bonito">Frida Eunice Dávalos Serdán</h3>
+                    <h3 id="aby" class="parrafo-bonito"> Gabriela Abigail Escamilla Flores</h3>
+                <h3 id="luis" class="parrafo-bonito" > Luis Pablo Fernandez Aguirre </h3>
+                 <h3 class ="parrafo-bonito" style="background-color: aqua;"> López Rosas Hatsi Iain</h3>
+                <h3 class="parrafo-bonito">Diana Karen Rivera</h3>               
+            </div>
+        </div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../Dynamics/js/vistainicial.js"></script>
+    <script src="../Dynamics/js/reproductor.js"></script>
+</body>
+</html>
