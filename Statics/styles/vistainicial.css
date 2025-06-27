@@ -650,7 +650,7 @@ body{
   align-items: center;
   gap: 1em;
 }
-#contenedorMixCancion{
+.contenedorMixCancion{
   width: 80%;
   border-radius: 30px;
   background-color: white;
@@ -715,7 +715,7 @@ body{
   align-items: center;
   gap: 1em;
 }
-#contenedorAlbumCancion{
+.contenedorAlbumCancion{
   width: 80%;
   border-radius: 30px;
   background-color: white;
@@ -727,7 +727,7 @@ body{
   cursor: pointer;
   font-size: 20px;
 }
-#contenedorAlbumCancion:hover{
+.contenedorAlbumCancion:hover{
    transform: scale(1.1);
 }
 

@@ -95,7 +95,7 @@ contenedorBusqueda.addEventListener("click", function (evento) {
     {
       if(baseDatosJSON.canciones[i].id_album == albumNum)
       {
-        contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+        contenedorCanciones.innerHTML += `<div class="contenedorAlbumCancion" id="cancion${i}" >${baseDatosJSON.canciones[i].nombre}</div>`; //El id Cancion es la localidad en el arreglo de canciones
         console.log(baseDatosJSON.canciones[i].nombre);
       }
     }

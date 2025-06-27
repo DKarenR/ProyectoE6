@@ -38,7 +38,7 @@ artistasList.forEach(artista => {
 //Para que cada div tenga la función
   paraLaListaDeArtistas.addEventListener("click", () => {
     mostrarAlbumesPorArtistaEnSeccion(artista.nombre);
-    cambiarDeVista("seccionAlbumes");
+    cambiarDeVista("seccionAlbumSelec");
   });
 
   divArtista.appendChild(imgArtista);
@@ -95,7 +95,7 @@ for (let i = 0; i < albumesEnLista.length; i++) {
       for(i=0;i<baseDatosJSON.canciones.length;i++)
       {  
         if(baseDatosJSON.canciones[i].id_album == albumNum)
-          contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+          contenedorCanciones.innerHTML += `<div class="contenedorAlbumCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}</div>`; //El id cancion es la localidad de la cancion en el arreglo de canciones
       }
     }
   });
@@ -146,12 +146,12 @@ document.querySelectorAll(".recomendacionArtista .noFormato").forEach(boton => {
 
     //cambiar de
     mostrarAlbumesPorArtistaEnSeccion(nombreArtista);
-    cambiarDeVista("seccionAlbumes");
+    cambiarDeVista("seccionAlbumSelec");
   });
 });
 //Esto también es parte de mostrar artistas ---> En base a lo anterios :o
 function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
-  const contenedor = document.querySelector("#seccionAlbumes .contenedorDeTodosLosAlbumes");
+  const contenedor = document.querySelector("#seccionAlbumSelec .contenedorDeTodosLosAlbumes");
   contenedor.innerHTML = ""; // limpiar contenido anterior
 
   const titulo = document.createElement("h1");
@@ -295,7 +295,7 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     {
       
       if(baseDatosJSON.canciones[i].id_album == albumNum)
-        contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+        contenedorCanciones.innerHTML += `<div class="contenedorAlbumCancion" id=cancion${i}>${baseDatosJSON.canciones[i].nombre}</div>`; //El id cancion es la localidad de la cancion en el arreglo de canciones
     }
 
   }
@@ -321,7 +321,8 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
     for(let i = 0; i < baseDatosJSON.canciones.length; i++)
     {
       if(element == baseDatosJSON.canciones[i].link)
-        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div id="contenedorMixCancion">${baseDatosJSON.canciones[i].nombre}</div>`
+        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div class="contenedorMixCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista}</div>` 
+        //El id cancion es la localidad de la cancion en el arreglo de canciones
     }
   })
 });
@@ -330,3 +331,18 @@ function toggleMenu() {
   menu.classList.toggle('abierto');
   //console.log("hola")
 }
+//Eventos en la zona de contenedorDeCanciones Album
+document.getElementById("contenedorDeCanciones").addEventListener("click",(evento) =>{
+  let padreCancion = evento.target.closest("div")
+  let cancionNum = padreCancion.id.replace(/[a-zA-Z]/g, "");
+  cancionLink = baseDatosJSON.canciones[cancionNum].link;
+  player.loadVideoById(cancionLink);
+});
+
+//Eventos en la zona de contenedorDeCancionesMix Mix
+document.getElementById("contenedorDeCancionesMix").addEventListener("click",(evento) =>{
+  let padreCancion = evento.target.closest("div")
+  let cancionNum = padreCancion.id.replace(/[a-zA-Z]/g, "");
+  cancionLink = baseDatosJSON.canciones[cancionNum].link;
+  player.loadVideoById(cancionLink);
+});
