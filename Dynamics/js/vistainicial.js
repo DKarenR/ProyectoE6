@@ -95,7 +95,7 @@ for (let i = 0; i < albumesEnLista.length; i++) {
       for(i=0;i<baseDatosJSON.canciones.length;i++)
       {  
         if(baseDatosJSON.canciones[i].id_album == albumNum)
-          contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+          contenedorCanciones.innerHTML += `<div class="contenedorAlbumCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}</div>`; //El id cancion es la localidad de la cancion en el arreglo de canciones
       }
     }
   });
@@ -295,7 +295,7 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     {
       
       if(baseDatosJSON.canciones[i].id_album == albumNum)
-        contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
+        contenedorCanciones.innerHTML += `<div class="contenedorAlbumCancion" id=cancion${i}>${baseDatosJSON.canciones[i].nombre}</div>`; //El id cancion es la localidad de la cancion en el arreglo de canciones
     }
 
   }
@@ -321,7 +321,8 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
     for(let i = 0; i < baseDatosJSON.canciones.length; i++)
     {
       if(element == baseDatosJSON.canciones[i].link)
-        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div id="contenedorMixCancion">${baseDatosJSON.canciones[i].nombre}</div>`
+        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div class="contenedorMixCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista}</div>` 
+        //El id cancion es la localidad de la cancion en el arreglo de canciones
     }
   })
 });
