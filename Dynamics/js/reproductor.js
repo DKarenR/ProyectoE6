@@ -117,6 +117,8 @@ let duration = 0;
 let lastVolume;
 let previousVolume;
 let updateInterval;
+let colaDeReproduccion = [];
+let posicionCola = 1;
 
 const seekbar = document.getElementById("seekBar");
 const volumeSlider = document.getElementById("volumeSlider");
@@ -151,9 +153,18 @@ function onPlayerReady(){
     }, 100);
 
 }
-function onPlayerStateChange(){
+function onPlayerStateChange(evento){
   duration = player.getDuration();
   seekbar.max = duration;   
+  if(colaDeReproduccion[0] != "")
+  {
+    if(evento.data === YT.PlayerState.ENDED)
+    {
+      posicionCola++;
+      if(posicionCola < colaDeReproduccion.length)
+        player.loadVideoById(colaDeReproduccion[posicionCola]);
+    }
+  }
 }
 
 //PlayPause

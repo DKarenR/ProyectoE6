@@ -16,7 +16,11 @@
             <div  id="result-autor"> </div>
             <div  id="result-album"> </div>
         </div>  
-      <img src="../Statics/media/imgs/logoTuneSix.png" class="logoTuneSix">
+        <article>Perfil
+            <a href=".\vistaperfil.html">
+                <img src="../Statics/media/imgs/logoTuneSix.png" class="logoTuneSix">      <!--Logo que lleva a perfil-->
+            </a>
+        </article>
     </div> 
     <div class="contenedorGrandote">
         <div class="debajoDelBuscador">
@@ -84,6 +88,7 @@
             <div class="lineaCentral"></div><!--Línea que aparece cerca del centro-->
             
             <!--ESTO ES PARTE DE LA PANTALLA INICIAL-->  
+        <div class="cambiarDeVistaaArtista">
             <div id="seccionInicio" class="contenidoDerecho">
                 <div class="recomendacionesDia"><!--contenedor que encapsula toda la sección derecha-->
                 <div class="todasRecomendaciones">
@@ -114,18 +119,18 @@
                             <img src="../Statics/img/.jpg" class="album-img">
                             <p>(nombre del Albúm)</p>
                             </button>
-                            <div class="recomendacionArtista">
+                            <div class="recomendacionArtista" id="contenedor-artistas">
                                 <button class="noFormato">
                                     <img src="../Statics/img/.jpg" class="artista-img">
-                                    <p>(nombre del artista1)</p>
+                                    <p>nombre del artista1</p>
                                 </button>
-                                <button class="noFormato">
+                                <button class="noFormato" id="contenedor-artistas">
                                     <img src="../Statics/img/.jpg" class="artista-img">
-                                    <p>(nombre del artista2)</p>
+                                    <p>nombre del artista2</p>
                                 </button>
-                                 <button class="noFormato">
+                                 <button class="noFormato" id="contenedor-artistas">
                                     <img src="../Statics/img/.jpg" class="artista-img">
-                                    <p>(nombre del artista3)</p>
+                                    <p>nombre del artista3</p>
                                 </button>
                             </div>  
                         </div>
@@ -170,6 +175,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
     </div>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="../Dynamics/js/vistainicial.js"></script>
