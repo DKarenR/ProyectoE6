@@ -1,7 +1,10 @@
 *{
     cursor: url('../media/imgs/Normal\ Select.cur'), auto;
 }
-
+button:hover {
+  cursor: pointer;
+  background-color: #01042046
+}
 body{
     background: #2072A9;
     background: radial-gradient(circle, rgba(32, 114, 169, 1) 0%, rgba(38, 26, 71, 1) 100%);
@@ -73,7 +76,6 @@ body{
     width: 250px;
     height: 60px;
     font-size: 18px;
-    cursor: pointer;
 }
 #editarPerfil:hover {
     background-color: #3e4f72;
@@ -106,7 +108,6 @@ body{
     border: none;
     padding: 10px 20px;
     border-radius: 12px;
-    cursor: pointer;
 }
 #guardarCambios:hover {
     background-color: #008236ad;

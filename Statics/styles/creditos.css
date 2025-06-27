@@ -1,7 +1,10 @@
 *{
-  cursor: url('../media/imgs/Normal\ Select.cur'), auto;
+    cursor: url('../media/imgs/Normal\ Select.cur'), auto;
 }
-
+button:hover {
+  cursor: pointer;
+  background-color: #01042046
+}
 .rectangulo {
       font-family: "Tipografiadelmetro",sans-serif;
       width: 400px; /* Ancho del rectángulo */
