@@ -383,3 +383,14 @@ let irATumix = document.getElementById("tuMix")
 irATumix.addEventListener("click",()=>{
   cambiarDeVista(`seccionTuMix`)
 })
+
+//Añadir a cola
+let cancionesRecomendadas = document.getElementsByClassName("recomendacion");
+for(let i=0;i<cancionesRecomendadas;i++)
+{
+  cancionesRecomendadas[i].addEventListener("click",function(evento) {
+    let padre = evento.target.closest("div")
+    if(padre.classList.contains("añadirCola"))
+      console.log("Hola")
+  });
+}
