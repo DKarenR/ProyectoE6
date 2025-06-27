@@ -8,7 +8,6 @@ function cambiarDeVista(idVista) {
     seccion.style.display = 'none';
   });
   //Mostrar vista de nuevo ----> artistas
-  console.log(idVista)
   document.getElementById(idVista).style.display = 'flex';
   const mixes = document.getElementById('contenedorMixesOcultar'); //Ocultar los mixes
     if (idVista === 'seccionInicio') {
@@ -71,12 +70,10 @@ albumesList.forEach(album => {
 });
 let albumesEnLista = document.getElementsByClassName("paraLaListaDeAlbumes")
 for (let i = 0; i < albumesEnLista.length; i++) {
-  console.log("hola")
   albumesEnLista[i].addEventListener("click", function(evento) {
     let padre = evento.target.closest("div");
     if(padre.id.includes("album")){
       let albumNum = padre.id.replace(/[a-zA-Z]/g, "");
-      console.log(albumNum)
       let nomAlbum = baseDatosJSON.album[albumNum-1].nombre;
       let artAlbum = baseDatosJSON.album[albumNum-1].artista;
       let imgAlbum = baseDatosJSON.album[albumNum-1].url_img;
@@ -86,14 +83,10 @@ for (let i = 0; i < albumesEnLista.length; i++) {
       document.getElementById("nombreAlbum").innerHTML = nomAlbum;
       document.getElementById("autorAlbum").innerHTML = `-${artAlbum}`;
       document.getElementById("imagendelAlbum").src = imgAlbum;
-      console.log(albumNum)
       for(i=0;i<baseDatosJSON.canciones.length;i++)
       {  
         if(baseDatosJSON.canciones[i].id_album == albumNum)
-        {
           contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
-          console.log(baseDatosJSON.canciones[i].nombre);
-       }
       }
     }
   });
@@ -279,15 +272,11 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     document.getElementById("nombreAlbum").innerHTML = nomAlbum;
     document.getElementById("autorAlbum").innerHTML = `-${artAlbum}`;
     document.getElementById("imagendelAlbum").src = imgAlbum;
-    console.log(albumNum)
     for(i=0;i<baseDatosJSON.canciones.length;i++)
     {
       
       if(baseDatosJSON.canciones[i].id_album == albumNum)
-      {
         contenedorCanciones.innerHTML += `<div id="contenedorAlbumCancion">${baseDatosJSON.canciones[i].nombre}</div>`;
-        console.log(baseDatosJSON.canciones[i].nombre);
-      }
     }
 
   }
@@ -304,6 +293,7 @@ document.getElementById("contenedorMixesOcultar").addEventListener("click", (eve
       colaDeReproduccion.push(baseDatosJSON.canciones[j].link)
   }
   posicionCola = 0;
+  shuffle(colaDeReproduccion);
   player.loadVideoById(colaDeReproduccion[posicionCola]);
 });
 function toggleMenu() {
