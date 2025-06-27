@@ -1,9 +1,37 @@
+const duracion = 60 * 60 * 24 * 14; 
 const inputBusqueda = document.getElementById("texto-input");
 const resultadoCancion = document.getElementById("result-cancion");
 const resultadoAutor = document.getElementById("result-autor");
 const resultadoAlbum = document.getElementById("result-album");
 const contenedorBusqueda = document.getElementById("resultadosBusqueda");
-
+let miMix = []; //para guardar la playlist que hace el usuario
+let miMixStr = ""; //array => string
+//////// Busca cookie /////////
+let cookies = document.cookie.split("; ");
+let usuarioActivo;
+let datosUsuario;
+for (let cookie of cookies) {
+  const [key, valor] = cookie.split("=");
+  if (key === "usuarioActivo") {
+    usuarioActivo = decodeURIComponent(valor);
+    break;
+  }
+}
+if (usuarioActivo) {
+  for (let cookie of cookies) {
+    const [key, valor] = cookie.split("=");
+    if (key === usuarioActivo) {
+      datosUsuario = JSON.parse(decodeURIComponent(valor));
+      break;
+    }
+  }
+}
+if (datosUsuario && datosUsuario.miMixStr) {
+  miMixStr = datosUsuario.miMixStr;
+  console.log("miMixStr desde cookie:", datosUsuario.miMixStr);
+}else {
+  console.log("No hay miMixStr guardado en la cookie.");
+}
 inputBusqueda.addEventListener("input", function () {
 
   let frase=normalizar(this.value);//normalizar(this.value);
@@ -21,10 +49,49 @@ inputBusqueda.addEventListener("input", function () {
   }  
   for (let i = 0; i < baseDatosJSON.canciones.length; i++) {
     if(normalizar(baseDatosJSON.canciones[i].nombre).includes(frase) && coincidenciasCancion < 5){
-      resultadoCancion.innerHTML += `<div class="resultadoCancion" id="cancion${i}">${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista} <i class="fa-solid fa-heart" id="corazoncito"></i> </div>  `;     //Talvez necesite poner i+1 en el id
-      coincidenciasCancion++;
+    resultadoCancion.innerHTML += `<div class="resultadoCancion" id="cancion${i}">
+      ${baseDatosJSON.canciones[i].nombre}-${baseDatosJSON.canciones[i].artista}
+      <i class="fa-solid fa-heart corazon" data-index="${i}"></i>
+      </div>`;      coincidenciasCancion++;
     }
   }
+  //Colorear el Corazoncito
+  let corazoncito = document.getElementById("click",()=>{
+    if(corazoncito.classList.contains("fa-solid fa-heart"))
+    {
+      corazoncito.classList.remove("fa-solid fa-heart")
+    }
+  })
+  // corazones
+    const corazones = document.querySelectorAll(".corazon");
+    for (let i = 0; i < corazones.length; i++) {
+      corazones[i].addEventListener("click", function (event) {
+        const index = parseInt(this.getAttribute("data-index"));
+        const cancion = baseDatosJSON.canciones[index];
+        let existe = false;
+        for (let j = 0; j < miMix.length; j++) {
+          if (miMix[j].nombre === cancion.nombre && miMix[j].artista === cancion.artista) {
+            existe = true;
+            break;
+          }
+        }
+        if (existe === false) {
+          miMix.push(cancion);
+          miMixStr += `${cancion.nombre} - ${cancion.artista},`;
+          console.log(miMixStr);
+          console.log("Agrega", cancion);
+          this.classList.add("favorita");
+          if (usuarioActivo && datosUsuario) {
+            datosUsuario.miMixStr = miMixStr;
+            const nuevaCookie = encodeURIComponent(JSON.stringify(datosUsuario));
+            document.cookie = `${usuarioActivo}=${nuevaCookie}; path=/; max-age=${duracion}`;
+          }
+        } else {
+          console.log("noooo");
+          this.classList.remove("favorita"); 
+        }
+      });
+    }
   for (let i = 0; i < baseDatosJSON.artistas.length; i++) {
     if(normalizar(baseDatosJSON.artistas[i].nombre).includes(frase) && coincidenciasArtista < 5){
       resultadoAutor.innerHTML += `<div class="resultadoArtista">${baseDatosJSON.artistas[i].nombre}-Artista</div> `;
@@ -45,13 +112,6 @@ inputBusqueda.addEventListener("input", function () {
   if(resultadoAlbum.innerHTML == '')
     resultadoAlbum.innerHTML = '<div class="resultadoAlbum"> No hay albumes registrados con ese nombre </div>';
 });
-//Colorear el Corazoncito
-let corazoncito = document.getElementById("click",()=>{
-  if(corazoncito.classList.contains("fa-solid fa-heart"))
-  {
-    corazoncito.classList.remove("fa-solid fa-heart")
-  }
-})
 //----------- Selecciona la opcion ------------------- 
 let cancionReproduciendo = document.getElementById("nombreCancion");
 let artistaCancionReproduciendo = document.getElementById("autorCancion");
@@ -64,15 +124,15 @@ contenedorBusqueda.addEventListener("click", function (evento) {
   let imagenCancion;
   let padre = evento.target.closest("div");
   let abuelo = padre.parentElement.closest("div");
-  if(abuelo.id === "result-cancion")
-  {
-    let cancionNum = evento.target.id.replace(/[a-zA-Z]/g, "");
-    cancionLink = baseDatosJSON.canciones[cancionNum].link;
-    //Inicializar Reproductor
-    player.loadVideoById(cancionLink);
-    cancionReproduciendo.innerHTML = `${nombreCancion}`;
-    artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
-    imagenCancionReproduciendo.src = imagenCancion;
+  if (abuelo.id === "result-cancion") {
+    let index = parseInt(padre.getAttribute("data-index"));
+    const cancion = baseDatosJSON.canciones[index];
+    if (!cancion) return;
+      player.loadVideoById(cancion.link);
+      cancionReproduciendo.innerHTML = `${cancion.nombre}`;
+      artistaCancionReproduciendo.innerHTML = `-${cancion.artista}`;
+      let albumId = cancion.id_album - 1;
+      imagenCancionReproduciendo.src = baseDatosJSON.album[albumId].url_img;
   }
   console.log(padre.id)
   console.log(abuelo.id)
