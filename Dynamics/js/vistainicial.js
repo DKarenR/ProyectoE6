@@ -331,3 +331,18 @@ function toggleMenu() {
   menu.classList.toggle('abierto');
   //console.log("hola")
 }
+//Eventos en la zona de contenedorDeCanciones Album
+document.getElementById("contenedorDeCanciones").addEventListener("click",(evento) =>{
+  let padreCancion = evento.target.closest("div")
+  let cancionNum = padreCancion.id.replace(/[a-zA-Z]/g, "");
+  cancionLink = baseDatosJSON.canciones[cancionNum].link;
+  player.loadVideoById(cancionLink);
+});
+
+//Eventos en la zona de contenedorDeCancionesMix Mix
+document.getElementById("contenedorDeCancionesMix").addEventListener("click",(evento) =>{
+  let padreCancion = evento.target.closest("div")
+  let cancionNum = padreCancion.id.replace(/[a-zA-Z]/g, "");
+  cancionLink = baseDatosJSON.canciones[cancionNum].link;
+  player.loadVideoById(cancionLink);
+});
