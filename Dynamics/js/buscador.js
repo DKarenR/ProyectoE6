@@ -851,7 +851,7 @@ inputBusqueda.addEventListener("input", function () {
     return;
   for (let i = 0; i < bd[0].length; i++) {
     if(normalizar(bd[0][i]).includes(frase))
-      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} - Canción </p> `;     //Talvez necesite poner i+1 en el id
+      resultadoCancion.innerHTML += ` <p id="cancion${i}"> ${bd[0][i]} - Canción </p> <button>+</button>`;     //Talvez necesite poner i+1 en el id
   }
   for (let i = 0; i < bd[1].length; i++) {
     if(normalizar(bd[1][i]).includes(frase))
@@ -883,10 +883,11 @@ document.getElementById("resultadosBusqueda").addEventListener("click", function
     let video = document.createElement('iframe');
                                            
     video.src = `https://www.youtube.com/embed/${cancionLink}`;
-    video.width = "600";
-    video.height = "400";
-
-    document.body.appendChild(video);
+    video.width = "100";
+    video.height = "100";
+    
+    let reproductor = document.getElementById("player");
+    reproductor.appendChild(video);
     let cancionPedida = cancionLink;
     
   }
@@ -898,3 +899,7 @@ function normalizar(texto) {
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 }
+
+
+
+//Reproductor
