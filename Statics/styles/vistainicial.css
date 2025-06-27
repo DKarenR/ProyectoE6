@@ -985,3 +985,6 @@ body{
    transform: scale(1.1);
 }
 
+#inicio{
+  width: 80%;
+}

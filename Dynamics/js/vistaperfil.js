@@ -12,6 +12,7 @@ const imagenFondoPerfil = document.querySelector(".fondoDelPerfil");
 const btnEditarPerfil = document.getElementById("editarPerfil");
 const btnGuardarCambios = document.getElementById("guardarCambios");
 const btnRegresar = document.getElementById("regresarBtn");
+const btnSalir = document.getElementById("salirBtn");
 let cookies = document.cookie.split("; ");
 //////// Busca cookie /////////
 let usuarioActivo;
@@ -83,4 +84,7 @@ btnGuardarCambios.addEventListener("click", () => {
 });
 btnRegresar.addEventListener("click", () => {
     window.location.href = "../Templates/vistainicial.html";
+});
+btnSalir.addEventListener("click", () => {
+    window.location.href = "../Templates/inicioSesion.html";
 });
