@@ -90,6 +90,8 @@ for (let i = 0; i < albumesEnLista.length; i++) {
       document.getElementById("nombreAlbum").innerHTML = nomAlbum;
       document.getElementById("autorAlbum").innerHTML = `-${artAlbum}`;
       document.getElementById("imagendelAlbum").src = imgAlbum;
+      console.log(albumNum)
+    for(i=0;i<baseDatosJSON.canciones.length;i++)
       for(i=0;i<baseDatosJSON.canciones.length;i++)
       {  
         if(baseDatosJSON.canciones[i].id_album == albumNum)
@@ -247,24 +249,23 @@ document.querySelectorAll(".noFormato").forEach(element => {
 
 let albumRecomend = document.getElementById("recomendacionMix");
 let nRandom = Math.floor(Math.random() * baseDatosJSON.album.length);
+albumRecomend.classList.add("recomendacionMix");
 albumRecomend.id = `recomendAlbum${baseDatosJSON.album[nRandom].id}`
 albumRecomend.firstElementChild.src = baseDatosJSON.album[nRandom].url_img;
 albumRecomend.lastElementChild.textContent = baseDatosJSON.album[nRandom].nombre;
 console.log(albumRecomend.id)
-
 document.getElementById("seccionDerecha").addEventListener("click", (evento) => {  
-  let cancionReproduciendo = document.getElementById("nombreCancion");
-  let artistaCancionReproduciendo = document.getElementById("autorCancion");
-  let imagenCancionReproduciendo = document.getElementById("imagenReproduciendo");
   let cancionLink;
   let nombreCancion;
   let autorCancion;
   let albumCancion;
   let imagenCancion;
-  let padre = evento.target.closest("button");
-  if(padre.id.includes("recomendCancion"))
+  let padreAlbum = evento.target.closest("div");
+  let padreCancion = evento.target.closest("button");
+
+  if(padreCancion != null && padreCancion.id.includes("recomendCancion"))
   {
-    let cancionNum = padre.id.replace(/[a-zA-Z]/g, "");
+    let cancionNum = padreCancion.id.replace(/[a-zA-Z]/g, "");
     cancionLink = baseDatosJSON.canciones[cancionNum-1].link;
     nombreCancion = baseDatosJSON.canciones[cancionNum-1].nombre;
     autorCancion = baseDatosJSON.canciones[cancionNum-1].artista;
@@ -272,12 +273,9 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
     imagenCancion = baseDatosJSON.album[albumCancion-1].url_img;
     player.loadVideoById(cancionLink);
     seekbar.max = player.getDuration();
-    cancionReproduciendo.innerHTML = `${nombreCancion}`;
-    artistaCancionReproduciendo.innerHTML = `-${autorCancion}`;
-    imagenCancionReproduciendo.src = imagenCancion;
   }
-  if(padre.id.includes("recomendAlbum")){
-    let albumNum = padre.id.replace(/[a-zA-Z]/g, "");
+  if(padreAlbum.id.includes("recomendAlbum")){
+    let albumNum = padreAlbum.id.replace(/[a-zA-Z]/g, "");
     let nomAlbum = baseDatosJSON.album[albumNum-1].nombre;
     let artAlbum = baseDatosJSON.album[albumNum-1].artista;
     let imgAlbum = baseDatosJSON.album[albumNum-1].url_img;
@@ -296,20 +294,30 @@ document.getElementById("seccionDerecha").addEventListener("click", (evento) => 
 
   }
 });
-
 document.getElementById("contenedorMixesOcultar").addEventListener("click", (evento) => {
   let padre = evento.target.closest("button");
   let generoMix = padre.id.slice(3);//.replace(/[\u0020-\u002F]/g, "");
+  console.log(generoMix)
   colaDeReproduccion.length = 0;
-
   for(let j = 0; j < baseDatosJSON.canciones.length; j++)
   {
     if(generoMix == baseDatosJSON.canciones[j].genero.replace(" ", ""))
       colaDeReproduccion.push(baseDatosJSON.canciones[j].link)
   }
   posicionCola = 0;
-  shuffle(colaDeReproduccion);
+  colaDeReproduccion = colaDeReproduccion.slice(-7); //Tiene 7 canciones
+  shuffle(colaDeReproduccion); 
+  console.log(colaDeReproduccion)
   player.loadVideoById(colaDeReproduccion[posicionCola]);
+  cambiarDeVista(`seccionMix`)
+  document.getElementById("nombreMix").innerHTML += generoMix;
+  colaDeReproduccion.forEach((element)=>{
+    for(let i = 0; i < baseDatosJSON.canciones.length; i++)
+    {
+      if(element == baseDatosJSON.canciones[i].link)
+        document.getElementById("contenedorDeCancionesMix").innerHTML += `<div id="contenedorMixCancion">${baseDatosJSON.canciones[i].nombre}</div>`
+    }
+  })
 });
 function toggleMenu() {
   const menu = document.getElementById("menuDesplegable");
