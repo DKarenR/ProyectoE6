@@ -61,7 +61,7 @@ albumesList.forEach(album => {
 
   let imgAlbum = document.createElement("img");
   imgAlbum.src = album.url_img; //le digo que lo agarre del url_img de la base de JSON
-  imgAlbum.classList.add("item-img");
+  imgAlbum.classList.add("album-img");
 
   let nomAlbum = document.createElement("p");
   nomAlbum.textContent = album.nombre; //que lo agarre del nombre del artista del JSON
@@ -170,7 +170,7 @@ function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
 
     const img = document.createElement("img");
     img.src = album.url_img;
-    img.classList.add("item-img");
+    img.classList.add("album-img");
 
     const nombre = document.createElement("p");
     nombre.textContent = album.nombre;
@@ -370,3 +370,23 @@ document.getElementById("contenedorDeCancionesMix").addEventListener("click",(ev
   cancionLink = baseDatosJSON.canciones[cancionNum].link;
   player.loadVideoById(cancionLink);
 });
+
+//CAMBIO A VISTA INICIAL (CONTENEDORES PRINCIPALES)
+
+function mostrarInicio() {
+  const contenedor = document.querySelector('.contenidoDerecho');
+  const vistaActual = contenedor.querySelector('.visible');
+  const vistaInicio = document.getElementById('inicio');
+
+  // Si ya estamos en inicio, no hacer nada
+  if (vistaActual === vistaInicio) return;
+  
+if (vistaActual && vistaActual !== vistaInicio) {
+  vistaActual.classList.replace('visible', 'oculto');
+}
+
+if (vistaInicio.classList.contains('oculto')) {
+  vistaInicio.classList.replace('oculto', 'visible');
+}
+
+}
