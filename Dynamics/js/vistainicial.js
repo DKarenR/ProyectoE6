@@ -38,7 +38,7 @@ artistasList.forEach(artista => {
 //Para que cada div tenga la función
   paraLaListaDeArtistas.addEventListener("click", () => {
     mostrarAlbumesPorArtistaEnSeccion(artista.nombre);
-    cambiarDeVista("seccionAlbumes");
+    cambiarDeVista("seccionAlbumSelec");
   });
 
   divArtista.appendChild(imgArtista);
@@ -144,12 +144,12 @@ document.querySelectorAll(".recomendacionArtista .noFormato").forEach(boton => {
 
     //cambiar de
     mostrarAlbumesPorArtistaEnSeccion(nombreArtista);
-    cambiarDeVista("seccionAlbumes");
+    cambiarDeVista("seccionAlbumSelec");
   });
 });
 //Esto también es parte de mostrar artistas ---> En base a lo anterios :o
 function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
-  const contenedor = document.querySelector("#seccionAlbumes .contenedorDeTodosLosAlbumes");
+  const contenedor = document.querySelector("#seccionAlbumSelec .contenedorDeTodosLosAlbumes");
   contenedor.innerHTML = ""; // limpiar contenido anterior
 
   const titulo = document.createElement("h1");
