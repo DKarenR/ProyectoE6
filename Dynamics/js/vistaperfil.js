@@ -11,6 +11,7 @@ const imagenFotoPerfil = document.querySelector(".fotoDelPerfil");
 const imagenFondoPerfil = document.querySelector(".fondoDelPerfil");
 const btnEditarPerfil = document.getElementById("editarPerfil");
 const btnGuardarCambios = document.getElementById("guardarCambios");
+const btnRegresar = document.getElementById("regresarBtn");
 let cookies = document.cookie.split("; ");
 //////// Busca cookie /////////
 let usuarioActivo;
@@ -79,4 +80,7 @@ btnGuardarCambios.addEventListener("click", () => {
     //////// Desaparece editar perfil /////////
     formularioEdicion.style.display = "none";
     btnEditarPerfil.textContent = "Editar perfil";
+});
+btnRegresar.addEventListener("click", () => {
+    window.location.href = "../Templates/vistainicial.html";
 });
