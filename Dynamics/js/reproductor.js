@@ -45,7 +45,13 @@ inputBusqueda.addEventListener("input", function () {
   if(resultadoAlbum.innerHTML == '')
     resultadoAlbum.innerHTML = '<div class="resultadoAlbum"> No hay albumes registrados con ese nombre </div>';
 });
-
+//Colorear el Corazoncito
+let corazoncito = document.getElementById("click",()=>{
+  if(corazoncito.classList.contains("fa-solid fa-heart"))
+  {
+    corazoncito.classList.remove("fa-solid fa-heart")
+  }
+})
 //----------- Selecciona la opcion ------------------- 
 let cancionReproduciendo = document.getElementById("nombreCancion");
 let artistaCancionReproduciendo = document.getElementById("autorCancion");
