@@ -62,15 +62,7 @@ inputBusqueda.addEventListener("input", function () {
     const corazones = document.querySelectorAll(".corazon");
     for (let i = 0; i < corazones.length; i++) 
     {
-      corazones[i].addEventListener("click", function (event) {
-        const divCancion = this.closest(".resultadoCancion");
-  if (divCancion) {
-    const idDelDiv = divCancion.id;
-    console.log("ID del div:", idDelDiv);
-  } else {
-    console.log("No se encontró el div contenedor.");
-  }
-
+      corazones[i].addEventListener("click", function (event) {        
         console.log(event.target.closest("div"))
         const index = parseInt(this.getAttribute("data-index"));
         const cancion = baseDatosJSON.canciones[index];
@@ -123,11 +115,6 @@ let cancionReproduciendo = document.getElementById("nombreCancion");
 let artistaCancionReproduciendo = document.getElementById("autorCancion");
 let imagenCancionReproduciendo = document.getElementById("imagenReproduciendo");
 contenedorBusqueda.addEventListener("click", function (evento) {
-  let cancionLink;
-  let nombreCancion;
-  let autorCancion;
-  let albumCancion;
-  let imagenCancion;
   let padre = evento.target.closest("div");
   let abuelo = padre.parentElement.closest("div");
   console.log(abuelo)
