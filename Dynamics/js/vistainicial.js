@@ -175,6 +175,10 @@ function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
     const nombre = document.createElement("p");
     nombre.textContent = album.nombre;
 
+    card.addEventListener("click", () => {
+      mostrarInfoDelAlbum(album); //--->en esta solo voy a hacer una función que tenga algo ya estaba antes  
+    });
+
     card.appendChild(img);
     card.appendChild(nombre);
     cuadroAlbumes.appendChild(card);
@@ -182,6 +186,27 @@ function mostrarAlbumesPorArtistaEnSeccion(nombreArtista) {
 
   contenedor.appendChild(titulo);
   contenedor.appendChild(cuadroAlbumes);
+}
+
+function mostrarInfoDelAlbum(album) {
+  cambiarDeVista("seccionAlbum");
+
+  document.getElementById("nombreAlbum").textContent = album.nombre;
+  document.getElementById("autorAlbum").textContent = `-${album.artista}`;
+  document.getElementById("imagendelAlbum").src = album.url_img;
+
+  const contenedorCanciones = document.getElementById("contenedorDeCanciones");
+  contenedorCanciones.innerHTML = "";
+
+  baseDatosJSON.canciones.forEach((cancion, i) => {
+    if (cancion.id_album === album.id) {
+      const cancionDiv = document.createElement("div");
+      cancionDiv.classList.add("contenedorAlbumCancion");
+      cancionDiv.id = `cancion${i}`;
+      cancionDiv.textContent = cancion.nombre;
+      contenedorCanciones.appendChild(cancionDiv);
+    }
+  });
 }
 
 
