@@ -114,7 +114,7 @@ let albumIMGS =  baseDatosJSON.album.url_img;
   let idAlbum = cancion.id_album;
   let album = albumesList[idAlbum - 1];
 
-  let paraLaListaDeCanciones = document.createElement("div");
+  let paraLaListaDeCanciones = document.createElement("button");
   paraLaListaDeCanciones.classList.add("paraLaListaDeCanciones"); //Para poder añadirle formato a los divs
 
   let divCancion = document.createElement("div");
@@ -137,6 +137,8 @@ let albumIMGS =  baseDatosJSON.album.url_img;
   contListcanciomes.appendChild(paraLaListaDeCanciones); //si se le da click al cuadro con el nombre e imagen de la canción se reproduce el video
 
   divCancion.addEventListener("click", ()=>{
+
+    console.log("Click en:", cancion.nombre);
     vidCargar(cancion.link);
   })
 });
