@@ -241,7 +241,8 @@ body{
   height: 70px;
   color: black;
   border-style: solid;
-  border-color: white;
+  border-color: rgb(242, 248, 242);
+  background-color: rgb(192, 228, 109);
   border-width: 3px;
   text-align: center;
   font-size: 20px;
@@ -254,6 +255,11 @@ body{
   color: #efe9d3;
   font-size: 30px;
   transform: scale(1.1);
+}
+#mixAlternativa{
+  background-color: #d3263d;
+  border: #c5182f;
+  color: white;
 }
 #mixHipHop{
   background-color: #01b7c2;
