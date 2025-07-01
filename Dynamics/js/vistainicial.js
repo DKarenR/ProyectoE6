@@ -134,7 +134,11 @@ let albumIMGS =  baseDatosJSON.album.url_img;
   divCancion.appendChild(nomCancionArtist);
   paraLaListaDeCanciones.appendChild(divCancion);
 
-  contListcanciomes.appendChild(paraLaListaDeCanciones);
+  contListcanciomes.appendChild(paraLaListaDeCanciones); //si se le da click al cuadro con el nombre e imagen de la canción se reproduce el video
+
+  divCancion.addEventListener("click", ()=>{
+    vidCargar(cancion.link);
+  })
 });
 
 //CAMBIO DE VISTA DEL ARTISTA | ÁLBUMES DEL ARTISTA (ALEATORIO)
